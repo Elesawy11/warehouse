@@ -1,13 +1,14 @@
 import 'package:go_router/go_router.dart';
 import 'package:warehouse_app/core/routing/routes.dart';
-import 'package:warehouse_app/features/start.dart';
+import 'package:warehouse_app/features/onboarding/presentation/views/onboarding_view.dart';
 
 abstract class AppRouter {
   static final router = GoRouter(
     routes: [
       GoRoute(
-          path: Routes.onboarding,
-          builder: (context, state) => StartView()),
+        path: Routes.onboarding,
+        builder: (context, state) => OnboardingView(),
+      ),
     ],
   );
 }
