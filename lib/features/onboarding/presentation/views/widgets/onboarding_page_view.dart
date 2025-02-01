@@ -7,14 +7,17 @@ import '../../../../../core/utils/styles.dart';
 class OnboardingPageView extends StatelessWidget {
   const OnboardingPageView({
     super.key,
+    this.onPageChanged,
     required this.pageController,
   });
 
+  final void Function(int)? onPageChanged;
   final PageController pageController;
 
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
+      onPageChanged: onPageChanged,
       controller: pageController,
       itemCount: onboardingImages.length,
       itemBuilder: (context, index) {
