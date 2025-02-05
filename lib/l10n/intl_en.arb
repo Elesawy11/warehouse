@@ -1,3 +1,4 @@
+
 {
     "onboarding1Title": "Ease of Use",
     "onboarding1Subtitle": "An intuitive interface that requires no special skills allows users to quickly add, edit, and manage products effortlessly.",
@@ -11,3 +12,6 @@
     "skipButton": "Skip",
     "getStartedButton": "Get Started"
 }
+
+{}
+
