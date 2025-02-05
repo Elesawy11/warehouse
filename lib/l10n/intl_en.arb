@@ -1,0 +1,13 @@
+{
+    "onboarding1Title": "Ease of Use",
+    "onboarding1Subtitle": "An intuitive interface that requires no special skills allows users to quickly add, edit, and manage products effortlessly.",
+    "onboarding2Title": "Instant Updates",
+    "onboarding2Subtitle": "All inventory changes are synchronized in real time, providing up-to-date stock information and enhancing decision-making processes.",
+    "onboarding3Title": "Mobility and Accessibility",
+    "onboarding3Subtitle": "Access your inventory from anywhere, at any time, and on any device, ensuring that you are always in control of your business.",
+    "onboarding4Title": "Detailed Reports",
+    "onboarding4Subtitle": "Generate comprehensive reports on sales, stock, and profits to gain insights into your business and make informed decisions.",
+    "continueButton": "Continue",
+    "skipButton": "Skip",
+    "getStartedButton": "Get Started"
+}

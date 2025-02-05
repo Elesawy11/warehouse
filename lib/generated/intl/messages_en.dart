@@ -32,6 +32,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "All inventory changes are synchronized in real time, providing up-to-date stock information and enhancing decision-making processes.",
     ),
     "onboarding2Title": MessageLookupByLibrary.simpleMessage("Instant Updates"),
+    "onboarding3Subtitle": MessageLookupByLibrary.simpleMessage(
+      "Access your inventory from anywhere, at any time, and on any device, ensuring that you are always in control of your business.",
+    ),
+    "onboarding3Title": MessageLookupByLibrary.simpleMessage(
+      "Mobility and Accessibility",
+    ),
+    "onboarding4Subtitle": MessageLookupByLibrary.simpleMessage(
+      "Generate comprehensive reports on sales, stock, and profits to gain insights into your business and make informed decisions.",
+    ),
+    "onboarding4Title": MessageLookupByLibrary.simpleMessage(
+      "Detailed Reports",
+    ),
     "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
   };
 }

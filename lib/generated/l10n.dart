@@ -95,6 +95,46 @@ class S {
     );
   }
 
+  /// `Mobility and Accessibility`
+  String get onboarding3Title {
+    return Intl.message(
+      'Mobility and Accessibility',
+      name: 'onboarding3Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Access your inventory from anywhere, at any time, and on any device, ensuring that you are always in control of your business.`
+  String get onboarding3Subtitle {
+    return Intl.message(
+      'Access your inventory from anywhere, at any time, and on any device, ensuring that you are always in control of your business.',
+      name: 'onboarding3Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Detailed Reports`
+  String get onboarding4Title {
+    return Intl.message(
+      'Detailed Reports',
+      name: 'onboarding4Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Generate comprehensive reports on sales, stock, and profits to gain insights into your business and make informed decisions.`
+  String get onboarding4Subtitle {
+    return Intl.message(
+      'Generate comprehensive reports on sales, stock, and profits to gain insights into your business and make informed decisions.',
+      name: 'onboarding4Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Continue`
   String get continueButton {
     return Intl.message('Continue', name: 'continueButton', desc: '', args: []);

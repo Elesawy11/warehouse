@@ -32,6 +32,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "يتم مزامنة جميع التغييرات في المخزون في الوقت الفعلي، مما يوفر معلومات محدثة عن المخزون ويعزز عمليات اتخاذ القرار",
     ),
     "onboarding2Title": MessageLookupByLibrary.simpleMessage("تحديثات فورية"),
+    "onboarding3Subtitle": MessageLookupByLibrary.simpleMessage(
+      "قم بالوصول إلى مخزونك من أي مكان وفي أي وقت وعلى أي جهاز، مما يضمن أنك دائمًا متحكم في عملك.",
+    ),
+    "onboarding3Title": MessageLookupByLibrary.simpleMessage(
+      "سهولةالتنقل والوصول",
+    ),
+    "onboarding4Subtitle": MessageLookupByLibrary.simpleMessage(
+      "قم بإنشاء تقارير شاملة حول المبيعات والمخزون والأرباح للحصول على رؤى حول عملك واتخاذ قرارات صحيحة.",
+    ),
+    "onboarding4Title": MessageLookupByLibrary.simpleMessage("تقارير مفصلة"),
     "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
   };
 }
