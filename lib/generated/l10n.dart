@@ -54,13 +54,122 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+
+  /// `Ease of Use`
+  String get onboarding1Title {
+    return Intl.message(
+      'Ease of Use',
+      name: 'onboarding1Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An intuitive interface that requires no special skills allows users to quickly add, edit, and manage products effortlessly.`
+  String get onboarding1Subtitle {
+    return Intl.message(
+      'An intuitive interface that requires no special skills allows users to quickly add, edit, and manage products effortlessly.',
+      name: 'onboarding1Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Instant Updates`
+  String get onboarding2Title {
+    return Intl.message(
+      'Instant Updates',
+      name: 'onboarding2Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All inventory changes are synchronized in real time, providing up-to-date stock information and enhancing decision-making processes.`
+  String get onboarding2Subtitle {
+    return Intl.message(
+      'All inventory changes are synchronized in real time, providing up-to-date stock information and enhancing decision-making processes.',
+      name: 'onboarding2Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobility and Accessibility`
+  String get onboarding3Title {
+    return Intl.message(
+      'Mobility and Accessibility',
+      name: 'onboarding3Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Access your inventory from anywhere, at any time, and on any device, ensuring that you are always in control of your business.`
+  String get onboarding3Subtitle {
+    return Intl.message(
+      'Access your inventory from anywhere, at any time, and on any device, ensuring that you are always in control of your business.',
+      name: 'onboarding3Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Detailed Reports`
+  String get onboarding4Title {
+    return Intl.message(
+      'Detailed Reports',
+      name: 'onboarding4Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Generate comprehensive reports on sales, stock, and profits to gain insights into your business and make informed decisions.`
+  String get onboarding4Subtitle {
+    return Intl.message(
+      'Generate comprehensive reports on sales, stock, and profits to gain insights into your business and make informed decisions.',
+      name: 'onboarding4Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continueButton {
+    return Intl.message('Continue', name: 'continueButton', desc: '', args: []);
+  }
+
+  /// `Skip`
+  String get skipButton {
+    return Intl.message('Skip', name: 'skipButton', desc: '', args: []);
+  }
+
+  /// `Get Started`
+  String get getStartedButton {
+    return Intl.message(
+      'Get Started',
+      name: 'getStartedButton',
+      desc: '',
+      args: [],
+    );
+  }
+
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
+
+    return const <Locale>[
+      Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
+    ];
+
     return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
+
   }
 
   @override
