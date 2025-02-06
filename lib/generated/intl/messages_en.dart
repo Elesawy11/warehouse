@@ -44,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboarding4Title": MessageLookupByLibrary.simpleMessage(
       "Detailed Reports",
     ),
+    "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+    "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
   };
 }

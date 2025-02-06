@@ -42,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "قم بإنشاء تقارير شاملة حول المبيعات والمخزون والأرباح للحصول على رؤى حول عملك واتخاذ قرارات صحيحة.",
     ),
     "onboarding4Title": MessageLookupByLibrary.simpleMessage("تقارير مفصلة"),
+    "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
   };
 }

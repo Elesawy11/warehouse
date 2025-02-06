@@ -9,7 +9,9 @@
     "onboarding4Subtitle": "Generate comprehensive reports on sales, stock, and profits to gain insights into your business and make informed decisions.",
     "continueButton": "Continue",
     "skipButton": "Skip",
-    "getStartedButton": "Get Started"
+    "getStartedButton": "Get Started",
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
 }
 
 

@@ -9,6 +9,8 @@
     "onboarding4Subtitle": "قم بإنشاء تقارير شاملة حول المبيعات والمخزون والأرباح للحصول على رؤى حول عملك واتخاذ قرارات صحيحة.",
     "continueButton": "متابعة",
     "skipButton": "تخطي",
-    "getStartedButton": "ابدأ"
+    "getStartedButton": "ابدأ",
+    "signIn": "تسجيل الدخول",
+    "signUp": "إنشاء حساب"
     
 }

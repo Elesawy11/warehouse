@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:warehouse_app/core/utils/styles.dart';
-
+import 'package:warehouse_app/features/onboarding/presentation/views/constants.dart';
 import '../../../../../core/utils/color_manager.dart';
 
 class ContainerOfAuthTypeWidget extends StatefulWidget {
@@ -33,6 +33,7 @@ class _ContainerOfAuthTypeWidgetState extends State<ContainerOfAuthTypeWidget> {
           return Align(
             alignment: Alignment.center,
             child: AuthTypeWidget(
+              type: Constants.getAuthTypeList(context)[index],
               currentPage: currentPage,
               index: index,
               onTap: () {
@@ -53,10 +54,12 @@ class AuthTypeWidget extends StatelessWidget {
     this.onTap,
     required this.index,
     required this.currentPage,
+    required this.type,
   });
   final void Function()? onTap;
   final int index;
   final int currentPage;
+  final String type;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -72,7 +75,7 @@ class AuthTypeWidget extends StatelessWidget {
           ),
           alignment: Alignment.center,
           child: Text(
-            'Sign In',
+            type,
             style: Styles.font16Semibold,
           ),
         ),
