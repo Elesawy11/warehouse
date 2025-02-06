@@ -23,6 +23,11 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
+    "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "enterEmail": MessageLookupByLibrary.simpleMessage("Enter your email"),
+    "enterPassword": MessageLookupByLibrary.simpleMessage(
+      "Enter your password",
+    ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "An intuitive interface that requires no special skills allows users to quickly add, edit, and manage products effortlessly.",
@@ -44,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboarding4Title": MessageLookupByLibrary.simpleMessage(
       "Detailed Reports",
     ),
+    "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),

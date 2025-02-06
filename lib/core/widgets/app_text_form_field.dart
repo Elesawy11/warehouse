@@ -56,7 +56,7 @@ class AppTextFormField extends StatelessWidget {
               ),
           enabledBorder: enabledBorder ??
               outLineBorder(
-                color: ColorManager.grayED,
+                color: ColorManager.greyED,
               ),
           errorBorder: outLineBorder(
             color: Colors.red,
@@ -66,11 +66,11 @@ class AppTextFormField extends StatelessWidget {
           ),
           hintStyle: hintStyle ??
               Styles.font14Regular.copyWith(
-                color: ColorManager.grayC2,
+                color: ColorManager.greyC2,
               ),
           hintText: hintText,
           suffixIcon: suffixIcon,
-          fillColor: backgroundColor ?? ColorManager.grayFD,
+          fillColor: backgroundColor ?? ColorManager.greyFD,
           filled: true,
           prefixIcon: prefixIcon),
       obscureText: isObscureText ?? false,

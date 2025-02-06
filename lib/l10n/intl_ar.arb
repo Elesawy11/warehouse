@@ -11,6 +11,11 @@
     "skipButton": "تخطي",
     "getStartedButton": "ابدأ",
     "signIn": "تسجيل الدخول",
-    "signUp": "إنشاء حساب"
+    "signUp": "إنشاء حساب",
+    "email": "البريد الإلكترونى",
+    "password": "كلمة السر",
+    "enterEmail": "أدخل البريد الإلكترونى",
+    "enterPassword": "أدخل كلمة السر",
+    "rememberMe": "تذكرني"
     
 }

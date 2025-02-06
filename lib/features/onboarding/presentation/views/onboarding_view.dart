@@ -22,7 +22,7 @@ class OnboardingView extends StatelessWidget {
         body: BlocConsumer<OnobardingScrollCubit, OnobardingScrollState>(
           listener: (context, state) {
             if (state is ScrollFinish) {
-              context.push(Routes.login);
+              context.push(Routes.auth);
             }
           },
           builder: (context, state) {
@@ -59,7 +59,7 @@ class OnboardingView extends StatelessWidget {
                     text: S.of(context).skipButton,
                     onPressed: () {
                       //Navigate to Auth screen
-                      context.push(Routes.login);
+                      context.push(Routes.auth);
                     },
                     backgroundColor: ColorManager.blueE0,
                     textColor: ColorManager.mainBlue,

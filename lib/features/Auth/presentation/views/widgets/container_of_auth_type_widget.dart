@@ -21,7 +21,7 @@ class _ContainerOfAuthTypeWidgetState extends State<ContainerOfAuthTypeWidget> {
     return Container(
       height: 50.h,
       decoration: BoxDecoration(
-        color: ColorManager.grayF4,
+        color: ColorManager.greyF4,
         borderRadius: BorderRadius.circular(12.r),
       ),
       padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 6.w),
@@ -70,7 +70,7 @@ class AuthTypeWidget extends StatelessWidget {
         child: Container(
           width: (MediaQuery.of(context).size.width - 36.w) * 0.5,
           decoration: BoxDecoration(
-            color: index == currentPage ? Colors.white : ColorManager.grayF4,
+            color: index == currentPage ? Colors.white : ColorManager.greyF4,
             borderRadius: BorderRadius.circular(8.r),
           ),
           alignment: Alignment.center,
