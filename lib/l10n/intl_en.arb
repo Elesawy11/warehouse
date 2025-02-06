@@ -16,7 +16,10 @@
     "password": "Password",
     "enterEmail": "Enter your email",
     "enterPassword": "Enter your password",
-    "rememberMe": "Remember me"
+    "rememberMe": "Remember me",
+    "name": "Name",
+    "enterName": "Enter your name",
+    "signupConsent": "I give my consent to the processing of my personal data and accept the privacy policy"
 }
 
 

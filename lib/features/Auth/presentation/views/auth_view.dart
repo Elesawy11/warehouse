@@ -7,6 +7,7 @@ import 'package:warehouse_app/core/utils/styles.dart';
 import 'package:warehouse_app/core/widgets/app_text_button.dart';
 import 'package:warehouse_app/core/widgets/app_text_form_field.dart';
 import 'package:warehouse_app/features/Auth/presentation/views/widgets/login_view_widget.dart';
+import 'package:warehouse_app/features/Auth/presentation/views/widgets/sign_up_view_widget.dart';
 import 'widgets/container_of_auth_type_widget.dart';
 
 class AuthView extends StatefulWidget {
@@ -37,7 +38,15 @@ class _AuthViewState extends State<AuthView> {
               verticalSpace(40),
               const ContainerOfAuthTypeWidget(),
               verticalSpace(40),
-              LoginViewWidget(),
+              // LoginViewWidget(),
+              Expanded(
+                child: PageView(
+                  children: [
+                    LoginViewWidget(),
+                    SignUpViewWidget(),
+                  ],
+                ),
+              )
             ],
           ),
         ),
@@ -45,5 +54,3 @@ class _AuthViewState extends State<AuthView> {
     );
   }
 }
-
-

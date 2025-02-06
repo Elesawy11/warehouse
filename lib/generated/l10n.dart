@@ -199,6 +199,31 @@ class S {
   String get rememberMe {
     return Intl.message('Remember me', name: 'rememberMe', desc: '', args: []);
   }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `Enter your name`
+  String get enterName {
+    return Intl.message(
+      'Enter your name',
+      name: 'enterName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I give my consent to the processing of my personal data and accept the privacy policy`
+  String get signupConsent {
+    return Intl.message(
+      'I give my consent to the processing of my personal data and accept the privacy policy',
+      name: 'signupConsent',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

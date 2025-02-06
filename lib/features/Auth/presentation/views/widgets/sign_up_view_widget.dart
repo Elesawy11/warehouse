@@ -7,14 +7,14 @@ import '../../../../../core/widgets/app_text_button.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
 import '../../../../../generated/l10n.dart';
 
-class LoginViewWidget extends StatefulWidget {
-  const LoginViewWidget({super.key});
+class SignUpViewWidget extends StatefulWidget {
+  const SignUpViewWidget({super.key});
 
   @override
-  State<LoginViewWidget> createState() => _LoginViewWidgetState();
+  State<SignUpViewWidget> createState() => _SignUpViewWidgetState();
 }
 
-class _LoginViewWidgetState extends State<LoginViewWidget> {
+class _SignUpViewWidgetState extends State<SignUpViewWidget> {
   int currentPage = 0;
   bool isSecure = true;
   bool isChecked = false;
@@ -23,6 +23,20 @@ class _LoginViewWidgetState extends State<LoginViewWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Text(
+          S.of(context).name,
+          style: Styles.font16Regular,
+        ),
+        verticalSpace(6),
+        AppTextFormField(
+          backgroundColor: ColorManager.greyF4,
+          hintStyle: Styles.font14Regular.copyWith(
+            color: ColorManager.grey75,
+          ),
+          hintText: S.of(context).enterName,
+          validator: (value) {},
+        ),
+        verticalSpace(24),
         Text(
           S.of(context).email,
           style: Styles.font16Regular,
@@ -64,6 +78,7 @@ class _LoginViewWidgetState extends State<LoginViewWidget> {
         ),
         verticalSpace(20),
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             InkWell(
               onTap: () {
@@ -79,15 +94,18 @@ class _LoginViewWidgetState extends State<LoginViewWidget> {
               ),
             ),
             horizontalSpace(12),
-            Text(
-              S.of(context).rememberMe,
-              style: Styles.font16Regular,
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .8,
+              child: Text(
+                S.of(context).signupConsent,
+                style: Styles.font16Regular,
+              ),
             ),
           ],
         ),
         verticalSpace(40),
         AppTextButton(
-          text: S.of(context).signIn,
+          text: S.of(context).signUp,
           onPressed: () {},
         ),
       ],

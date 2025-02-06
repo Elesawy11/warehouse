@@ -27,8 +27,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterEmail": MessageLookupByLibrary.simpleMessage(
       "أدخل البريد الإلكترونى",
     ),
+    "enterName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
     "enterPassword": MessageLookupByLibrary.simpleMessage("أدخل كلمة السر"),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
+    "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "واجهة بديهية لا تتطلب أي مهارات خاصة تتيح للمستخدمين إضافة المنتجات وتعديلها وإدارتها بسرعة وسهولة.",
     ),
@@ -51,6 +53,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "signupConsent": MessageLookupByLibrary.simpleMessage(
+      "أمنح موافقتي على معالجة بياناتي الشخصية وأوافق على سياسة الخصوصية",
+    ),
     "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
   };
 }

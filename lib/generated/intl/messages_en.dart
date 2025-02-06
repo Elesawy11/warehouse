@@ -25,10 +25,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "enterEmail": MessageLookupByLibrary.simpleMessage("Enter your email"),
+    "enterName": MessageLookupByLibrary.simpleMessage("Enter your name"),
     "enterPassword": MessageLookupByLibrary.simpleMessage(
       "Enter your password",
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "name": MessageLookupByLibrary.simpleMessage("Name"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "An intuitive interface that requires no special skills allows users to quickly add, edit, and manage products effortlessly.",
     ),
@@ -53,6 +55,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "signupConsent": MessageLookupByLibrary.simpleMessage(
+      "I give my consent to the processing of my personal data and accept the privacy policy",
+    ),
     "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
   };
 }
