@@ -19,7 +19,6 @@ class WarehouseAppBody extends StatelessWidget {
       child: MaterialApp.router(
         locale: const Locale('ar'),
         localizationsDelegates: [
-          
           S.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,

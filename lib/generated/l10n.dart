@@ -55,7 +55,6 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-
   /// `Ease of Use`
   String get onboarding1Title {
     return Intl.message(
@@ -155,21 +154,16 @@ class S {
       args: [],
     );
   }
-
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
-
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'ar'),
     ];
-
-    return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
-
   }
 
   @override

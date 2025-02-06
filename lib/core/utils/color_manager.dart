@@ -10,5 +10,6 @@ abstract class ColorManager {
   static const Color grayC2 = Color(0xFFC2C2C2);
   static const Color grayED = Color(0xFFEDEDED);
   static const Color grayFD = Color(0xFFFDFDFF);
+  static const Color grayF4 = Color(0xFFF4F4F4);
   static const Color whiteF5 = Color(0xFFF5F5F5);
 }
