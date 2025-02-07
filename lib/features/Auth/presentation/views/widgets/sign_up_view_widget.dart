@@ -15,7 +15,6 @@ class SignUpViewWidget extends StatefulWidget {
 }
 
 class _SignUpViewWidgetState extends State<SignUpViewWidget> {
-  int currentPage = 0;
   bool isSecure = true;
   bool isChecked = false;
   @override

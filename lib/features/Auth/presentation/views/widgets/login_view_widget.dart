@@ -15,7 +15,6 @@ class LoginViewWidget extends StatefulWidget {
 }
 
 class _LoginViewWidgetState extends State<LoginViewWidget> {
-  int currentPage = 0;
   bool isSecure = true;
   bool isChecked = false;
   @override
