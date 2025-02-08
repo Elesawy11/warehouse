@@ -19,95 +19,98 @@ class _SignUpViewWidgetState extends State<SignUpViewWidget> {
   bool isChecked = false;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          S.of(context).name,
-          style: Styles.font16Regular,
-        ),
-        verticalSpace(6),
-        AppTextFormField(
-          backgroundColor: ColorManager.greyF4,
-          hintStyle: Styles.font14Regular.copyWith(
-            color: ColorManager.grey75,
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            S.of(context).name,
+            style: Styles.font16Regular,
           ),
-          hintText: S.of(context).enterName,
-          validator: (value) {},
-        ),
-        verticalSpace(24),
-        Text(
-          S.of(context).email,
-          style: Styles.font16Regular,
-        ),
-        verticalSpace(6),
-        AppTextFormField(
-          backgroundColor: ColorManager.greyF4,
-          hintStyle: Styles.font14Regular.copyWith(
-            color: ColorManager.grey75,
-          ),
-          hintText: S.of(context).enterEmail,
-          validator: (value) {},
-        ),
-        verticalSpace(24),
-        Text(
-          S.of(context).password,
-          style: Styles.font16Regular,
-        ),
-        verticalSpace(6),
-        AppTextFormField(
-          backgroundColor: ColorManager.greyF4,
-          hintStyle: Styles.font14Regular.copyWith(
-            color: ColorManager.grey75,
-          ),
-          suffixIcon: InkWell(
-            onTap: () {
-              isSecure = !isSecure;
-              setState(() {});
-            },
-            child: Icon(
-              isSecure
-                  ? Icons.visibility_off_outlined
-                  : Icons.visibility_outlined,
+          verticalSpace(6),
+          AppTextFormField(
+            backgroundColor: ColorManager.greyF4,
+            hintStyle: Styles.font14Regular.copyWith(
+              color: ColorManager.grey75,
             ),
+            hintText: S.of(context).enterName,
+            validator: (value) {},
           ),
-          hintText: S.of(context).enterPassword,
-          validator: (value) {},
-          isObscureText: isSecure,
-        ),
-        verticalSpace(20),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            InkWell(
+          verticalSpace(24),
+          Text(
+            S.of(context).email,
+            style: Styles.font16Regular,
+          ),
+          verticalSpace(6),
+          AppTextFormField(
+            backgroundColor: ColorManager.greyF4,
+            hintStyle: Styles.font14Regular.copyWith(
+              color: ColorManager.grey75,
+            ),
+            hintText: S.of(context).enterEmail,
+            validator: (value) {},
+          ),
+          verticalSpace(24),
+          Text(
+            S.of(context).password,
+            style: Styles.font16Regular,
+          ),
+          verticalSpace(6),
+          AppTextFormField(
+            backgroundColor: ColorManager.greyF4,
+            hintStyle: Styles.font14Regular.copyWith(
+              color: ColorManager.grey75,
+            ),
+            suffixIcon: InkWell(
               onTap: () {
-                isChecked = !isChecked;
+                isSecure = !isSecure;
                 setState(() {});
               },
               child: Icon(
-                isChecked
-                    ? Icons.check_box
-                    : Icons.check_box_outline_blank_outlined,
-                size: 24.r,
-                color: isChecked ? ColorManager.mainBlue : ColorManager.grey9E,
+                isSecure
+                    ? Icons.visibility_off_outlined
+                    : Icons.visibility_outlined,
               ),
             ),
-            horizontalSpace(12),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * .8,
-              child: Text(
-                S.of(context).signupConsent,
-                style: Styles.font16Regular,
+            hintText: S.of(context).enterPassword,
+            validator: (value) {},
+            isObscureText: isSecure,
+          ),
+          verticalSpace(20),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              InkWell(
+                onTap: () {
+                  isChecked = !isChecked;
+                  setState(() {});
+                },
+                child: Icon(
+                  isChecked
+                      ? Icons.check_box
+                      : Icons.check_box_outline_blank_outlined,
+                  size: 24.r,
+                  color:
+                      isChecked ? ColorManager.mainBlue : ColorManager.grey9E,
+                ),
               ),
-            ),
-          ],
-        ),
-        verticalSpace(40),
-        AppTextButton(
-          text: S.of(context).signUp,
-          onPressed: () {},
-        ),
-      ],
+              horizontalSpace(12),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .8,
+                child: Text(
+                  S.of(context).signupConsent,
+                  style: Styles.font16Regular,
+                ),
+              ),
+            ],
+          ),
+          verticalSpace(40),
+          AppTextButton(
+            text: S.of(context).signUp,
+            onPressed: () {},
+          ),
+        ],
+      ),
     );
   }
 }
