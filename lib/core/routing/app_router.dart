@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:warehouse_app/core/routing/routes.dart';
-import 'package:warehouse_app/features/Auth/presentation/views/login_view.dart';
+import 'package:warehouse_app/features/Auth/presentation/views/auth_view.dart';
 import 'package:warehouse_app/features/onboarding/presentation/views/onboarding_view.dart';
 
 abstract class AppRouter {
@@ -8,11 +8,11 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: Routes.onboarding,
-        builder: (context, state) => OnboardingView(),
+        builder: (context, state) => const OnboardingView(),
       ),
       GoRoute(
-        path: Routes.login,
-        builder: (context, state) => LoginView(),
+        path: Routes.auth,
+        builder: (context, state) => const AuthView(),
       ),
     ],
   );

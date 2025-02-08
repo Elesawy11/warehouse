@@ -1,4 +1,3 @@
-
 {
     "onboarding1Title": "Ease of Use",
     "onboarding1Subtitle": "An intuitive interface that requires no special skills allows users to quickly add, edit, and manage products effortlessly.",
@@ -10,8 +9,18 @@
     "onboarding4Subtitle": "Generate comprehensive reports on sales, stock, and profits to gain insights into your business and make informed decisions.",
     "continueButton": "Continue",
     "skipButton": "Skip",
-    "getStartedButton": "Get Started"
+    "getStartedButton": "Get Started",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "enterEmail": "Enter your email",
+    "enterPassword": "Enter your password",
+    "rememberMe": "Remember me",
+    "name": "Name",
+    "enterName": "Enter your name",
+    "signupConsent": "I give my consent to the processing of my personal data and accept the privacy policy"
 }
 
-{}
+
 

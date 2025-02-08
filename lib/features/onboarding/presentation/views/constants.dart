@@ -23,4 +23,11 @@ abstract class Constants {
       ],
     ];
   }
+
+  static List<String> getAuthTypeList(BuildContext context) {
+    return [
+      S.of(context).signIn,
+      S.of(context).signUp,
+    ];
+  }
 }

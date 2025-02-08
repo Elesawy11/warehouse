@@ -1,6 +1,6 @@
 abstract class Routes {
   static const onboarding = '/';
-  static const login = '/login';
+  static const auth = '/auth';
   static const register = '/register';
   static const profile = '/profile';
   static const settings = '/settings';

@@ -23,7 +23,14 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "continueButton": MessageLookupByLibrary.simpleMessage("متابعة"),
+    "email": MessageLookupByLibrary.simpleMessage("البريد الإلكترونى"),
+    "enterEmail": MessageLookupByLibrary.simpleMessage(
+      "أدخل البريد الإلكترونى",
+    ),
+    "enterName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
+    "enterPassword": MessageLookupByLibrary.simpleMessage("أدخل كلمة السر"),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
+    "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "واجهة بديهية لا تتطلب أي مهارات خاصة تتيح للمستخدمين إضافة المنتجات وتعديلها وإدارتها بسرعة وسهولة.",
     ),
@@ -42,6 +49,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "قم بإنشاء تقارير شاملة حول المبيعات والمخزون والأرباح للحصول على رؤى حول عملك واتخاذ قرارات صحيحة.",
     ),
     "onboarding4Title": MessageLookupByLibrary.simpleMessage("تقارير مفصلة"),
+    "password": MessageLookupByLibrary.simpleMessage("كلمة السر"),
+    "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
+    "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "signupConsent": MessageLookupByLibrary.simpleMessage(
+      "أمنح موافقتي على معالجة بياناتي الشخصية وأوافق على سياسة الخصوصية",
+    ),
     "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
   };
 }

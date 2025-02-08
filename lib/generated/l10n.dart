@@ -55,7 +55,6 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-
   /// `Ease of Use`
   String get onboarding1Title {
     return Intl.message(
@@ -156,20 +155,85 @@ class S {
     );
   }
 
+  /// `Sign In`
+  String get signIn {
+    return Intl.message('Sign In', name: 'signIn', desc: '', args: []);
+  }
+
+  /// `Sign Up`
+  String get signUp {
+    return Intl.message('Sign Up', name: 'signUp', desc: '', args: []);
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message('Password', name: 'password', desc: '', args: []);
+  }
+
+  /// `Enter your email`
+  String get enterEmail {
+    return Intl.message(
+      'Enter your email',
+      name: 'enterEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get enterPassword {
+    return Intl.message(
+      'Enter your password',
+      name: 'enterPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remember me`
+  String get rememberMe {
+    return Intl.message('Remember me', name: 'rememberMe', desc: '', args: []);
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `Enter your name`
+  String get enterName {
+    return Intl.message(
+      'Enter your name',
+      name: 'enterName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I give my consent to the processing of my personal data and accept the privacy policy`
+  String get signupConsent {
+    return Intl.message(
+      'I give my consent to the processing of my personal data and accept the privacy policy',
+      name: 'signupConsent',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
-
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'ar'),
     ];
-
-    return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
-
   }
 
   @override
