@@ -113,8 +113,9 @@ class _SignUpViewWidgetState extends State<SignUpViewWidget> {
                 email: 'ahmed20he@gmail.com',
                 emailRedirectTo: 'elesawy928@gmail.com',
                 password: '1142003a',
+                data: {'name': 'ahmed'}
               );
-              print(res.session);
+              print(res.user!.userMetadata);
             },
           ),
         ],
