@@ -4,14 +4,14 @@ import '../utils/color_manager.dart';
 import '../utils/font_weight_helper.dart';
 import '../utils/styles.dart';
 
-class AppTextFormField extends StatelessWidget {
+class AppTextFormField extends StatefulWidget {
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? focusedBorder;
   final InputBorder? enabledBorder;
   final TextStyle? inputTextStyle;
   final TextStyle? hintStyle;
   final String hintText;
-  final bool? isObscureText;
+  final bool isObscureText;
   final Widget? suffixIcon;
   final Color? backgroundColor;
   final TextEditingController? controller;
@@ -28,7 +28,7 @@ class AppTextFormField extends StatelessWidget {
     this.inputTextStyle,
     this.hintStyle,
     required this.hintText,
-    this.isObscureText,
+    this.isObscureText = false,
     this.suffixIcon,
     this.backgroundColor,
     this.controller,
@@ -40,46 +40,65 @@ class AppTextFormField extends StatelessWidget {
   });
 
   @override
+  State<AppTextFormField> createState() => _AppTextFormFieldState();
+}
+
+class _AppTextFormFieldState extends State<AppTextFormField> {
+  bool secureIcon = true;
+  @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onTapOutside: onTapOutside,
-      onTap: onTap,
-      controller: controller,
-      maxLines: maxLines,
+      onTapOutside: widget.onTapOutside,
+      onTap: widget.onTap,
+      controller: widget.controller,
+      maxLines: widget.maxLines,
       decoration: InputDecoration(
-          isDense: true,
-          contentPadding: contentPadding ??
-              EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
-          focusedBorder: focusedBorder ??
-              outLineBorder(
-                color: ColorManager.mainBlue,
-              ),
-          enabledBorder: enabledBorder ??
-              outLineBorder(
-                color: ColorManager.greyED,
-              ),
-          errorBorder: outLineBorder(
-            color: Colors.red,
-          ),
-          focusedErrorBorder: outLineBorder(
-            color: Colors.red,
-          ),
-          hintStyle: hintStyle ??
-              Styles.font14Regular.copyWith(
-                color: ColorManager.greyC2,
-              ),
-          hintText: hintText,
-          suffixIcon: suffixIcon,
-          fillColor: backgroundColor ?? ColorManager.greyFD,
-          filled: true,
-          prefixIcon: prefixIcon),
-      obscureText: isObscureText ?? false,
+        isDense: true,
+        contentPadding: widget.contentPadding ??
+            EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
+        focusedBorder: widget.focusedBorder ??
+            outLineBorder(
+              color: ColorManager.mainBlue,
+            ),
+        enabledBorder: widget.enabledBorder ??
+            outLineBorder(
+              color: ColorManager.greyED,
+            ),
+        errorBorder: outLineBorder(
+          color: Colors.red,
+        ),
+        focusedErrorBorder: outLineBorder(
+          color: Colors.red,
+        ),
+        hintStyle: widget.hintStyle ??
+            Styles.font14Regular.copyWith(
+              color: ColorManager.greyC2,
+            ),
+        hintText: widget.hintText,
+        prefixIcon: widget.suffixIcon,
+        fillColor: widget.backgroundColor ?? ColorManager.greyFD,
+        filled: true,
+        suffixIcon: widget.isObscureText
+            ? InkWell(
+                onTap: () {
+                  secureIcon = !secureIcon;
+                  setState(() {});
+                },
+                child: Icon(
+                  secureIcon
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
+                ),
+              )
+            : widget.prefixIcon,
+      ),
+      obscureText: secureIcon,
       style: Styles.font14Regular.copyWith(
         fontWeight: FontWeightHelper.medium,
         color: ColorManager.darkBlue,
       ),
       validator: (value) {
-        return validator(value);
+        return widget.validator(value);
       },
     );
   }
