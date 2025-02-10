@@ -3,12 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:warehouse_app/core/utils/service_locator.dart';
 import 'package:warehouse_app/core/utils/supabase_init.dart';
 import 'package:warehouse_app/simple_bloc_observer.dart';
-
 import 'warehouse_app.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SupabaseMethods.initialize();
+
   serviceLocator();
-  SupabaseMethods.initialize();
   Bloc.observer = SimpleBlocObserver();
   runApp(const WarehouseApp());
 }

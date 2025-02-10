@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:warehouse_app/core/utils/supabase_init.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/utils/spacer.dart';
 import '../../../../../core/utils/styles.dart';
@@ -107,7 +108,14 @@ class _SignUpViewWidgetState extends State<SignUpViewWidget> {
           verticalSpace(40),
           AppTextButton(
             text: S.of(context).signUp,
-            onPressed: () {},
+            onPressed: () async {
+              var res = await SupabaseMethods.client.auth.signUp(
+                email: 'ahmed20he@gmail.com',
+                emailRedirectTo: 'elesawy928@gmail.com',
+                password: '1142003a',
+              );
+              print(res.session);
+            },
           ),
         ],
       ),
