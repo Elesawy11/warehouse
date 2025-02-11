@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utils/color_manager.dart';
-import '../../../../../core/utils/spacer.dart';
+import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../generated/l10n.dart';
 import '../../cubits/sign_up_variables_cubit/sign_up_variables_cubit.dart';

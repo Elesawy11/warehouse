@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:warehouse_app/features/Auth/presentation/cubits/sign_up_cubit/sign_up_cubit.dart';
-import '../../../../../core/utils/spacer.dart';
+import '../../../../../core/helpers/spacer.dart';
 import 'sign_up_check_box_widget.dart';
 import 'sign_up_create_account_button_widget.dart';
 import 'sign_up_data_fields.dart';
