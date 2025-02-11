@@ -10,11 +10,13 @@ class AppTextButton extends StatelessWidget {
     required this.text,
     this.backgroundColor,
     this.textColor,
+    this.child,
   });
   final void Function()? onPressed;
   final String text;
   final Color? backgroundColor;
   final Color? textColor;
+  final Widget? child;
   @override
   Widget build(BuildContext context) {
     return TextButton(
@@ -26,12 +28,13 @@ class AppTextButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(16.r),
         ),
       ),
-      child: Text(
-        text,
-        style: Styles.font16Semibold.copyWith(
-          color: textColor ?? Colors.white,
-        ),
-      ),
+      child: child ??
+          Text(
+            text,
+            style: Styles.font16Semibold.copyWith(
+              color: textColor ?? Colors.white,
+            ),
+          ),
     );
   }
 }

@@ -92,7 +92,7 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
               )
             : widget.prefixIcon,
       ),
-      obscureText: secureIcon,
+      obscureText: widget.isObscureText ? secureIcon : false,
       style: Styles.font14Regular.copyWith(
         fontWeight: FontWeightHelper.medium,
         color: ColorManager.darkBlue,

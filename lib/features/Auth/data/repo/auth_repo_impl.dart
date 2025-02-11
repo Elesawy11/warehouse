@@ -19,10 +19,11 @@ class AuthRepoImpl implements AuthRepo {
   }
 
   @override
-  Future<User> signUp({required String email, required String password}) async {
+  Future<User> signUp({required String email, required String password,required String name}) async {
     final userModel = await source.signUp(
       email: email,
       password: password,
+      name: name,
     );
     return User(
       id: userModel.id,

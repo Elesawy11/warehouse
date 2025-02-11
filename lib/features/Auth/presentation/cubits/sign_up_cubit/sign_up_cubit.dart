@@ -10,13 +10,15 @@ class SignUpCubit extends Cubit<SignUpState> {
   final SignUpUseCase signUpUseCase;
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
   final GlobalKey formKey = GlobalKey<FormState>();
-  Future<void> signUp({required String email, required String password}) async {
+  Future<void> signUp() async {
     emit(SignUpLoading());
     try {
       await signUpUseCase.call(
         email: emailController.text,
         password: passwordController.text,
+        name: nameController.text,
       );
       emit(SignUpSuccess());
     } catch (e) {

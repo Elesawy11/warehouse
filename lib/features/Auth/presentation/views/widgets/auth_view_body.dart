@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:warehouse_app/core/utils/service_locator.dart';
 import 'package:warehouse_app/features/Auth/presentation/cubits/auth_scroll_cubit/auth_scroll_cubit.dart';
+import 'package:warehouse_app/features/Auth/presentation/cubits/sign_up_cubit/sign_up_cubit.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/spacer.dart';
 import '../../../../../core/utils/styles.dart';
@@ -46,7 +48,10 @@ class AuthViewBody extends StatelessWidget {
                     controller: cubit.controller,
                     children: [
                       const LoginViewWidget(),
-                      const SignUpViewWidget(),
+                      BlocProvider(
+                        create: (context) => getIt.get<SignUpCubit>(),
+                        child: const SignUpViewWidget(),
+                      ),
                     ],
                   );
                 },

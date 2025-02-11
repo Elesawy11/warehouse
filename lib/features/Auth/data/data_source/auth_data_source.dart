@@ -6,11 +6,14 @@ class AuthDataSource {
   var client = SupabaseMethods.client;
 
   Future<UserModel> signUp(
-      {required String email, required String password}) async {
+      {required String email,
+      required String password,
+      required String name}) async {
     try {
       final response = await client.auth.signUp(
         password: password.trim(),
         email: email.trim(),
+        data: {'name': name.trim()},
       );
       if (response.user != null) {
         return UserModel(
@@ -23,7 +26,7 @@ class AuthDataSource {
       }
     } on AuthException catch (e) {
       throw Exception("Sign-Up Faild: ${e.message}");
-    }catch(e){
+    } catch (e) {
       throw Exception("Sign-Up Faild: $e");
     }
   }

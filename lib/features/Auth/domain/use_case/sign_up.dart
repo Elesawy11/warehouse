@@ -6,7 +6,14 @@ class SignUpUseCase {
 
   SignUpUseCase({required this.repo});
 
-  Future<User> call({required String email, required String password}) async {
-    return await repo.signUp(email: email, password: password);
+  Future<User> call(
+      {required String email,
+      required String password,
+      required String name}) async {
+    return await repo.signUp(
+      email: email,
+      password: password,
+      name: name,
+    );
   }
 }
