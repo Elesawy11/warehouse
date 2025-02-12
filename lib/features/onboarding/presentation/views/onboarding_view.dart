@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:warehouse_app/core/routing/routes.dart';
 import 'package:warehouse_app/core/utils/color_manager.dart';
-import 'package:warehouse_app/core/utils/spacer.dart';
+import 'package:warehouse_app/core/helpers/spacer.dart';
 import 'package:warehouse_app/core/widgets/app_text_button.dart';
 import 'package:warehouse_app/features/onboarding/presentation/cubits/cubit/onobarding_scroll_cubit.dart';
 import 'package:warehouse_app/generated/l10n.dart';

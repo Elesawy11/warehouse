@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:warehouse_app/core/routing/app_router.dart';
-import 'package:warehouse_app/core/utils/change_system_ui_mode.dart';
+import 'package:warehouse_app/core/helpers/change_system_ui_mode.dart';
 import 'generated/l10n.dart';
 
 class WarehouseAppBody extends StatelessWidget {

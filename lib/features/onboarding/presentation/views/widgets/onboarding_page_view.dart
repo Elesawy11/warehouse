@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:warehouse_app/features/onboarding/presentation/views/constants.dart';
-import '../../../../../core/utils/spacer.dart';
+import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/styles.dart';
 
 class OnboardingPageView extends StatelessWidget {

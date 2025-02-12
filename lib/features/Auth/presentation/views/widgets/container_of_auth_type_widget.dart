@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:warehouse_app/core/utils/styles.dart';
-import 'package:warehouse_app/features/Auth/presentation/cubits/cubit/auth_scroll_cubit.dart';
+import 'package:warehouse_app/features/Auth/presentation/cubits/auth_scroll_cubit/auth_scroll_cubit.dart';
 import 'package:warehouse_app/features/onboarding/presentation/views/constants.dart';
 import '../../../../../core/utils/color_manager.dart';
 

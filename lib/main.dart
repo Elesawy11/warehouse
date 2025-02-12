@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:warehouse_app/core/utils/service_locator.dart';
+import 'package:warehouse_app/core/DI/service_locator.dart';
+import 'package:warehouse_app/core/utils/supabase_init.dart';
 import 'package:warehouse_app/simple_bloc_observer.dart';
-
 import 'warehouse_app.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SupabaseMethods.initialize();
+
   serviceLocator();
   Bloc.observer = SimpleBlocObserver();
-  runApp(WarehouseApp());
+  runApp(const WarehouseApp());
 }
 
 class WarehouseApp extends StatelessWidget {

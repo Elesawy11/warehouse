@@ -224,6 +224,66 @@ class S {
       args: [],
     );
   }
+
+  /// `please enter your name`
+  String get nameValidator {
+    return Intl.message(
+      'please enter your name',
+      name: 'nameValidator',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `enter your password`
+  String get passwordValidator {
+    return Intl.message(
+      'enter your password',
+      name: 'passwordValidator',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `password is weak`
+  String get passwordRegex {
+    return Intl.message(
+      'password is weak',
+      name: 'passwordRegex',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `enter your email`
+  String get emailValidator {
+    return Intl.message(
+      'enter your email',
+      name: 'emailValidator',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `enter valid email`
+  String get emailRegex {
+    return Intl.message(
+      'enter valid email',
+      name: 'emailRegex',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You must agree to the processing of your personal data and the privacy policy`
+  String get checkBox {
+    return Intl.message(
+      'You must agree to the processing of your personal data and the privacy policy',
+      name: 'checkBox',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
