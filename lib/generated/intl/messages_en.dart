@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "emailRegex": MessageLookupByLibrary.simpleMessage("enter valid email"),
+    "emailValidator": MessageLookupByLibrary.simpleMessage("enter your email"),
     "enterEmail": MessageLookupByLibrary.simpleMessage("Enter your email"),
     "enterName": MessageLookupByLibrary.simpleMessage("Enter your name"),
     "enterPassword": MessageLookupByLibrary.simpleMessage(
@@ -31,6 +33,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "nameValidator": MessageLookupByLibrary.simpleMessage(
+      "please enter your name",
+    ),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "An intuitive interface that requires no special skills allows users to quickly add, edit, and manage products effortlessly.",
     ),
@@ -52,6 +57,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Detailed Reports",
     ),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "passwordRegex": MessageLookupByLibrary.simpleMessage("password is weak"),
+    "passwordValidator": MessageLookupByLibrary.simpleMessage(
+      "enter your password",
+    ),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),

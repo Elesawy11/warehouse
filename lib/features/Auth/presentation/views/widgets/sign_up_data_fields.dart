@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:warehouse_app/core/helpers/custom_snack_bar_method.dart';
+import 'package:warehouse_app/core/utils/app_regex.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/styles.dart';
@@ -30,7 +31,11 @@ class SignUpDataFields extends StatelessWidget {
             color: ColorManager.grey75,
           ),
           hintText: S.of(context).enterName,
-          validator: (value) {},
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return S.of(context).nameValidator;
+            }
+          },
         ),
         verticalSpace(24),
         Text(
@@ -45,7 +50,13 @@ class SignUpDataFields extends StatelessWidget {
             color: ColorManager.grey75,
           ),
           hintText: S.of(context).enterEmail,
-          validator: (value) {},
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return S.of(context).emailValidator;
+            } else if (!AppRegex.isEmailValid(value)) {
+              return S.of(context).emailRegex;
+            }
+          },
         ),
         verticalSpace(24),
         Text(
@@ -60,7 +71,13 @@ class SignUpDataFields extends StatelessWidget {
             color: ColorManager.grey75,
           ),
           hintText: S.of(context).enterPassword,
-          validator: (value) {},
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return S.of(context).passwordValidator;
+            } else if (!AppRegex.isPasswordValid(value)) {
+              return S.of(context).passwordRegex;
+            }
+          },
           isObscureText: true,
         ),
       ],

@@ -24,6 +24,12 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "continueButton": MessageLookupByLibrary.simpleMessage("متابعة"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكترونى"),
+    "emailRegex": MessageLookupByLibrary.simpleMessage(
+      "أدخل بريدإلكترونى صحيح",
+    ),
+    "emailValidator": MessageLookupByLibrary.simpleMessage(
+      "أدخل البريد الإلكترونى الخاص بك",
+    ),
     "enterEmail": MessageLookupByLibrary.simpleMessage(
       "أدخل البريد الإلكترونى",
     ),
@@ -31,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterPassword": MessageLookupByLibrary.simpleMessage("أدخل كلمة السر"),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
+    "nameValidator": MessageLookupByLibrary.simpleMessage("من فضلك أدخل اسمك"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "واجهة بديهية لا تتطلب أي مهارات خاصة تتيح للمستخدمين إضافة المنتجات وتعديلها وإدارتها بسرعة وسهولة.",
     ),
@@ -50,6 +57,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "onboarding4Title": MessageLookupByLibrary.simpleMessage("تقارير مفصلة"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة السر"),
+    "passwordRegex": MessageLookupByLibrary.simpleMessage("كلمة السر ضعيفة"),
+    "passwordValidator": MessageLookupByLibrary.simpleMessage(
+      "أدخل كلمة السر الخاص بك",
+    ),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),

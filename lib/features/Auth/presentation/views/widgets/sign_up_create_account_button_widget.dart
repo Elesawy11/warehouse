@@ -37,7 +37,11 @@ class SignUpCreateAccountButtonWidget extends StatelessWidget {
                   ),
                 )
               : null,
-          onPressed: () => context.read<SignUpCubit>().signUp(),
+          onPressed: () {
+            if (context.read<SignUpCubit>().formKey.currentState!.validate()) {
+              context.read<SignUpCubit>().signUp();
+            }
+          },
         );
       },
     );

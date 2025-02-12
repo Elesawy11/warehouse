@@ -19,7 +19,12 @@
     "rememberMe": "Remember me",
     "name": "Name",
     "enterName": "Enter your name",
-    "signupConsent": "I give my consent to the processing of my personal data and accept the privacy policy"
+    "signupConsent": "I give my consent to the processing of my personal data and accept the privacy policy",
+    "nameValidator": "please enter your name",
+    "passwordValidator": "enter your password",
+    "passwordRegex": "password is weak",
+    "emailValidator": "enter your email",
+    "emailRegex": "enter valid email"
 }
 
 
