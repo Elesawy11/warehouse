@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "checkBox": MessageLookupByLibrary.simpleMessage(
+      "You must agree to the processing of your personal data and the privacy policy",
+    ),
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "emailRegex": MessageLookupByLibrary.simpleMessage("enter valid email"),

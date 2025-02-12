@@ -5,4 +5,6 @@ sealed class SignUpVariablesState {}
 
 final class SignUpVariablesInitial extends SignUpVariablesState {}
 final class IsSecuredDone extends SignUpVariablesState {}
-final class IsCheckedDone extends SignUpVariablesState {}
+final class IsCheckedTrue extends SignUpVariablesState {}
+final class IsCheckedFalse extends SignUpVariablesState {}
+

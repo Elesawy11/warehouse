@@ -14,7 +14,12 @@ class SignUpVariablesCubit extends Cubit<SignUpVariablesState> {
   }
 
   void check() {
-    isChecked = !isChecked;
-    emit(IsCheckedDone());
+    if (isChecked == false) {
+      isChecked = true;
+      emit(IsCheckedTrue());
+    } else {
+      isChecked = false;
+      emit(IsCheckedFalse());
+    }
   }
 }

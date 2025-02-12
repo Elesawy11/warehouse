@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "checkBox": MessageLookupByLibrary.simpleMessage(
+      "يجب الموافقة علي صلاحية معالجة بيانتك الشخصية وسياسة الخصوصية",
+    ),
     "continueButton": MessageLookupByLibrary.simpleMessage("متابعة"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكترونى"),
     "emailRegex": MessageLookupByLibrary.simpleMessage(
@@ -33,7 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterEmail": MessageLookupByLibrary.simpleMessage(
       "أدخل البريد الإلكترونى",
     ),
-    "enterName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
+    "enterName": MessageLookupByLibrary.simpleMessage("أدخل الاسم"),
     "enterPassword": MessageLookupByLibrary.simpleMessage("أدخل كلمة السر"),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),

@@ -274,6 +274,16 @@ class S {
       args: [],
     );
   }
+
+  /// `You must agree to the processing of your personal data and the privacy policy`
+  String get checkBox {
+    return Intl.message(
+      'You must agree to the processing of your personal data and the privacy policy',
+      name: 'checkBox',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

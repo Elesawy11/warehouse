@@ -24,7 +24,8 @@
     "passwordValidator": "enter your password",
     "passwordRegex": "password is weak",
     "emailValidator": "enter your email",
-    "emailRegex": "enter valid email"
+    "emailRegex": "enter valid email",
+    "checkBox": "You must agree to the processing of your personal data and the privacy policy"
 }
 
 
