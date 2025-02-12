@@ -4,6 +4,7 @@ import '../utils/styles.dart';
 void customSnackBarMethod(BuildContext context, String text) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
+      backgroundColor: Colors.black,
       content: Text(
         text,
         style: Styles.font13Regular,

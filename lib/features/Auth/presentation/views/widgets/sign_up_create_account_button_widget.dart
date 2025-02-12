@@ -45,7 +45,7 @@ class SignUpCreateAccountButtonWidget extends StatelessWidget {
             } else if (!context.read<SignUpVariablesCubit>().isChecked) {
               customSnackBarMethod(
                 context,
-                'يجب الموافقة علي صلاحية معالجة بيانتك الشخصية وسياسة الخصوصية',
+                S.of(context).checkBox,
               );
             }
           },
