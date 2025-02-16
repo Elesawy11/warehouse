@@ -6,9 +6,8 @@ class AuthRepoImpl {
 
   AuthRepoImpl({required this.source});
 
-  Future<UserModel> signIn({required String email, required String password}) {
-    // TODO: implement signIn
-    throw UnimplementedError();
+  Future<void> signIn({required String email, required String password}) async {
+    await source.signIn(email: email, password: password);
   }
 
   Future<void> signOut() {
