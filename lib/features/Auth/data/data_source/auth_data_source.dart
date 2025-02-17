@@ -30,4 +30,25 @@ class AuthDataSource {
       throw Exception("Sign-Up Faild: $e");
     }
   }
+
+  Future<void> signIn({required String email, required String password}) async {
+    try {
+      final response = await client.auth.signInWithPassword(
+        email: email.trim(),
+        password: password.trim(),
+      );
+      if (response.user != null) {
+        return;
+      } else {
+        throw Exception('Sign-In Faild: No User Returned');
+      }
+    } on AuthException catch (e) {
+      if (e.code == 'email_not_confirmed') {
+        return;
+      }
+      throw Exception("Sign-In Faild: ${e.message}");
+    } catch (e) {
+      throw Exception("Sign-In Faild: $e");
+    }
+  }
 }
