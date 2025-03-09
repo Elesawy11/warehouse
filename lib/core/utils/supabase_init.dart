@@ -1,9 +1,10 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:warehouse_app/constant_key.dart';
 
-abstract class SupabaseMethods {
-  static const _supabaseUrl = 'https://ahlgctfekuqsykshgnjg.supabase.co';
-  static const _supabaseAnonKey =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFobGdjdGZla3Vxc3lrc2hnbmpnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkxMDYxODcsImV4cCI6MjA1NDY4MjE4N30.AdHgVM4BzJ7Jq_tgcEc9Hh5zJf2Nh1ONBLylLfhDGyQ";
+class SupabaseMethods {
+  SupabaseMethods._();
+  static const _supabaseUrl = supabaseUrl;
+  static const _supabaseAnonKey = supabaseAnonKey;
 
   static bool _isInitialized = false;
 
@@ -21,5 +22,10 @@ abstract class SupabaseMethods {
     }
   }
 
-  static SupabaseClient get client => Supabase.instance.client;
+  static SupabaseClient get client {
+    if (!_isInitialized) {
+      throw Exception("Supabase is not initialized. Call initialize() first.");
+    }
+    return Supabase.instance.client;
+  }
 }
