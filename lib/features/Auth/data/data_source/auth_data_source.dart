@@ -18,7 +18,7 @@ class AuthDataSource {
       if (response.user != null) {
         return UserModel(
           id: response.user!.id,
-          name: response.user!.userMetadata?['name'],
+          name: response.user!.userMetadata?['name'] ?? 'not found',
           email: response.user!.email!,
         );
       } else {
