@@ -4,6 +4,8 @@ class Assets {
   
   static const String imagesAccount = "assets/images/account.png";
 
+  static const String imagesLaptop = "assets/images/laptop.jpg";
+
   static const String imagesOnboarding1 = "assets/images/onboarding1.webp";
 
   static const String imagesOnboarding2 = "assets/images/onboarding2.jpg";

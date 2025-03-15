@@ -16,6 +16,10 @@ abstract class Styles {
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.regular,
   );
+  static TextStyle font14SemiBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.semiBold,
+  );
   static TextStyle font16Regular = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.regular,
