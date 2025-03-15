@@ -17,7 +17,7 @@ class WarehouseAppBody extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp.router(
-        locale: const Locale('ar'),
+        locale: const Locale('en'),
         localizationsDelegates: [
           S.delegate,
           GlobalMaterialLocalizations.delegate,

@@ -1,3 +1,3 @@
 const String supabaseUrl = 'https://ahlgctfekuqsykshgnjg.supabase.co';
 const String supabaseAnonKey =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFobGdjdGZla3Vxc3lrc2huamciLCJpYXQiOjE2NjY5NjEwNjYsImV4cCI6MTk4MjUzNzA2Nn0.2o2S5e0Qo5d2mXoN3Nk4vD4nXmGjvK9QaOvB2y6o9o4';
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFobGdjdGZla3Vxc3lrc2hnbmpnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkxMDYxODcsImV4cCI6MjA1NDY4MjE4N30.AdHgVM4BzJ7Jq_tgcEc9Hh5zJf2Nh1ONBLylLfhDGyQ';
