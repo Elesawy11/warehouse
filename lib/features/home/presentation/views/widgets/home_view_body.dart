@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:warehouse_app/core/helpers/spacer.dart';
 import 'row_of_stock_method.dart';
+import 'show_items_title_widget.dart';
 import 'today_average_widget.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -20,6 +21,9 @@ class HomeViewBody extends StatelessWidget {
             const TodayAverageWidget(),
             verticalSpace(12),
             const RowOfStockMethods(),
+            verticalSpace(22),
+            const ShowItemsTitleWidget(),
+            verticalSpace(22),
           ],
         ),
       ),
