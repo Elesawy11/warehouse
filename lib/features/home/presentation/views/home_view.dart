@@ -5,12 +5,15 @@ import 'package:warehouse_app/core/utils/color_manager.dart';
 import 'package:warehouse_app/core/utils/styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'widgets/home_view_body.dart';
+
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorManager.greyED,
       appBar: AppBar(
         leading: Padding(
           padding: EdgeInsets.only(left: 16.w),
@@ -25,13 +28,13 @@ class HomeView extends StatelessWidget {
           children: [
             Text(
               'Hello',
-              style: Styles.font14Regular.copyWith(
+              style: Styles.font16Regular.copyWith(
                 color: ColorManager.subText,
               ),
             ),
             Text(
               'Ahmed Elesawy',
-              style: Styles.font16Regular,
+              style: Styles.font16Semibold,
             ),
           ],
         ),
@@ -49,10 +52,7 @@ class HomeView extends StatelessWidget {
           ),
         ],
       ),
-      body: const SafeArea(
-          child: Column(
-        children: [],
-      )),
+      body: const HomeViewBody(),
     );
   }
 }
