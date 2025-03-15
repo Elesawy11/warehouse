@@ -20,7 +20,7 @@ class ProductWidget extends StatelessWidget {
         ),
       ),
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
-      margin: EdgeInsets.only(bottom: 8.h),
+      margin: EdgeInsets.only(bottom: 12.h),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

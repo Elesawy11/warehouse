@@ -25,7 +25,15 @@ class HomeViewBody extends StatelessWidget {
             verticalSpace(22),
             const ShowItemsTitleWidget(),
             verticalSpace(22),
-            const ProductWidget()
+            Expanded(
+              child: ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return const ProductWidget();
+                },
+                itemCount: 6,
+              ),
+            ),
           ],
         ),
       ),
