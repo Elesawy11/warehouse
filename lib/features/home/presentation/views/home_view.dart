@@ -41,12 +41,15 @@ class HomeView extends StatelessWidget {
         actions: [
           Padding(
             padding: EdgeInsets.only(right: 16.w),
-            child: CircleAvatar(
-              backgroundColor: ColorManager.greyED,
-              child: SvgPicture.asset(
-                Assets.svg_imageNotification,
-                width: 24.r,
-                height: 24.r,
+            child: InkWell(
+              onTap: () {},
+              child: CircleAvatar(
+                backgroundColor: ColorManager.greyED,
+                child: SvgPicture.asset(
+                  Assets.svg_imageNotification,
+                  width: 24.r,
+                  height: 24.r,
+                ),
               ),
             ),
           ),

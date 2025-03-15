@@ -28,12 +28,15 @@ class RowOfStockMethods extends StatelessWidget {
               12.r,
             ),
           ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(12.r),
-            child: Image.asset(
-              Assets.imagesScan,
-              width: 50.r,
-              height: 50.r,
+          child: InkWell(
+            onTap: () {},
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(12.r),
+              child: Image.asset(
+                Assets.imagesScan,
+                width: 50.r,
+                height: 50.r,
+              ),
             ),
           ),
         )

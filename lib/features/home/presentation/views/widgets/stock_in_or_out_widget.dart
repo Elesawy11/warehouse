@@ -14,31 +14,34 @@ class StockInOrOutWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 160.w,
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(
-          12.r,
-        ),
-      ),
-      child: Row(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12.r),
-            child: Image.asset(
-              iconUrl,
-              width: 50.r,
-              height: 50.r,
-            ),
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        width: 160.w,
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(
+            12.r,
           ),
-          horizontalSpace(12),
-          Text(
-            title,
-            style: Styles.font16Semibold,
-          )
-        ],
+        ),
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12.r),
+              child: Image.asset(
+                iconUrl,
+                width: 50.r,
+                height: 50.r,
+              ),
+            ),
+            horizontalSpace(12),
+            Text(
+              title,
+              style: Styles.font16Semibold,
+            )
+          ],
+        ),
       ),
     );
   }
