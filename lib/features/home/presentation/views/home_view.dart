@@ -15,6 +15,8 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorManager.greyED,
       appBar: AppBar(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
         leading: Padding(
           padding: EdgeInsets.only(left: 16.w),
           child: Image.asset(
