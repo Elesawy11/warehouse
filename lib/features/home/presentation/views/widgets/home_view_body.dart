@@ -16,23 +16,24 @@ class HomeViewBody extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: Column(
-          children: [
-            verticalSpace(20),
-            const TodayAverageWidget(),
-            verticalSpace(12),
-            const RowOfStockMethods(),
-            verticalSpace(22),
-            const ShowItemsTitleWidget(),
-            verticalSpace(22),
-            Expanded(
-              child: ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return const ProductWidget();
-                },
-                itemCount: 6,
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  verticalSpace(20),
+                  const TodayAverageWidget(),
+                  verticalSpace(12),
+                  const RowOfStockMethods(),
+                  verticalSpace(22),
+                  const ShowItemsTitleWidget(),
+                  verticalSpace(22),
+                ],
               ),
+            ),
+            SliverList.builder(
+              itemBuilder: (context, index) => const ProductWidget(),
+              itemCount: 10,
             ),
           ],
         ),

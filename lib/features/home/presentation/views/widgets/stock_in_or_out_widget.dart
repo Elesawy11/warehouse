@@ -18,6 +18,7 @@ class StockInOrOutWidget extends StatelessWidget {
       onTap: () {},
       child: Container(
         width: 160.w,
+        height: 60.h,
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
         decoration: BoxDecoration(
           color: Colors.white,

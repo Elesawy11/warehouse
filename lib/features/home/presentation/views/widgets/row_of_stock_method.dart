@@ -35,7 +35,7 @@ class RowOfStockMethods extends StatelessWidget {
               child: Image.asset(
                 Assets.imagesScan,
                 width: 50.r,
-                height: 50.r,
+                height: 60.h,
               ),
             ),
           ),
