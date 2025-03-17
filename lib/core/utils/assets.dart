@@ -6,6 +6,8 @@ class Assets {
 
   static const String imagesLaptop = "assets/images/laptop.jpg";
 
+  static const String imagesNoNotification = "assets/images/noNotification.png";
+
   static const String imagesOnboarding1 = "assets/images/onboarding1.webp";
 
   static const String imagesOnboarding2 = "assets/images/onboarding2.jpg";
@@ -31,6 +33,8 @@ class Assets {
   static const String svg_imageActiveSettings = "assets/svg_image/activeSettings.svg";
 
   static const String svg_imageActiveTransactions = "assets/svg_image/activeTransactions.svg";
+
+  static const String svg_imageArrowLeft = "assets/svg_image/arrowLeft.svg";
 
   static const String svg_imageHome = "assets/svg_image/Home.svg";
 

@@ -5,4 +5,5 @@ abstract class Routes {
   static const items = '/items';
   static const transactions = '/transactions';
   static const settings = '/settings';
+  static const notification = '/notification';
 }

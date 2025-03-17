@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:warehouse_app/core/routing/routes.dart';
 import 'package:warehouse_app/core/utils/assets.dart';
 import 'package:warehouse_app/core/utils/color_manager.dart';
 import 'package:warehouse_app/core/utils/styles.dart';
@@ -43,7 +45,7 @@ class HomeView extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 16.w),
             child: InkWell(
-              onTap: () {},
+              onTap: () => context.push(Routes.notification),
               child: CircleAvatar(
                 backgroundColor: ColorManager.greyED,
                 child: SvgPicture.asset(
