@@ -24,6 +24,22 @@ class Assets {
 
   static const String imagesTest = "assets/images/test.png";
 
+  static const String svg_imageActiveHome = "assets/svg_image/activeHome.svg";
+
+  static const String svg_imageActiveItems = "assets/svg_image/activeItems.svg";
+
+  static const String svg_imageActiveSettings = "assets/svg_image/activeSettings.svg";
+
+  static const String svg_imageActiveTransactions = "assets/svg_image/activeTransactions.svg";
+
+  static const String svg_imageHome = "assets/svg_image/Home.svg";
+
+  static const String svg_imageItems = "assets/svg_image/items.svg";
+
   static const String svg_imageNotification = "assets/svg_image/notification.svg";
+
+  static const String svg_imageSettings = "assets/svg_image/settings.svg";
+
+  static const String svg_imageTransaction = "assets/svg_image/transaction.svg";
 }
 

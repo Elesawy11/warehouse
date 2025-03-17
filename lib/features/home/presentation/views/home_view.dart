@@ -4,7 +4,6 @@ import 'package:warehouse_app/core/utils/assets.dart';
 import 'package:warehouse_app/core/utils/color_manager.dart';
 import 'package:warehouse_app/core/utils/styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
