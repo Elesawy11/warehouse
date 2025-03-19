@@ -6,19 +6,23 @@ import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/utils/styles.dart';
 
-class ContainerOfProfileFeatureInfoWidget extends StatelessWidget {
-  const ContainerOfProfileFeatureInfoWidget({
+class ContainerOfFeatureWidget extends StatelessWidget {
+  const ContainerOfFeatureWidget({
     super.key,
     required this.field,
     required this.value,
     this.hasBorder = true,
     this.isEmptyValue = false,
+    this.isLastIcon = false,
     this.onTap,
+    this.widget,
   });
   final String field, value;
   final bool hasBorder;
   final GestureTapCallback? onTap;
   final bool isEmptyValue;
+  final bool isLastIcon;
+  final Widget? widget;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -36,6 +40,7 @@ class ContainerOfProfileFeatureInfoWidget extends StatelessWidget {
               : null,
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               field,
@@ -43,17 +48,25 @@ class ContainerOfProfileFeatureInfoWidget extends StatelessWidget {
                 color: ColorManager.subText,
               ),
             ),
-            const Spacer(),
-            !isEmptyValue
-                ? Text(
-                    value,
-                    style: Styles.font18Meduim,
+            // const Spacer(),
+            !isEmptyValue && !isLastIcon
+                ? Row(
+                    children: [
+                      !isEmptyValue
+                          ? Text(
+                              value,
+                              style: Styles.font18Meduim,
+                            )
+                          : const SizedBox(),
+                      horizontalSpace(10),
+                      !isLastIcon
+                          ? SvgPicture.asset(
+                              Assets.svg_imageChevronRight,
+                            )
+                          : const SizedBox(),
+                    ],
                   )
-                : const SizedBox(),
-            horizontalSpace(10),
-            SvgPicture.asset(
-              Assets.svg_imageChevronRight,
-            )
+                : widget ?? const SizedBox(),
           ],
         ),
       ),
