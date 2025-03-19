@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterName": MessageLookupByLibrary.simpleMessage("أدخل الاسم"),
     "enterPassword": MessageLookupByLibrary.simpleMessage("أدخل كلمة السر"),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
+    "hello": MessageLookupByLibrary.simpleMessage("مرحبا"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),

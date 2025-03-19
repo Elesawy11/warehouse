@@ -36,5 +36,6 @@
     "birthday": "تاريخ الميلاد",
     "companyName": "اسم الشركة",
     "notification": "الاشعارات",
-    "emptyNotification": "قائمة الاشعارات فارغة"
+    "emptyNotification": "قائمة الاشعارات فارغة",
+    "hello": "مرحبا"
 }

@@ -36,7 +36,8 @@
     "birthday": "Birthday",
     "companyName": "Company name",
     "notification": "Notification",
-    "emptyNotification": "The notification list is empty"
+    "emptyNotification": "The notification list is empty",
+    "hello": "Hello"
 }
 
 
