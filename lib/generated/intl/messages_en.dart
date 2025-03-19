@@ -22,9 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "appStyle": MessageLookupByLibrary.simpleMessage("App Style"),
+    "birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
     "checkBox": MessageLookupByLibrary.simpleMessage(
       "You must agree to the processing of your personal data and the privacy policy",
     ),
+    "companyName": MessageLookupByLibrary.simpleMessage("Company name"),
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "emailRegex": MessageLookupByLibrary.simpleMessage("enter valid email"),
@@ -35,6 +38,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enter your password",
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
+    "logOut": MessageLookupByLibrary.simpleMessage("Log Out"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameValidator": MessageLookupByLibrary.simpleMessage(
       "please enter your name",
@@ -64,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordValidator": MessageLookupByLibrary.simpleMessage(
       "enter your password",
     ),
+    "profileSettings": MessageLookupByLibrary.simpleMessage("Profile Settings"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
@@ -71,5 +77,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "I give my consent to the processing of my personal data and accept the privacy policy",
     ),
     "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
+    "sound": MessageLookupByLibrary.simpleMessage("Sound"),
+    "systemSettings": MessageLookupByLibrary.simpleMessage("System Settings"),
+    "vibration": MessageLookupByLibrary.simpleMessage("Vibration"),
   };
 }

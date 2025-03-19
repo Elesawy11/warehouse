@@ -36,6 +36,10 @@ class Assets {
 
   static const String svg_imageArrowLeft = "assets/svg_image/arrowLeft.svg";
 
+  static const String svg_imageCamera = "assets/svg_image/Camera.svg";
+
+  static const String svg_imageChevronRight = "assets/svg_image/chevronRight.svg";
+
   static const String svg_imageHome = "assets/svg_image/Home.svg";
 
   static const String svg_imageItems = "assets/svg_image/items.svg";

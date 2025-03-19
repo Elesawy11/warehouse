@@ -22,9 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "appStyle": MessageLookupByLibrary.simpleMessage("الوضع الداكن/الفاتح"),
+    "birthday": MessageLookupByLibrary.simpleMessage("تاريخ الميلاد"),
     "checkBox": MessageLookupByLibrary.simpleMessage(
       "يجب الموافقة علي صلاحية معالجة بيانتك الشخصية وسياسة الخصوصية",
     ),
+    "companyName": MessageLookupByLibrary.simpleMessage("اسم الشركة"),
     "continueButton": MessageLookupByLibrary.simpleMessage("متابعة"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكترونى"),
     "emailRegex": MessageLookupByLibrary.simpleMessage(
@@ -39,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterName": MessageLookupByLibrary.simpleMessage("أدخل الاسم"),
     "enterPassword": MessageLookupByLibrary.simpleMessage("أدخل كلمة السر"),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
+    "language": MessageLookupByLibrary.simpleMessage("اللغة"),
+    "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "nameValidator": MessageLookupByLibrary.simpleMessage("من فضلك أدخل اسمك"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
@@ -64,6 +69,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordValidator": MessageLookupByLibrary.simpleMessage(
       "أدخل كلمة السر الخاص بك",
     ),
+    "profileSettings": MessageLookupByLibrary.simpleMessage(
+      "اعدادات الملف الشخصي",
+    ),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
@@ -71,5 +79,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "أمنح موافقتي على معالجة بياناتي الشخصية وأوافق على سياسة الخصوصية",
     ),
     "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "sound": MessageLookupByLibrary.simpleMessage("الصوت"),
+    "systemSettings": MessageLookupByLibrary.simpleMessage("إعدادات النظام"),
+    "vibration": MessageLookupByLibrary.simpleMessage("وضع الاهتزاز"),
   };
 }

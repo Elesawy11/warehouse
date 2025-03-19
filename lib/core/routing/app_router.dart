@@ -6,6 +6,7 @@ import 'package:warehouse_app/core/utils/constants.dart';
 import 'package:warehouse_app/features/Auth/presentation/views/auth_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/home_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/notification_view.dart';
+import 'package:warehouse_app/features/home/presentation/views/profile_view.dart';
 import 'package:warehouse_app/features/items/presentation/views/items_view.dart';
 import 'package:warehouse_app/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:warehouse_app/features/settings/presentation/views/settings_view.dart';
@@ -67,6 +68,10 @@ abstract class AppRouter {
       GoRoute(
         path: Routes.notification,
         builder: (context, state) => const NotificationView(),
+      ),
+      GoRoute(
+        path: Routes.profile,
+        builder: (context, state) => const ProfileView(),
       ),
     ],
   );

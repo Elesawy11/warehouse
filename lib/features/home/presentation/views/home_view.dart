@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:warehouse_app/core/helpers/spacer.dart';
 import 'package:warehouse_app/core/routing/routes.dart';
 import 'package:warehouse_app/core/utils/assets.dart';
 import 'package:warehouse_app/core/utils/color_manager.dart';
@@ -18,28 +19,33 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
-        leading: Padding(
-          padding: EdgeInsets.only(left: 16.w),
-          child: Image.asset(
-            Assets.imagesAccount,
-            width: 30.r,
-            height: 30.r,
-          ),
-        ),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Hello',
-              style: Styles.font16Regular.copyWith(
-                color: ColorManager.subText,
+        title: InkWell(
+          onTap: () => context.push(Routes.profile),
+          child: Row(
+            children: [
+              Image.asset(
+                Assets.imagesAccount,
+                width: 45.r,
+                height: 45.r,
               ),
-            ),
-            Text(
-              'Ahmed Elesawy',
-              style: Styles.font16Semibold,
-            ),
-          ],
+              horizontalSpace(12),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Hello',
+                    style: Styles.font16Regular.copyWith(
+                      color: ColorManager.subText,
+                    ),
+                  ),
+                  Text(
+                    'Ahmed Elesawy',
+                    style: Styles.font16Semibold,
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
         actions: [
           Padding(
