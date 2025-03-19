@@ -32,6 +32,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "emailRegex": MessageLookupByLibrary.simpleMessage("enter valid email"),
     "emailValidator": MessageLookupByLibrary.simpleMessage("enter your email"),
+    "emptyNotification": MessageLookupByLibrary.simpleMessage(
+      "The notification list is empty",
+    ),
     "enterEmail": MessageLookupByLibrary.simpleMessage("Enter your email"),
     "enterName": MessageLookupByLibrary.simpleMessage("Enter your name"),
     "enterPassword": MessageLookupByLibrary.simpleMessage(
@@ -44,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "nameValidator": MessageLookupByLibrary.simpleMessage(
       "please enter your name",
     ),
+    "notification": MessageLookupByLibrary.simpleMessage("Notification"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "An intuitive interface that requires no special skills allows users to quickly add, edit, and manage products effortlessly.",
     ),

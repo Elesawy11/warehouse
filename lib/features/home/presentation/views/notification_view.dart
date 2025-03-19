@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:warehouse_app/core/utils/assets.dart';
 import 'package:warehouse_app/core/utils/color_manager.dart';
 import 'package:warehouse_app/core/utils/styles.dart';
+import '../../../../generated/l10n.dart';
 import 'widgets/custom_view_bar_widget.dart';
 
 class NotificationView extends StatelessWidget {
@@ -19,8 +20,8 @@ class NotificationView extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const CustomViewBarWidget(
-                  title: 'Notification',
+                CustomViewBarWidget(
+                  title: S.of(context).notification,
                 ),
                 //TODO: if notification list is empty show this
                 //TODO: else show notification list
@@ -33,7 +34,7 @@ class NotificationView extends StatelessWidget {
                         Assets.imagesNoNotification,
                       ),
                       Text(
-                        'The notification list is empty',
+                        S.of(context).emptyNotification,
                         style: Styles.font16Semibold.copyWith(
                           color: ColorManager.subText,
                         ),

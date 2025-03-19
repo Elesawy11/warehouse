@@ -344,6 +344,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Notification`
+  String get notification {
+    return Intl.message(
+      'Notification',
+      name: 'notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The notification list is empty`
+  String get emptyNotification {
+    return Intl.message(
+      'The notification list is empty',
+      name: 'emptyNotification',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

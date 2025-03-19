@@ -34,5 +34,7 @@
     "logOut": "تسجيل الخروج",
     "profileSettings": "اعدادات الملف الشخصي",
     "birthday": "تاريخ الميلاد",
-    "companyName": "اسم الشركة"
+    "companyName": "اسم الشركة",
+    "notification": "الاشعارات",
+    "emptyNotification": "قائمة الاشعارات فارغة"
 }

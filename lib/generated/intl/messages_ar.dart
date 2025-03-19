@@ -36,6 +36,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "emailValidator": MessageLookupByLibrary.simpleMessage(
       "أدخل البريد الإلكترونى الخاص بك",
     ),
+    "emptyNotification": MessageLookupByLibrary.simpleMessage(
+      "قائمة الاشعارات فارغة",
+    ),
     "enterEmail": MessageLookupByLibrary.simpleMessage(
       "أدخل البريد الإلكترونى",
     ),
@@ -46,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "nameValidator": MessageLookupByLibrary.simpleMessage("من فضلك أدخل اسمك"),
+    "notification": MessageLookupByLibrary.simpleMessage("الاشعارات"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "واجهة بديهية لا تتطلب أي مهارات خاصة تتيح للمستخدمين إضافة المنتجات وتعديلها وإدارتها بسرعة وسهولة.",
     ),
