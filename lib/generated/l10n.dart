@@ -369,6 +369,26 @@ class S {
   String get hello {
     return Intl.message('Hello', name: 'hello', desc: '', args: []);
   }
+
+  /// `Today`
+  String get today {
+    return Intl.message('Today', name: 'today', desc: '', args: []);
+  }
+
+  /// `Total`
+  String get total {
+    return Intl.message('Total', name: 'total', desc: '', args: []);
+  }
+
+  /// `Stock In`
+  String get stockIn {
+    return Intl.message('Stock In', name: 'stockIn', desc: '', args: []);
+  }
+
+  /// `Stock Out`
+  String get stockOut {
+    return Intl.message('Stock Out', name: 'stockOut', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -37,5 +37,9 @@
     "companyName": "اسم الشركة",
     "notification": "الاشعارات",
     "emptyNotification": "قائمة الاشعارات فارغة",
-    "hello": "مرحبا"
+    "hello": "مرحبا",
+    "today": "اليوم",
+    "total": "المجموع",
+    "stockIn": "الداخل",
+    "stockOut": "الخارج"
 }

@@ -85,7 +85,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
     "sound": MessageLookupByLibrary.simpleMessage("الصوت"),
+    "stockIn": MessageLookupByLibrary.simpleMessage("الداخل"),
+    "stockOut": MessageLookupByLibrary.simpleMessage("الخارج"),
     "systemSettings": MessageLookupByLibrary.simpleMessage("إعدادات النظام"),
+    "today": MessageLookupByLibrary.simpleMessage("اليوم"),
+    "total": MessageLookupByLibrary.simpleMessage("المجموع"),
     "vibration": MessageLookupByLibrary.simpleMessage("وضع الاهتزاز"),
   };
 }

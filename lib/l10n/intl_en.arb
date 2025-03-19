@@ -37,7 +37,11 @@
     "companyName": "Company name",
     "notification": "Notification",
     "emptyNotification": "The notification list is empty",
-    "hello": "Hello"
+    "hello": "Hello",
+    "today": "Today",
+    "total": "Total",
+    "stockIn": "Stock In",
+    "stockOut": "Stock Out"
 }
 
 

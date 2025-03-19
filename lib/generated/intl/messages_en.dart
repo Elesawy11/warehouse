@@ -83,7 +83,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
     "sound": MessageLookupByLibrary.simpleMessage("Sound"),
+    "stockIn": MessageLookupByLibrary.simpleMessage("Stock In"),
+    "stockOut": MessageLookupByLibrary.simpleMessage("Stock Out"),
     "systemSettings": MessageLookupByLibrary.simpleMessage("System Settings"),
+    "today": MessageLookupByLibrary.simpleMessage("Today"),
+    "total": MessageLookupByLibrary.simpleMessage("Total"),
     "vibration": MessageLookupByLibrary.simpleMessage("Vibration"),
   };
 }

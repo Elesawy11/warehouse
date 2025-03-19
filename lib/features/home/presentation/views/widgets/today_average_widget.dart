@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../../../generated/l10n.dart';
 
 class TodayAverageWidget extends StatelessWidget {
   const TodayAverageWidget({
@@ -42,9 +42,9 @@ class RowOfAchivedWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const AchivedWidget(
+        AchivedWidget(
           achived: '276',
-          name: 'total',
+          name: S.of(context).total,
         ),
         SizedBox(
           height: 40.h,
@@ -52,9 +52,9 @@ class RowOfAchivedWidget extends StatelessWidget {
             color: ColorManager.greyED,
           ),
         ),
-        const AchivedWidget(
+        AchivedWidget(
           achived: '276',
-          name: 'total',
+          name: S.of(context).stockIn,
         ),
         SizedBox(
           height: 40.h,
@@ -62,9 +62,9 @@ class RowOfAchivedWidget extends StatelessWidget {
             color: ColorManager.greyED,
           ),
         ),
-        const AchivedWidget(
+        AchivedWidget(
           achived: '276',
-          name: 'total',
+          name: S.of(context).stockOut,
         ),
       ],
     );
@@ -82,11 +82,12 @@ class DateWidget extends StatelessWidget {
       text: TextSpan(
         children: [
           TextSpan(
-            text: 'Today',
+            text: S.of(context).today,
             style: Styles.font24Bold,
           ),
+          WidgetSpan(child: horizontalSpace(10)),
           TextSpan(
-            text: '  Mar 15,2025',
+            text: 'Mar 15,2025',
             style: Styles.font16Semibold.copyWith(
               color: ColorManager.greyED,
             ),
