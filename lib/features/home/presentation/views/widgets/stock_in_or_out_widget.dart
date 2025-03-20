@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/styles.dart';
 
@@ -9,13 +8,15 @@ class StockInOrOutWidget extends StatelessWidget {
     super.key,
     required this.title,
     required this.iconUrl,
+    this.onTap,
   });
   final String title, iconUrl;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         width: 160.w,
         height: 60.h,

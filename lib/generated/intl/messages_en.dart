@@ -22,23 +22,33 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "appStyle": MessageLookupByLibrary.simpleMessage("App Style"),
+    "birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
     "checkBox": MessageLookupByLibrary.simpleMessage(
       "You must agree to the processing of your personal data and the privacy policy",
     ),
+    "companyName": MessageLookupByLibrary.simpleMessage("Company name"),
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "emailRegex": MessageLookupByLibrary.simpleMessage("enter valid email"),
     "emailValidator": MessageLookupByLibrary.simpleMessage("enter your email"),
+    "emptyNotification": MessageLookupByLibrary.simpleMessage(
+      "The notification list is empty",
+    ),
     "enterEmail": MessageLookupByLibrary.simpleMessage("Enter your email"),
     "enterName": MessageLookupByLibrary.simpleMessage("Enter your name"),
     "enterPassword": MessageLookupByLibrary.simpleMessage(
       "Enter your password",
     ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "hello": MessageLookupByLibrary.simpleMessage("Hello"),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
+    "logOut": MessageLookupByLibrary.simpleMessage("Log Out"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameValidator": MessageLookupByLibrary.simpleMessage(
       "please enter your name",
     ),
+    "notification": MessageLookupByLibrary.simpleMessage("Notification"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "An intuitive interface that requires no special skills allows users to quickly add, edit, and manage products effortlessly.",
     ),
@@ -64,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordValidator": MessageLookupByLibrary.simpleMessage(
       "enter your password",
     ),
+    "profileSettings": MessageLookupByLibrary.simpleMessage("Profile Settings"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
@@ -71,5 +82,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "I give my consent to the processing of my personal data and accept the privacy policy",
     ),
     "skipButton": MessageLookupByLibrary.simpleMessage("Skip"),
+    "sound": MessageLookupByLibrary.simpleMessage("Sound"),
+    "stockIn": MessageLookupByLibrary.simpleMessage("Stock In"),
+    "stockOut": MessageLookupByLibrary.simpleMessage("Stock Out"),
+    "systemSettings": MessageLookupByLibrary.simpleMessage("System Settings"),
+    "today": MessageLookupByLibrary.simpleMessage("Today"),
+    "total": MessageLookupByLibrary.simpleMessage("Total"),
+    "vibration": MessageLookupByLibrary.simpleMessage("Vibration"),
   };
 }

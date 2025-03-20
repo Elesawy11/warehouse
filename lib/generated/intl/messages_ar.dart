@@ -22,9 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "appStyle": MessageLookupByLibrary.simpleMessage("الوضع الداكن/الفاتح"),
+    "birthday": MessageLookupByLibrary.simpleMessage("تاريخ الميلاد"),
     "checkBox": MessageLookupByLibrary.simpleMessage(
       "يجب الموافقة علي صلاحية معالجة بيانتك الشخصية وسياسة الخصوصية",
     ),
+    "companyName": MessageLookupByLibrary.simpleMessage("اسم الشركة"),
     "continueButton": MessageLookupByLibrary.simpleMessage("متابعة"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكترونى"),
     "emailRegex": MessageLookupByLibrary.simpleMessage(
@@ -33,14 +36,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "emailValidator": MessageLookupByLibrary.simpleMessage(
       "أدخل البريد الإلكترونى الخاص بك",
     ),
+    "emptyNotification": MessageLookupByLibrary.simpleMessage(
+      "قائمة الاشعارات فارغة",
+    ),
     "enterEmail": MessageLookupByLibrary.simpleMessage(
       "أدخل البريد الإلكترونى",
     ),
     "enterName": MessageLookupByLibrary.simpleMessage("أدخل الاسم"),
     "enterPassword": MessageLookupByLibrary.simpleMessage("أدخل كلمة السر"),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
+    "hello": MessageLookupByLibrary.simpleMessage("مرحبا"),
+    "language": MessageLookupByLibrary.simpleMessage("اللغة"),
+    "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "nameValidator": MessageLookupByLibrary.simpleMessage("من فضلك أدخل اسمك"),
+    "notification": MessageLookupByLibrary.simpleMessage("الاشعارات"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "واجهة بديهية لا تتطلب أي مهارات خاصة تتيح للمستخدمين إضافة المنتجات وتعديلها وإدارتها بسرعة وسهولة.",
     ),
@@ -64,6 +74,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordValidator": MessageLookupByLibrary.simpleMessage(
       "أدخل كلمة السر الخاص بك",
     ),
+    "profileSettings": MessageLookupByLibrary.simpleMessage(
+      "اعدادات الملف الشخصي",
+    ),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
@@ -71,5 +84,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "أمنح موافقتي على معالجة بياناتي الشخصية وأوافق على سياسة الخصوصية",
     ),
     "skipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "sound": MessageLookupByLibrary.simpleMessage("الصوت"),
+    "stockIn": MessageLookupByLibrary.simpleMessage("الداخل"),
+    "stockOut": MessageLookupByLibrary.simpleMessage("الخارج"),
+    "systemSettings": MessageLookupByLibrary.simpleMessage("إعدادات النظام"),
+    "today": MessageLookupByLibrary.simpleMessage("اليوم"),
+    "total": MessageLookupByLibrary.simpleMessage("المجموع"),
+    "vibration": MessageLookupByLibrary.simpleMessage("وضع الاهتزاز"),
   };
 }

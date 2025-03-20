@@ -25,7 +25,23 @@
     "passwordRegex": "password is weak",
     "emailValidator": "enter your email",
     "emailRegex": "enter valid email",
-    "checkBox": "You must agree to the processing of your personal data and the privacy policy"
+    "checkBox": "You must agree to the processing of your personal data and the privacy policy",
+    "systemSettings": "System Settings",
+    "language": "Language",
+    "appStyle": "App Style",
+    "sound": "Sound",
+    "vibration": "Vibration",
+    "logOut": "Log Out",
+    "profileSettings": "Profile Settings",
+    "birthday": "Birthday",
+    "companyName": "Company name",
+    "notification": "Notification",
+    "emptyNotification": "The notification list is empty",
+    "hello": "Hello",
+    "today": "Today",
+    "total": "Total",
+    "stockIn": "Stock In",
+    "stockOut": "Stock Out"
 }
 
 
