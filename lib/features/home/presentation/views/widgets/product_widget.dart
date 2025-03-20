@@ -36,6 +36,7 @@ class ProductWidget extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.4,
                 child: Text(
+                  //TODO: product name
                   'Hello Ahmed Elesawy',
                   style: Styles.font16Semibold,
                   overflow: TextOverflow.ellipsis,
@@ -47,6 +48,7 @@ class ProductWidget extends StatelessWidget {
           ),
           const Spacer(),
           Text(
+            //TODO: product countity
             '80 N',
             style: Styles.font18Bold.copyWith(
               color: ColorManager.mainBlue,
@@ -80,6 +82,7 @@ class RowOfProductInfo extends StatelessWidget {
           ),
         ),
         Text(
+          //TODO: product cost
           '100 C',
           style: Styles.font16Semibold.copyWith(
             color: ColorManager.subText,
@@ -92,6 +95,7 @@ class RowOfProductInfo extends StatelessWidget {
           ),
         ),
         Text(
+          //TODO: product price
           '200 P',
           style: Styles.font16Semibold.copyWith(
             color: ColorManager.subText,
