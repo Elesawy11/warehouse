@@ -7,4 +7,6 @@ abstract class Routes {
   static const settings = '/settings';
   static const notification = '/notification';
   static const profile = '/profile';
+  static const stockIn = '/stockIn';
+  static const stockOut = '/stockOut';
 }

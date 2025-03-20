@@ -20,7 +20,13 @@ class Assets {
 
   static const String imagesSplash12 = "assets/images/splash12.png";
 
+  static const String imagesStock22 = "assets/images/stock22.png";
+
   static const String imagesStockIn = "assets/images/stockIn.jpg";
+
+  static const String imagesStockInMethod = "assets/images/stockInMethod.png";
+
+  static const String imagesStockInMethod2 = "assets/images/stockInMethod2.png";
 
   static const String imagesStockOut = "assets/images/stockOut.avif";
 

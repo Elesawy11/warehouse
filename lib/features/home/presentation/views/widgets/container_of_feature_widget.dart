@@ -13,16 +13,13 @@ class ContainerOfFeatureWidget extends StatelessWidget {
     required this.value,
     this.hasBorder = true,
     this.isEmptyValue = false,
-    this.isLastIcon = false,
     this.onTap,
-    this.widget,
   });
   final String field, value;
   final bool hasBorder;
   final GestureTapCallback? onTap;
   final bool isEmptyValue;
-  final bool isLastIcon;
-  final Widget? widget;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -49,24 +46,20 @@ class ContainerOfFeatureWidget extends StatelessWidget {
               ),
             ),
             // const Spacer(),
-            !isEmptyValue && !isLastIcon
-                ? Row(
-                    children: [
-                      !isEmptyValue
-                          ? Text(
-                              value,
-                              style: Styles.font18Meduim,
-                            )
-                          : const SizedBox(),
-                      horizontalSpace(10),
-                      !isLastIcon
-                          ? SvgPicture.asset(
-                              Assets.svg_imageChevronRight,
-                            )
-                          : const SizedBox(),
-                    ],
-                  )
-                : widget ?? const SizedBox(),
+            Row(
+              children: [
+                !isEmptyValue
+                    ? Text(
+                        value,
+                        style: Styles.font18Meduim,
+                      )
+                    : const SizedBox(),
+                horizontalSpace(10),
+                SvgPicture.asset(
+                  Assets.svg_imageChevronRight,
+                ),
+              ],
+            ),
           ],
         ),
       ),

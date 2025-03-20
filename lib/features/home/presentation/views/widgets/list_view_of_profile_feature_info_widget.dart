@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../../generated/l10n.dart';
-import 'container_of_profile_feature_info_widget.dart';
+import 'container_of_feature_widget.dart';
 
 class ListViewOFProfileFeatureInfoWidget extends StatelessWidget {
   const ListViewOFProfileFeatureInfoWidget({
@@ -13,21 +13,21 @@ class ListViewOFProfileFeatureInfoWidget extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       children: [
-        ContainerOfProfileFeatureInfoWidget(
+        ContainerOfFeatureWidget(
           onTap: () {
             // TODO: goto feature view
           },
           field: S.of(context).name,
           value: 'Ahmed Elesawy',
         ),
-        ContainerOfProfileFeatureInfoWidget(
+        ContainerOfFeatureWidget(
           onTap: () {
             // TODO: goto feature view
           },
           field: S.of(context).birthday,
           value: '11/4/2003',
         ),
-        ContainerOfProfileFeatureInfoWidget(
+        ContainerOfFeatureWidget(
           onTap: () {
             // TODO: goto feature view
           },

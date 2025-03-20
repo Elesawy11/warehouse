@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../generated/l10n.dart';
-import 'container_of_profile_feature_info_widget.dart';
+import 'container_of_feature_widget.dart';
 import 'system_setting_switch_widget.dart';
 
 class ListViewOfSystemSettingsFeaturesWidget extends StatelessWidget {
@@ -15,12 +14,12 @@ class ListViewOfSystemSettingsFeaturesWidget extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       children: [
-        ContainerOfProfileFeatureInfoWidget(
+        ContainerOfFeatureWidget(
           field: S.of(context).language,
           value: 'English',
           onTap: () {},
         ),
-        ContainerOfProfileFeatureInfoWidget(
+        ContainerOfFeatureWidget(
           field: S.of(context).appStyle,
           value: 'Light',
           onTap: () {},
@@ -31,7 +30,7 @@ class ListViewOfSystemSettingsFeaturesWidget extends StatelessWidget {
         SystemSettingSwitchWidget(
           field: S.of(context).vibration,
         ),
-        ContainerOfProfileFeatureInfoWidget(
+        ContainerOfFeatureWidget(
           field: S.of(context).logOut,
           value: '',
           isEmptyValue: true,

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:warehouse_app/core/routing/routes.dart';
+import 'package:warehouse_app/generated/l10n.dart';
 import '../../../../../core/utils/assets.dart';
 import 'stock_in_or_out_widget.dart';
 
@@ -13,12 +16,13 @@ class RowOfStockMethods extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const StockInOrOutWidget(
-          title: 'Stock in',
+        StockInOrOutWidget(
+          onTap: () => context.push(Routes.stockIn),
+          title: S.of(context).stockIn,
           iconUrl: Assets.imagesStockIn,
         ),
-        const StockInOrOutWidget(
-          title: 'Stock out',
+        StockInOrOutWidget(
+          title: S.of(context).stockOut,
           iconUrl: Assets.imagesStockOut,
         ),
         Container(
