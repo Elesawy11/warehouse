@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/color_manager.dart';
@@ -15,7 +14,9 @@ class SelectProductWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        //TODO: show products view
+      },
       child: Container(
         decoration: BoxDecoration(
           color: ColorManager.greyED,
@@ -26,6 +27,7 @@ class SelectProductWidget extends StatelessWidget {
           children: [
             ContainerOfFeatureWidget(
               field: 'Items',
+              //TODO: value == number of items
               value: '0',
               onTap: () {},
               hasBorder: false,

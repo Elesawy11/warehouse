@@ -8,6 +8,7 @@ import 'package:warehouse_app/features/home/presentation/views/home_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/notification_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/profile_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/stock_in_view.dart';
+import 'package:warehouse_app/features/home/presentation/views/stock_out_view.dart';
 import 'package:warehouse_app/features/items/presentation/views/items_view.dart';
 import 'package:warehouse_app/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:warehouse_app/features/settings/presentation/views/settings_view.dart';
@@ -77,6 +78,10 @@ abstract class AppRouter {
       GoRoute(
         path: Routes.stockIn,
         builder: (context, state) => const StockInView(),
+      ),
+      GoRoute(
+        path: Routes.stockOut,
+        builder: (context, state) => const StockOutView(),
       ),
     ],
   );

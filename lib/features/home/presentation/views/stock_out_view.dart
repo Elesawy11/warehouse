@@ -5,12 +5,11 @@ import 'package:warehouse_app/core/widgets/app_text_button.dart';
 import 'package:warehouse_app/features/home/presentation/views/widgets/container_of_feature_widget.dart';
 import 'package:warehouse_app/features/home/presentation/views/widgets/custom_view_bar_widget.dart';
 import 'package:warehouse_app/generated/l10n.dart';
-
 import 'widgets/select_product_widget.dart';
 import 'widgets/stock_in_date_widget.dart';
 
-class StockInView extends StatelessWidget {
-  const StockInView({super.key});
+class StockOutView extends StatelessWidget {
+  const StockOutView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,25 +20,22 @@ class StockInView extends StatelessWidget {
           child: Column(
             children: [
               CustomViewBarWidget(
-                title: S.of(context).stockIn,
+                title: S.of(context).stockOut,
               ),
               verticalSpace(24),
-              const StockDateWidget(
-                title: 'Stock In Date',
+               StockDateWidget(
+                title: 'Stock Out Date',
+                
               ),
               ContainerOfFeatureWidget(
-                field: 'Supplier',
+                field: 'Customer',
                 value: 'choose',
-                onTap: () {
-                  //TODO: Suppliers view
-                },
+                onTap: () {},
               ),
               ContainerOfFeatureWidget(
                 field: 'Notes',
                 value: '',
-                onTap: () {
-                  //TODO: Notes view
-                },
+                onTap: () {},
                 hasBorder: false,
               ),
               verticalSpace(24),

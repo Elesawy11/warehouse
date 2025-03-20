@@ -22,6 +22,7 @@ class RowOfStockMethods extends StatelessWidget {
           iconUrl: Assets.imagesStockIn,
         ),
         StockInOrOutWidget(
+          onTap: () => context.push(Routes.stockOut),
           title: S.of(context).stockOut,
           iconUrl: Assets.imagesStockOut,
         ),
