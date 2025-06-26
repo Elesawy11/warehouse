@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 import 'package:warehouse_app/features/Auth/data/repo/auth_repo_impl.dart';
 part 'sign_up_state.dart';
 

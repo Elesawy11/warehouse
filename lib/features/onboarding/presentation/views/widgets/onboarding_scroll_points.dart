@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utils/color_manager.dart';
-import '../constants.dart';
+import '../onboarding_constants.dart';
 
 class OnboardingScrollPoints extends StatelessWidget {
   const OnboardingScrollPoints({
@@ -18,8 +18,8 @@ class OnboardingScrollPoints extends StatelessWidget {
       width: 5 * 32.w,
       child: Center(
         child: ListView.builder(
-          physics: NeverScrollableScrollPhysics(),
-          itemCount: Constants.getOnbaordingList(context).length,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: OnbaoedingConstants.getOnbaordingList(context).length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Padding(

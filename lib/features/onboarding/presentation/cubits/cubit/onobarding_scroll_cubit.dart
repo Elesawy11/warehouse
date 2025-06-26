@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
-import 'package:warehouse_app/features/onboarding/presentation/views/constants.dart';
+import 'package:warehouse_app/features/onboarding/presentation/views/onboarding_constants.dart';
 part 'onobarding_scroll_state.dart';
 
 class OnobardingScrollCubit extends Cubit<OnobardingScrollState> {
@@ -12,7 +11,7 @@ class OnobardingScrollCubit extends Cubit<OnobardingScrollState> {
 
   void scroll(BuildContext context) {
     final int onboardingListLength =
-        Constants.getOnbaordingList(context).length;
+        OnbaoedingConstants.getOnbaordingList(context).length;
 
     if (onboardingListLength - 2 > currentPage) {
       controller.nextPage(
@@ -37,7 +36,7 @@ class OnobardingScrollCubit extends Cubit<OnobardingScrollState> {
   void updateCurrentPage(int page, BuildContext context) {
     currentPage = page;
     final int onboardingListLength =
-        Constants.getOnbaordingList(context).length;
+        OnbaoedingConstants.getOnbaordingList(context).length;
 
     if (currentPage == onboardingListLength) {
       emit(ScrollFinish());
