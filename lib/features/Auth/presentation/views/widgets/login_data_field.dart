@@ -19,11 +19,6 @@ class LogInDataFields extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          S.of(context).name,
-          style: Styles.font16Regular,
-        ),
-        verticalSpace(6),
-        Text(
           S.of(context).email,
           style: Styles.font16Regular,
         ),
