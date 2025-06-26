@@ -21,7 +21,6 @@ class SignUpViewWidget extends StatelessWidget {
             const SignUpCheckBoxWidget(),
             verticalSpace(40),
             const SignUpCreateAccountButtonWidget(),
-            verticalSpace(20),
           ],
         ),
       ),
