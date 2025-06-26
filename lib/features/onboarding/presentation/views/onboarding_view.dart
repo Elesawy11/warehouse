@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:warehouse_app/core/routing/routes.dart';
 import 'package:warehouse_app/core/utils/color_manager.dart';
 import 'package:warehouse_app/core/helpers/spacer.dart';
 import 'package:warehouse_app/core/widgets/app_text_button.dart';
-import 'package:warehouse_app/features/onboarding/presentation/cubits/cubit/onobarding_scroll_cubit.dart';
 import 'package:warehouse_app/features/onboarding/presentation/views/onboarding_constants.dart';
 import 'package:warehouse_app/generated/l10n.dart';
 import 'widgets/onboarding_page_view.dart';
@@ -54,9 +52,8 @@ class _OnboardingViewState extends State<OnboardingView> {
               verticalSpace(160),
               Expanded(
                 child: OnboardingPageView(
-                    pageController: _pageController, onPageChanged: (page) {}
-                    // cubit.updateCurrentPage(page, context),
-                    ),
+                  pageController: _pageController,
+                ),
               ),
               OnboardingScrollPoints(
                 currentPage: _currentPage.value,
@@ -65,11 +62,9 @@ class _OnboardingViewState extends State<OnboardingView> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w),
                 child: AppTextButton(
-                    text:
-                        // state is ScrollLastIcrease || state is ScrollFinish
-                        _currentPage.value == listLength - 1
-                            ? S.of(context).getStartedButton
-                            : S.of(context).continueButton,
+                    text: _currentPage.value == listLength - 1
+                        ? S.of(context).getStartedButton
+                        : S.of(context).continueButton,
                     onPressed: () {
                       if (_currentPage.value == listLength - 1) {
                         context.push(Routes.auth);
@@ -98,48 +93,6 @@ class _OnboardingViewState extends State<OnboardingView> {
             ],
           );
         },
-        //   child: Column(
-        //     mainAxisAlignment: MainAxisAlignment.center,
-        //     crossAxisAlignment: CrossAxisAlignment.center,
-        //     children: [
-        //       verticalSpace(160),
-        //       Expanded(
-        //         child: OnboardingPageView(
-        //           pageController: cubit.controller,
-        //           onPageChanged: (page) =>
-        //               cubit.updateCurrentPage(page, context),
-        //         ),
-        //       ),
-        //       OnboardingScrollPoints(
-        //         currentPage: cubit.currentPage,
-        //       ),
-        //       verticalSpace(50),
-        //       Padding(
-        //         padding: EdgeInsets.symmetric(horizontal: 24.w),
-        //         child: AppTextButton(
-        //           text: state is ScrollLastIcrease || state is ScrollFinish
-        //               ? S.of(context).getStartedButton
-        //               : S.of(context).continueButton,
-        //           onPressed: () => cubit.scroll(context),
-        //         ),
-        //       ),
-        //       verticalSpace(14),
-        //       Padding(
-        //         padding: EdgeInsets.symmetric(horizontal: 24.w),
-        //         child: AppTextButton(
-        //           text: S.of(context).skipButton,
-        //           onPressed: () {
-        //             //Navigate to Auth screen
-        //             context.push(Routes.auth);
-        //           },
-        //           backgroundColor: ColorManager.blueE0,
-        //           textColor: ColorManager.mainBlue,
-        //         ),
-        //       ),
-        //       verticalSpace(120),
-        //     ],
-        //   ),
-        //
       ),
     );
   }
