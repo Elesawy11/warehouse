@@ -1,14 +1,19 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:warehouse_app/core/DI/service_locator.dart';
 import 'package:warehouse_app/core/utils/supabase_init.dart';
 import 'package:warehouse_app/simple_bloc_observer.dart';
+import 'firebase_options.dart';
 import 'warehouse_app.dart';
 
 void main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
   await SupabaseMethods.initialize();
-
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   serviceLocator();
   Bloc.observer = SimpleBlocObserver();
   runApp(const WarehouseApp());
