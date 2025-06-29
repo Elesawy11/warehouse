@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:warehouse_app/core/routing/routes.dart';
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/utils/styles.dart';
@@ -44,6 +46,13 @@ class _LogInCheckBoxWidgetState extends State<LogInCheckBoxWidget> {
         Text(
           S.of(context).rememberMe,
           style: Styles.font16Regular,
+        ),
+        InkWell(
+          onTap: () => context.push(Routes.signinWithPhoneNumber),
+          child: Text('sign in with phone number',
+              style: Styles.font16Regular.copyWith(
+                color: ColorManager.mainBlue,
+              )),
         ),
       ],
     );

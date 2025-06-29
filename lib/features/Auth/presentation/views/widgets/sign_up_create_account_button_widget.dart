@@ -42,9 +42,12 @@ class SignUpCreateAccountButtonWidget extends StatelessWidget {
             // context.pushReplacement(Routes.home);
 
             if (context.read<SignUpCubit>().formKey.currentState!.validate() &&
-                context.read<SignUpVariablesCubit>().isChecked) {
+                // context.read<SignUpVariablesCubit>().isChecked
+                true) {
               context.read<SignUpCubit>().signUp();
-            } else if (!context.read<SignUpVariablesCubit>().isChecked) {
+            } else if (
+                // !context.read<SignUpVariablesCubit>().isChecked
+                false) {
               customSnackBarMethod(
                 context,
                 S.of(context).checkBox,
