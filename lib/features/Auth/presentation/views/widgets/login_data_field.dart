@@ -19,11 +19,6 @@ class LogInDataFields extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          S.of(context).name,
-          style: Styles.font16Regular,
-        ),
-        verticalSpace(6),
-        Text(
           S.of(context).email,
           style: Styles.font16Regular,
         ),
@@ -36,11 +31,11 @@ class LogInDataFields extends StatelessWidget {
           ),
           hintText: S.of(context).enterEmail,
           validator: (value) {
-            if (value == null || value.isEmpty) {
-              return S.of(context).emailValidator;
-            } else if (!AppRegex.isEmailValid(value)) {
-              return S.of(context).emailRegex;
-            }
+            // if (value == null || value.isEmpty) {
+            //   return S.of(context).emailValidator;
+            // } else if (!AppRegex.isEmailValid(value)) {
+            //   return S.of(context).emailRegex;
+            // }
           },
         ),
         verticalSpace(24),

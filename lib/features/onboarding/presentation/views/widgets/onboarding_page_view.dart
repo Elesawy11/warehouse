@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:warehouse_app/features/onboarding/presentation/views/constants.dart';
+import 'package:warehouse_app/features/onboarding/presentation/views/onboarding_constants.dart';
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/styles.dart';
 
@@ -19,14 +19,14 @@ class OnboardingPageView extends StatelessWidget {
     return PageView.builder(
       onPageChanged: onPageChanged,
       controller: pageController,
-      itemCount: Constants.getOnbaordingList(context).length,
+      itemCount: OnbaoedingConstants.getOnbaordingList(context).length,
       itemBuilder: (context, index) {
         return Column(
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(12.r),
               child: Image.asset(
-                Constants.getOnbaordingList(context)[index][0],
+                OnbaoedingConstants.getOnbaordingList(context)[index][0],
                 width: MediaQuery.of(context).size.width * 0.6,
                 height: MediaQuery.of(context).size.height * 0.2,
                 fit: BoxFit.cover,
@@ -34,14 +34,14 @@ class OnboardingPageView extends StatelessWidget {
             ),
             verticalSpace(40),
             Text(
-              Constants.getOnbaordingList(context)[index][1],
+              OnbaoedingConstants.getOnbaordingList(context)[index][1],
               style: Styles.font18Bold,
             ),
             verticalSpace(16),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
               child: Text(
-                Constants.getOnbaordingList(context)[index][2],
+                OnbaoedingConstants.getOnbaordingList(context)[index][2],
                 textAlign: TextAlign.center,
                 style: Styles.font13SemiBold.copyWith(
                   height: 1.5,

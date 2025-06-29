@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:warehouse_app/core/utils/styles.dart';
-import 'package:warehouse_app/features/Auth/presentation/cubits/auth_scroll_cubit/auth_scroll_cubit.dart';
-import 'package:warehouse_app/features/onboarding/presentation/views/constants.dart';
+import 'package:warehouse_app/features/onboarding/presentation/views/onboarding_constants.dart';
 import '../../../../../core/utils/color_manager.dart';
 
 class ContainerOfAuthTypeWidget extends StatelessWidget {
-  const ContainerOfAuthTypeWidget({super.key});
+  const ContainerOfAuthTypeWidget({
+    super.key,
+    required this.currentPage,
+    required this.pageController,
+  });
 
-  // int currentPage = 0;
+  final ValueNotifier<int> currentPage;
+  final PageController pageController;
   @override
   Widget build(BuildContext context) {
-    var cubit = context.read<AuthScrollCubit>();
     return Container(
       height: 50.h,
       decoration: BoxDecoration(
@@ -21,17 +23,19 @@ class ContainerOfAuthTypeWidget extends StatelessWidget {
       ),
       padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 6.w),
       child: ListView.builder(
-        itemCount: Constants.getAuthTypeList(context).length,
+        itemCount: OnbaoedingConstants.getAuthTypeList(context).length,
         scrollDirection: Axis.horizontal,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
           return Align(
             alignment: Alignment.center,
             child: AuthTypeWidget(
-              type: Constants.getAuthTypeList(context)[index],
-              currentPage: context.watch<AuthScrollCubit>().currentPage,
+              type: OnbaoedingConstants.getAuthTypeList(context)[index],
+              currentPage: currentPage.value,
               index: index,
-              onTap: () => cubit.scroll(index),
+              onTap: () {
+                pageController.jumpToPage(index);
+              },
             ),
           );
         },

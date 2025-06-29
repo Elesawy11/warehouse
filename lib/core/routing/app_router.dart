@@ -14,6 +14,8 @@ import 'package:warehouse_app/features/onboarding/presentation/views/onboarding_
 import 'package:warehouse_app/features/settings/presentation/views/settings_view.dart';
 import 'package:warehouse_app/features/transaction/presentation/views/transaction_view.dart';
 
+import '../../features/Auth/presentation/views/signin_with_phone_view.dart';
+
 abstract class AppRouter {
   static final router = GoRouter(
     routes: [
@@ -24,6 +26,9 @@ abstract class AppRouter {
       GoRoute(
         path: Routes.auth,
         builder: (context, state) => const AuthView(),
+      ),GoRoute(
+        path: Routes.signinWithPhoneNumber,
+        builder: (context, state) =>  PhoneLoginScreen(),
       ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) => AppNavigationBar(
