@@ -41,5 +41,9 @@
     "today": "اليوم",
     "total": "المجموع",
     "stockIn": "الداخل",
-    "stockOut": "الخارج"
+    "stockOut": "الخارج",
+    "signInWithPhone": "تسجيل الدخول برقم الهاتف",
+    "signInWithEmail": "تسجيل الدخول بالبريد الإلكترونى",
+    "phoneNumber": "رقم الهاتف",
+    "enterPhoneNumber": "أدخل رقم الهاتف"
 }
