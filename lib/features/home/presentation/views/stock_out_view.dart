@@ -23,7 +23,7 @@ class StockOutView extends StatelessWidget {
                 title: S.of(context).stockOut,
               ),
               verticalSpace(24),
-               StockDateWidget(
+               const StockDateWidget(
                 title: 'Stock Out Date',
                 
               ),

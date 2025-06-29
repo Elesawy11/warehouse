@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../../generated/l10n.dart';
 
-abstract class Constants {
+abstract class OnbaoedingConstants {
   static List<List<String>> getOnbaordingList(BuildContext context) {
     return [
       [
