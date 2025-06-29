@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enterName": MessageLookupByLibrary.simpleMessage("أدخل الاسم"),
     "enterPassword": MessageLookupByLibrary.simpleMessage("أدخل كلمة السر"),
+    "enterPhoneNumber": MessageLookupByLibrary.simpleMessage("أدخل رقم الهاتف"),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "hello": MessageLookupByLibrary.simpleMessage("مرحبا"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
@@ -74,11 +75,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordValidator": MessageLookupByLibrary.simpleMessage(
       "أدخل كلمة السر الخاص بك",
     ),
+    "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "profileSettings": MessageLookupByLibrary.simpleMessage(
       "اعدادات الملف الشخصي",
     ),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "signInWithEmail": MessageLookupByLibrary.simpleMessage(
+      "تسجيل الدخول بالبريد الإلكترونى",
+    ),
+    "signInWithPhone": MessageLookupByLibrary.simpleMessage(
+      "تسجيل الدخول برقم الهاتف",
+    ),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "signupConsent": MessageLookupByLibrary.simpleMessage(
       "أمنح موافقتي على معالجة بياناتي الشخصية وأوافق على سياسة الخصوصية",

@@ -40,6 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterPassword": MessageLookupByLibrary.simpleMessage(
       "Enter your password",
     ),
+    "enterPhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "Enter your phone number",
+    ),
     "getStartedButton": MessageLookupByLibrary.simpleMessage("Get Started"),
     "hello": MessageLookupByLibrary.simpleMessage("Hello"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
@@ -74,9 +77,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordValidator": MessageLookupByLibrary.simpleMessage(
       "enter your password",
     ),
+    "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "profileSettings": MessageLookupByLibrary.simpleMessage("Profile Settings"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+    "signInWithEmail": MessageLookupByLibrary.simpleMessage(
+      "Sign In with Email",
+    ),
+    "signInWithPhone": MessageLookupByLibrary.simpleMessage(
+      "Sign In with Phone number",
+    ),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "signupConsent": MessageLookupByLibrary.simpleMessage(
       "I give my consent to the processing of my personal data and accept the privacy policy",

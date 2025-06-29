@@ -20,6 +20,7 @@ class AppTextFormField extends StatefulWidget {
   final int? maxLines;
   final void Function()? onTap;
   final void Function(PointerDownEvent)? onTapOutside;
+  final TextInputType? keyboardType;
   const AppTextFormField({
     super.key,
     this.contentPadding,
@@ -37,6 +38,7 @@ class AppTextFormField extends StatefulWidget {
     this.maxLines = 1,
     this.onTap,
     this.onTapOutside,
+    this.keyboardType,
   });
 
   @override
@@ -49,6 +51,7 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
   Widget build(BuildContext context) {
     return TextFormField(
       onTapOutside: widget.onTapOutside,
+      keyboardType: widget.keyboardType,
       onTap: widget.onTap,
       controller: widget.controller,
       maxLines: widget.maxLines,

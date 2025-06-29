@@ -389,6 +389,46 @@ class S {
   String get stockOut {
     return Intl.message('Stock Out', name: 'stockOut', desc: '', args: []);
   }
+
+  /// `Sign In with Phone number`
+  String get signInWithPhone {
+    return Intl.message(
+      'Sign In with Phone number',
+      name: 'signInWithPhone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In with Email`
+  String get signInWithEmail {
+    return Intl.message(
+      'Sign In with Email',
+      name: 'signInWithEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phoneNumber {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your phone number`
+  String get enterPhoneNumber {
+    return Intl.message(
+      'Enter your phone number',
+      name: 'enterPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
