@@ -41,7 +41,12 @@
     "today": "Today",
     "total": "Total",
     "stockIn": "Stock In",
-    "stockOut": "Stock Out"
+    "stockOut": "Stock Out",
+    "signInWithPhone": "Sign In with Phone number",
+    "signInWithEmail": "Sign In with Email",
+    "phoneNumber": "Phone Number",
+    "enterPhoneNumber": "Enter your phone number"
+    
 }
 
 
