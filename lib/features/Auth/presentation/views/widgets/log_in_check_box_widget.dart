@@ -47,13 +47,6 @@ class _LogInCheckBoxWidgetState extends State<LogInCheckBoxWidget> {
           S.of(context).rememberMe,
           style: Styles.font16Regular,
         ),
-        InkWell(
-          onTap: () => context.push(Routes.signinWithPhoneNumber),
-          child: Text('sign in with phone number',
-              style: Styles.font16Regular.copyWith(
-                color: ColorManager.mainBlue,
-              )),
-        ),
       ],
     );
   }
