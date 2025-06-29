@@ -51,4 +51,13 @@ class AuthDataSource {
       throw Exception("Sign-In Faild: $e");
     }
   }
+
+  Future<AuthResponse> signInWithPhoneNumber(
+      {required String phoneNumber, required String password}) async {
+    final response = await client.auth.signInWithPassword(
+      phone: phoneNumber,
+      password: password,
+    );
+    return response;
+  }
 }
