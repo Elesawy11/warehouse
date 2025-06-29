@@ -15,29 +15,28 @@ class OnboardingScrollPoints extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 8.h,
-      width: 5 * 32.w,
-      child: Center(
-        child: ListView.builder(
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: OnbaoedingConstants.getOnbaordingList(context).length,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: EdgeInsets.only(right: 8.w),
-              child: Container(
-                height: 8.h,
-                width: 32.w,
-                decoration: BoxDecoration(
-                  color: index == currentPage
-                      ? ColorManager.mainBlue
-                      : ColorManager.blueE0,
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(4.r),
-                ),
+      child: ListView.builder(
+        shrinkWrap: true,
+        padding: EdgeInsets.zero,
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: OnbaoedingConstants.getOnbaordingList(context).length,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: EdgeInsets.only(right: 8.w),
+            child: Container(
+              height: 8.h,
+              width: 32.w,
+              decoration: BoxDecoration(
+                color: index == currentPage
+                    ? ColorManager.mainBlue
+                    : ColorManager.blueE0,
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(4.r),
               ),
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }
