@@ -1,8 +1,11 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:warehouse_app/app_navigation_bar.dart';
+import 'package:warehouse_app/core/DI/service_locator.dart';
 import 'package:warehouse_app/core/routing/routes.dart';
 import 'package:warehouse_app/core/utils/app_navigation_bar_items.dart';
 import 'package:warehouse_app/core/utils/constants.dart';
+import 'package:warehouse_app/features/Auth/presentation/cubits/signin_with_phone_number_cubit/cubit/signin_with_phone_number_cubit.dart';
 import 'package:warehouse_app/features/Auth/presentation/views/auth_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/home_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/notification_view.dart';
@@ -23,7 +26,10 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: Routes.auth,
-        builder: (context, state) => const AuthView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => getIt.get<SigninWithPhoneNumberCubit>(),
+          child: const AuthView(),
+        ),
       ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) => AppNavigationBar(

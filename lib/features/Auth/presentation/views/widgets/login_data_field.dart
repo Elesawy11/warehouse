@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:warehouse_app/core/utils/app_regex.dart';
 import 'package:warehouse_app/features/Auth/presentation/cubits/log_in_cubit/log_in_cubit.dart';
+import 'package:warehouse_app/features/Auth/presentation/cubits/signin_with_phone_number_cubit/cubit/signin_with_phone_number_cubit.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/styles.dart';
@@ -28,8 +29,9 @@ class LogInDataFields extends StatelessWidget {
         verticalSpace(6),
         loginMethod.value
             ? AppTextFormField(
-                //TODO: change 3 change controller
-                controller: context.read<LogInCubit>().emailController,
+                controller: context
+                    .read<SigninWithPhoneNumberCubit>()
+                    .phoneNumberController,
                 backgroundColor: ColorManager.greyF4,
                 hintStyle: Styles.font14Regular.copyWith(
                   color: ColorManager.grey75,
@@ -64,8 +66,9 @@ class LogInDataFields extends StatelessWidget {
         ),
         verticalSpace(6),
         AppTextFormField(
-          //TODO: change 5 change controller
-          controller: context.read<LogInCubit>().passwordController,
+          controller: loginMethod.value
+              ? context.read<SigninWithPhoneNumberCubit>().passwordController
+              : context.read<LogInCubit>().passwordController,
           backgroundColor: ColorManager.greyF4,
           hintStyle: Styles.font14Regular.copyWith(
             color: ColorManager.grey75,

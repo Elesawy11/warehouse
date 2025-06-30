@@ -1,9 +1,10 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:warehouse_app/core/utils/supabase_init.dart';
 import 'package:warehouse_app/features/Auth/data/models/user_model.dart';
 
 class AuthDataSource {
-  var client = SupabaseMethods.client;
+  final SupabaseClient client;
+
+  AuthDataSource(this.client);
 
   Future<UserModel> signUp(
       {required String email,

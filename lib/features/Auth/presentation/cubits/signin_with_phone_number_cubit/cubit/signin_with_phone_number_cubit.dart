@@ -14,8 +14,8 @@ class SigninWithPhoneNumberCubit extends Cubit<SigninWithPhoneNumberState> {
   Future<void> signInWithPhoneNumber() async {
     emit(const SigninWithPhoneNumberState.singInWithPhoneLoading());
     final response = await _repo.signInWithPhoneNumber(
-      phoneNumber: '',
-      password: '',
+      phoneNumber: phoneNumberController.text,
+      password: passwordController.text,
     );
 
     switch (response) {

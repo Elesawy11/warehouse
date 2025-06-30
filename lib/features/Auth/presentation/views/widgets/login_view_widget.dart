@@ -1,12 +1,13 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:warehouse_app/core/utils/color_manager.dart';
 import 'package:warehouse_app/core/utils/styles.dart';
 import 'package:warehouse_app/features/Auth/presentation/cubits/log_in_variables_cubit/log_in_variables_cubit.dart';
+import 'package:warehouse_app/features/Auth/presentation/cubits/signin_with_phone_number_cubit/cubit/signin_with_phone_number_cubit.dart';
 import 'package:warehouse_app/features/Auth/presentation/views/widgets/login_button_widget.dart';
 import 'package:warehouse_app/features/Auth/presentation/views/widgets/login_data_field.dart';
+import 'package:warehouse_app/features/Auth/presentation/views/widgets/signin_withPhoneNumber_button_widget.dart';
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../generated/l10n.dart';
 import '../../cubits/log_in_cubit/log_in_cubit.dart';
@@ -31,19 +32,18 @@ class _LoginViewWidgetState extends State<LoginViewWidget> {
           valueListenable: loginMethod,
           builder: (context, value, child) {
             return Form(
-              // change 1 - to use the cubit formKey
-              key: context.read<LogInCubit>().formKey,
+              key: loginMethod.value
+                  ? context.read<SigninWithPhoneNumberCubit>().formKey
+                  : context.read<LogInCubit>().formKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  //TODO: change 2 inside the Form widget
                   LogInDataFields(
                     loginMethod: loginMethod,
                   ),
                   verticalSpace(20),
                   const LogInCheckBoxWidget(),
                   verticalSpace(10),
-
                   Row(
                     children: [
                       Icon(
@@ -68,8 +68,9 @@ class _LoginViewWidgetState extends State<LoginViewWidget> {
                     ],
                   ),
                   verticalSpace(40),
-                  //TODO: change 7 change all widget
-                  const LogInButtonWidget(),
+                  loginMethod.value
+                      ? const SigninWithPhoneNumberButtonWidget()
+                      : const LogInButtonWidget(),
                 ],
               ),
             );
