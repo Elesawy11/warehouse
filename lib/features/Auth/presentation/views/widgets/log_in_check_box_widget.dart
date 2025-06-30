@@ -8,13 +8,15 @@ import '../../../../../generated/l10n.dart';
 class LogInCheckBoxWidget extends StatefulWidget {
   const LogInCheckBoxWidget({
     super.key,
+    required this.isChecked,
   });
+  final ValueNotifier<bool> isChecked;
 
   @override
   State<LogInCheckBoxWidget> createState() => _LogInCheckBoxWidgetState();
 }
 
-ValueNotifier<bool> isChecked = ValueNotifier(false);
+// ValueNotifier<bool> isChecked = ValueNotifier(false);
 
 class _LogInCheckBoxWidgetState extends State<LogInCheckBoxWidget> {
   @override
@@ -22,18 +24,18 @@ class _LogInCheckBoxWidgetState extends State<LogInCheckBoxWidget> {
     return Row(
       children: [
         ValueListenableBuilder<bool>(
-          valueListenable: isChecked,
+          valueListenable: widget.isChecked,
           builder: (context, value, child) {
             return InkWell(
               onTap: () {
-                isChecked.value = !isChecked.value;
+                widget.isChecked.value = !widget.isChecked.value;
               },
               child: Icon(
-                isChecked.value
+                widget.isChecked.value
                     ? Icons.check_box
                     : Icons.check_box_outline_blank_outlined,
                 size: 24.r,
-                color: isChecked.value
+                color: widget.isChecked.value
                     ? ColorManager.mainBlue
                     : ColorManager.grey9E,
               ),

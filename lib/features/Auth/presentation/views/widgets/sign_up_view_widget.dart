@@ -6,8 +6,15 @@ import 'sign_up_check_box_widget.dart';
 import 'sign_up_create_account_button_widget.dart';
 import 'sign_up_data_fields.dart';
 
-class SignUpViewWidget extends StatelessWidget {
+class SignUpViewWidget extends StatefulWidget {
   const SignUpViewWidget({super.key});
+
+  @override
+  State<SignUpViewWidget> createState() => _SignUpViewWidgetState();
+}
+
+class _SignUpViewWidgetState extends State<SignUpViewWidget> {
+  ValueNotifier<bool> isChecked = ValueNotifier(false);
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -18,9 +25,13 @@ class SignUpViewWidget extends StatelessWidget {
           children: [
             const SignUpDataFields(),
             verticalSpace(20),
-            const SignUpCheckBoxWidget(),
+            SignUpCheckBoxWidget(
+              isChecked: isChecked,
+            ),
             verticalSpace(40),
-            const SignUpCreateAccountButtonWidget(),
+            SignUpCreateAccountButtonWidget(
+              isChecked: isChecked,
+            ),
           ],
         ),
       ),

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,8 +13,9 @@ import '../../../../../generated/l10n.dart';
 class LogInButtonWidget extends StatelessWidget {
   const LogInButtonWidget({
     super.key,
+    required this.isChecked,
   });
-
+  final ValueNotifier<bool> isChecked;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LogInCubit, LogInState>(
@@ -40,6 +43,7 @@ class LogInButtonWidget extends StatelessWidget {
           onPressed: () async {
             if (context.read<LogInCubit>().formKey.currentState!.validate()) {
               context.read<LogInCubit>().logIn();
+              log('my check:: ${isChecked.value}');
             }
           },
         );

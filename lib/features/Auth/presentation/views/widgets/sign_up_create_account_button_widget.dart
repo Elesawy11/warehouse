@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,8 +14,9 @@ import '../../cubits/sign_up_cubit/sign_up_cubit.dart';
 class SignUpCreateAccountButtonWidget extends StatelessWidget {
   const SignUpCreateAccountButtonWidget({
     super.key,
+    required this.isChecked,
   });
-
+  final ValueNotifier<bool> isChecked;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignUpCubit, SignUpState>(
@@ -42,14 +45,15 @@ class SignUpCreateAccountButtonWidget extends StatelessWidget {
             // context.pushReplacement(Routes.home);
 
             if (context.read<SignUpCubit>().formKey.currentState!.validate() &&
-                context.read<SignUpVariablesCubit>().isChecked) {
+                isChecked.value) {
               context.read<SignUpCubit>().signUp();
-            } else if (!context.read<SignUpVariablesCubit>().isChecked) {
+            } else if (!isChecked.value) {
               customSnackBarMethod(
                 context,
                 S.of(context).checkBox,
               );
             }
+            log('my check is :: ${isChecked.value}');
           },
         );
       },
