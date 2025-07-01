@@ -400,11 +400,31 @@ class S {
     );
   }
 
+  /// `Sign Up with Phone number`
+  String get signUpWithPhone {
+    return Intl.message(
+      'Sign Up with Phone number',
+      name: 'signUpWithPhone',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sign In with Email`
   String get signInWithEmail {
     return Intl.message(
       'Sign In with Email',
       name: 'signInWithEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up with Email`
+  String get signUpWithEmail {
+    return Intl.message(
+      'Sign Up with Email',
+      name: 'signUpWithEmail',
       desc: '',
       args: [],
     );

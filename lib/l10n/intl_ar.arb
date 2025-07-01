@@ -45,5 +45,7 @@
     "signInWithPhone": "تسجيل الدخول برقم الهاتف",
     "signInWithEmail": "تسجيل الدخول بالبريد الإلكترونى",
     "phoneNumber": "رقم الهاتف",
-    "enterPhoneNumber": "أدخل رقم الهاتف"
+    "enterPhoneNumber": "أدخل رقم الهاتف",
+    "signUpWithPhone": "إنشاء حساب برقم الهاتف",
+    "signUpWithEmail": "إنشاء حساب بالبريد الإلكترونى"
 }

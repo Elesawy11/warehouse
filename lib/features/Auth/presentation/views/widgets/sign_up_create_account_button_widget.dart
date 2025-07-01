@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:warehouse_app/core/routing/routes.dart';
-import 'package:warehouse_app/features/Auth/presentation/cubits/sign_up_variables_cubit/sign_up_variables_cubit.dart';
 import '../../../../../core/helpers/custom_snack_bar_method.dart';
 import '../../../../../core/widgets/app_text_button.dart';
 import '../../../../../generated/l10n.dart';

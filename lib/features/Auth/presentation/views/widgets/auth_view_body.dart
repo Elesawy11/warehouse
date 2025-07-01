@@ -58,12 +58,12 @@ class _AuthViewBodyState extends State<AuthViewBody> {
                   'Stockly',
                   style: Styles.font32Bold,
                 ),
-                verticalSpace(40),
+                verticalSpace(30),
                 ContainerOfAuthTypeWidget(
                   pageController: _pageController,
                   currentPage: _currentPage,
                 ),
-                verticalSpace(40),
+                verticalSpace(30),
                 Expanded(
                   child: PageView(
                     physics: const NeverScrollableScrollPhysics(),

@@ -69,7 +69,10 @@ class _LoginViewWidgetState extends State<LoginViewWidget> {
                 ),
                 verticalSpace(40),
                 loginMethod.value
-                    ? const SigninWithPhoneNumberButtonWidget()
+                    ? SigninWithPhoneNumberButtonWidget(
+                        // i add isChecked valueNotifier to save data into local storage soon
+                        isChecked: isChecked,
+                      )
                     : LogInButtonWidget(
                         // i add isChecked valueNotifier to save data into local storage soon
                         isChecked: isChecked,
@@ -82,4 +85,3 @@ class _LoginViewWidgetState extends State<LoginViewWidget> {
     );
   }
 }
-// commiet

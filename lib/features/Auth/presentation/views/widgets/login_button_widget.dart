@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -43,7 +42,7 @@ class LogInButtonWidget extends StatelessWidget {
           onPressed: () async {
             if (context.read<LogInCubit>().formKey.currentState!.validate()) {
               context.read<LogInCubit>().logIn();
-              log('my check:: ${isChecked.value}');
+              
             }
           },
         );

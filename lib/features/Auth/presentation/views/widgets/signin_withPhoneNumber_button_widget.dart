@@ -11,8 +11,9 @@ import '../../../../../generated/l10n.dart';
 
 class SigninWithPhoneNumberButtonWidget extends StatelessWidget {
   const SigninWithPhoneNumberButtonWidget({
-    super.key,
+    super.key, required this.isChecked,
   });
+  final ValueNotifier<bool> isChecked;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +40,7 @@ class SigninWithPhoneNumberButtonWidget extends StatelessWidget {
                 )
               : null,
           onPressed: () async {
+            // i need is checked value to save data in the local storage
             if (context
                 .read<SigninWithPhoneNumberCubit>()
                 .formKey

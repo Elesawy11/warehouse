@@ -88,6 +88,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Sign In with Phone number",
     ),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "signUpWithEmail": MessageLookupByLibrary.simpleMessage(
+      "Sign Up with Email",
+    ),
+    "signUpWithPhone": MessageLookupByLibrary.simpleMessage(
+      "Sign Up with Phone number",
+    ),
     "signupConsent": MessageLookupByLibrary.simpleMessage(
       "I give my consent to the processing of my personal data and accept the privacy policy",
     ),

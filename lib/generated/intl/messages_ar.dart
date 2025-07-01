@@ -88,6 +88,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "تسجيل الدخول برقم الهاتف",
     ),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "signUpWithEmail": MessageLookupByLibrary.simpleMessage(
+      "إنشاء حساب بالبريد الإلكترونى",
+    ),
+    "signUpWithPhone": MessageLookupByLibrary.simpleMessage(
+      "إنشاء حساب برقم الهاتف",
+    ),
     "signupConsent": MessageLookupByLibrary.simpleMessage(
       "أمنح موافقتي على معالجة بياناتي الشخصية وأوافق على سياسة الخصوصية",
     ),
