@@ -162,4 +162,108 @@ class _$SignUpWithPhoneErrorCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
+
+class VerifyCodeSuccess implements SignUpWithPhoneNumberState {
+  const VerifyCodeSuccess();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is VerifyCodeSuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'SignUpWithPhoneNumberState.verifyCodeSuccess()';
+  }
+}
+
+/// @nodoc
+
+class VerifyCodeLoading implements SignUpWithPhoneNumberState {
+  const VerifyCodeLoading();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is VerifyCodeLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'SignUpWithPhoneNumberState.verifyCodeLoading()';
+  }
+}
+
+/// @nodoc
+
+class VerifyCodeError implements SignUpWithPhoneNumberState {
+  const VerifyCodeError({required this.error});
+
+  final String error;
+
+  /// Create a copy of SignUpWithPhoneNumberState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $VerifyCodeErrorCopyWith<VerifyCodeError> get copyWith =>
+      _$VerifyCodeErrorCopyWithImpl<VerifyCodeError>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is VerifyCodeError &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @override
+  String toString() {
+    return 'SignUpWithPhoneNumberState.verifyCodeError(error: $error)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $VerifyCodeErrorCopyWith<$Res>
+    implements $SignUpWithPhoneNumberStateCopyWith<$Res> {
+  factory $VerifyCodeErrorCopyWith(
+          VerifyCodeError value, $Res Function(VerifyCodeError) _then) =
+      _$VerifyCodeErrorCopyWithImpl;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class _$VerifyCodeErrorCopyWithImpl<$Res>
+    implements $VerifyCodeErrorCopyWith<$Res> {
+  _$VerifyCodeErrorCopyWithImpl(this._self, this._then);
+
+  final VerifyCodeError _self;
+  final $Res Function(VerifyCodeError) _then;
+
+  /// Create a copy of SignUpWithPhoneNumberState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(VerifyCodeError(
+      error: null == error
+          ? _self.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
 // dart format on

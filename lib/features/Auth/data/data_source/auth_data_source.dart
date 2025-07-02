@@ -75,10 +75,10 @@ class AuthDataSource {
     return response;
   }
 
-  Future<AuthResponse> verifyOTP(
-      {required String phoneNumber,
-      required String smsCode,
-      required String name}) async {
+  Future<AuthResponse> verifyOTP({
+    required String phoneNumber,
+    required String smsCode,
+  }) async {
     final response = await client.auth.verifyOTP(
       phone: phoneNumber,
       token: smsCode,

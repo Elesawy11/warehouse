@@ -46,6 +46,7 @@ class AuthRepoImpl {
             'Invalid phone number format. Please include country code.');
       }
 
+
       final response = await _source.signInWithPhoneNumber(
         phoneNumber: cleanedPhoneNumber,
         password: password.trim(),
@@ -74,13 +75,13 @@ class AuthRepoImpl {
     }
   }
 
+
   Future<NetworkResult<User>> signUpWithPhone({
     required String name,
     required String phoneNumber,
     required String password,
   }) async {
     try {
-      // Clean and validate inputs
       final cleanedPhoneNumber =
           phoneNumber.trim().replaceAll(RegExp(r'\s+'), '');
       if (!_isValidPhoneNumber(cleanedPhoneNumber)) {
@@ -99,7 +100,6 @@ class AuthRepoImpl {
             'Password must be at least 9 characters long.');
       }
 
-      // Perform the sign-up
       final AuthResponse response = await _source.signUpWithPhoneNumber(
         name: cleanedName,
         phoneNumber: cleanedPhoneNumber,
@@ -127,6 +127,53 @@ class AuthRepoImpl {
       }
     } catch (e) {
       return NetworkResult.failure('Sign-up failed: ${e.toString()}');
+    }
+  }
+
+
+  Future<NetworkResult<User>> verifyOTP({
+    required String phoneNumber,
+    required String otpToken,
+  }) async {
+    try {
+      // Clean and validate inputs
+      final cleanedPhoneNumber =
+          phoneNumber.trim().replaceAll(RegExp(r'\s+'), '');
+      if (!_isValidPhoneNumber(cleanedPhoneNumber)) {
+        return const NetworkResult.failure(
+            'Invalid phone number format. Please include country code.');
+      }
+
+      final cleanedOtpToken = otpToken.trim();
+      if (cleanedOtpToken.isEmpty || cleanedOtpToken.length != 6) {
+        return const NetworkResult.failure('OTP must be 6 digits long.');
+      }
+
+      final AuthResponse response = await _source.verifyOTP(
+        phoneNumber: cleanedPhoneNumber,
+        smsCode: cleanedOtpToken,
+      );
+
+      final user = response.user;
+      if (user == null) {
+        return const NetworkResult.failure(
+            'OTP verification failed: No user returned.');
+      }
+
+      return NetworkResult.success(user);
+    } on AuthException catch (e) {
+      switch (e.code) {
+        case 'invalid_otp':
+          return const NetworkResult.failure(
+              'Invalid OTP. Please check the code and try again.');
+        case 'otp_expired':
+          return const NetworkResult.failure(
+              'OTP has expired. Please request a new one.');
+        default:
+          return NetworkResult.failure('OTP verification failed: ${e.message}');
+      }
+    } catch (e) {
+      return NetworkResult.failure('OTP verification failed: ${e.toString()}');
     }
   }
 

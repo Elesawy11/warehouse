@@ -12,6 +12,10 @@ class SignUpWithPhoneNumberCubit extends Cubit<SignUpWithPhoneNumberState> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController phoneNumberController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final List<TextEditingController> controllers =
+      List.generate(6, (index) => TextEditingController());
+  final List<FocusNode> focusNodes = List.generate(6, (index) => FocusNode());
 
   Future<void> signupWithPhoneNumber() async {
     emit(const SignUpWithPhoneNumberState.signUpWithPhoneLoading());
@@ -30,6 +34,30 @@ class SignUpWithPhoneNumberCubit extends Cubit<SignUpWithPhoneNumberState> {
         emit(
           SignUpWithPhoneNumberState.signUpWithPhoneError(
             error: response.error,
+          ),
+        );
+      default:
+    }
+  }
+
+  Future<void> verifyOtp() async {
+    final otpToken = controllers.map((e) => e.text).join();
+
+    emit(const VerifyCodeLoading());
+    final otpResponse = await _repo.verifyOTP(
+      phoneNumber: phoneNumberController.text,
+      otpToken: otpToken,
+    );
+
+    switch (otpResponse) {
+      case Success():
+        emit(const VerifyCodeSuccess());
+
+        break;
+      case Failure():
+        emit(
+          VerifyCodeError(
+            error: otpResponse.error,
           ),
         );
       default:
