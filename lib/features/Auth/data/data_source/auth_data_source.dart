@@ -61,4 +61,29 @@ class AuthDataSource {
     );
     return response;
   }
+
+  Future<AuthResponse> signUpWithPhoneNumber(
+      {required String phoneNumber,
+      required String password,
+      required String name}) async {
+    final response = await client.auth.signUp(
+      data: {'name': name},
+      phone: phoneNumber,
+      password: password,
+      channel: OtpChannel.sms,
+    );
+    return response;
+  }
+
+  Future<AuthResponse> verifyOTP(
+      {required String phoneNumber,
+      required String smsCode,
+      required String name}) async {
+    final response = await client.auth.verifyOTP(
+      phone: phoneNumber,
+      token: smsCode,
+      type: OtpType.sms,
+    );
+    return response;
+  }
 }

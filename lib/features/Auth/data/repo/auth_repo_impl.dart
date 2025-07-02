@@ -45,11 +45,7 @@ class AuthRepoImpl {
         return const NetworkResult.failure(
             'Invalid phone number format. Please include country code.');
       }
-      // used in signup
-      // final cleanedPassword = password.trim();
-      // if (cleanedPassword.isEmpty || cleanedPassword.length < 9) {
-      //   throw Exception('Password must be at least 9 characters long.');
-      // }
+
       final response = await _source.signInWithPhoneNumber(
         phoneNumber: cleanedPhoneNumber,
         password: password.trim(),
@@ -75,6 +71,62 @@ class AuthRepoImpl {
       }
     } catch (e) {
       return NetworkResult.failure('Sign-in failed: ${e.toString()}');
+    }
+  }
+
+  Future<NetworkResult<User>> signUpWithPhone({
+    required String name,
+    required String phoneNumber,
+    required String password,
+  }) async {
+    try {
+      // Clean and validate inputs
+      final cleanedPhoneNumber =
+          phoneNumber.trim().replaceAll(RegExp(r'\s+'), '');
+      if (!_isValidPhoneNumber(cleanedPhoneNumber)) {
+        return const NetworkResult.failure(
+            'Invalid phone number format. Please include country code.');
+      }
+
+      final cleanedName = name.trim();
+      if (cleanedName.isEmpty) {
+        return const NetworkResult.failure('Name cannot be empty.');
+      }
+
+      final cleanedPassword = password.trim();
+      if (cleanedPassword.isEmpty || cleanedPassword.length < 9) {
+        return const NetworkResult.failure(
+            'Password must be at least 9 characters long.');
+      }
+
+      // Perform the sign-up
+      final AuthResponse response = await _source.signUpWithPhoneNumber(
+        name: cleanedName,
+        phoneNumber: cleanedPhoneNumber,
+        password: cleanedPassword,
+      );
+
+      final user = response.user;
+      if (user == null) {
+        return const NetworkResult.failure('Sign-up failed: No user returned.');
+      }
+
+      return NetworkResult.success(user);
+    } on AuthException catch (e) {
+      switch (e.code) {
+        case 'phone_already_in_use':
+          return const NetworkResult.failure(
+              'Phone number already registered. Please sign in instead.');
+        case 'invalid_phone_number':
+          return const NetworkResult.failure('Invalid phone number format.');
+        case 'weak_password':
+          return const NetworkResult.failure(
+              'Password is too weak. Please choose a stronger password.');
+        default:
+          return NetworkResult.failure('Sign-up failed: ${e.message}');
+      }
+    } catch (e) {
+      return NetworkResult.failure('Sign-up failed: ${e.toString()}');
     }
   }
 
