@@ -40,20 +40,21 @@ class SignUpCreateAccountButtonWidget extends StatelessWidget {
                   ),
                 )
               : null,
-          onPressed: () {
-            // context.pushReplacement(Routes.home);
+          // onPressed: () {
+          //   // context.pushReplacement(Routes.home);
 
-            if (context.read<SignUpCubit>().formKey.currentState!.validate() &&
-                isChecked.value) {
-              context.read<SignUpCubit>().signUp();
-            } else if (!isChecked.value) {
-              customSnackBarMethod(
-                context,
-                S.of(context).checkBox,
-              );
-            }
-            log('my check is :: ${isChecked.value}');
-          },
+          //   if (context.read<SignUpCubit>().formKey.currentState!.validate() &&
+          //       isChecked.value) {
+          //     context.read<SignUpCubit>().signUp();
+          //   } else if (!isChecked.value) {
+          //     customSnackBarMethod(
+          //       context,
+          //       S.of(context).checkBox,
+          //     );
+          //   }
+          //   log('my check is :: ${isChecked.value}');
+          // },
+          onPressed: () => context.push(Routes.otpView),
         );
       },
     );

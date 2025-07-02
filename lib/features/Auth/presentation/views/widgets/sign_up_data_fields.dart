@@ -91,8 +91,7 @@ class SignUpDataFields extends StatelessWidget {
           validator: (value) {
             if (value == null || value.isEmpty) {
               return S.of(context).passwordValidator;
-            }
-            else if (!AppRegex.isPasswordValid(value)) {
+            } else if (!AppRegex.isPasswordValid(value)) {
               return S.of(context).passwordRegex;
             }
           },

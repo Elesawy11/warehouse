@@ -120,10 +120,14 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
   //   }
   // }
 
-  Future<void> signUpWithPhone() async {
+  Future<void> signUpWithPhone(
+      {required String name,
+      required String phone,
+      required String password}) async {
     try {
       // This sends the OTP immediately
       final AuthResponse res = await SupabaseMethods.client.auth.signUp(
+        data: {'name': 'Ahmed Elesawy'},
         phone: '+201019986026', // include country code
         password: '123456789', // required for phone signup
         // email: 'elesawy928@gmail.com',

@@ -7,6 +7,7 @@ import 'package:warehouse_app/core/utils/app_navigation_bar_items.dart';
 import 'package:warehouse_app/core/utils/constants.dart';
 import 'package:warehouse_app/features/Auth/presentation/cubits/signin_with_phone_number_cubit/cubit/signin_with_phone_number_cubit.dart';
 import 'package:warehouse_app/features/Auth/presentation/views/auth_view.dart';
+import 'package:warehouse_app/features/Auth/presentation/views/otp_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/home_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/notification_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/profile_view.dart';
@@ -30,6 +31,10 @@ abstract class AppRouter {
           create: (context) => getIt.get<SigninWithPhoneNumberCubit>(),
           child: const AuthView(),
         ),
+      ),
+      GoRoute(
+        path: Routes.otpView,
+        builder: (context, state) => const OtpView(),
       ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) => AppNavigationBar(

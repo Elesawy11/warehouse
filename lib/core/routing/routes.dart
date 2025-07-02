@@ -9,4 +9,5 @@ abstract class Routes {
   static const profile = '/profile';
   static const stockIn = '/stockIn';
   static const stockOut = '/stockOut';
+  static const otpView = '/otpView';
 }
