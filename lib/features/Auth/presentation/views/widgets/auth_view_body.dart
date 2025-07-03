@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:warehouse_app/core/DI/service_locator.dart';
-import 'package:warehouse_app/features/Auth/presentation/cubits/log_in_cubit/log_in_cubit.dart';
-import 'package:warehouse_app/features/Auth/presentation/cubits/sign_up_cubit/sign_up_cubit.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/styles.dart';
+import 'auth_methods_widgets.dart';
 import 'container_of_auth_type_widget.dart';
-import 'login_view_widget.dart';
-import 'sign_up_view_widget.dart';
 
 class AuthViewBody extends StatefulWidget {
   const AuthViewBody({
@@ -64,21 +59,8 @@ class _AuthViewBodyState extends State<AuthViewBody> {
                   currentPage: _currentPage,
                 ),
                 verticalSpace(30),
-                Expanded(
-                  child: PageView(
-                    physics: const NeverScrollableScrollPhysics(),
-                    controller: _pageController,
-                    children: [
-                      BlocProvider(
-                        create: (context) => getIt.get<LogInCubit>(),
-                        child: const LoginViewWidget(),
-                      ),
-                      BlocProvider(
-                        create: (context) => getIt.get<SignUpCubit>(),
-                        child: const SignUpViewWidget(),
-                      ),
-                    ],
-                  ),
+                AuthMethodsWidgets(
+                  pageController: _pageController,
                 ),
               ],
             );

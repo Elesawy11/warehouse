@@ -1,8 +1,9 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:warehouse_app/features/Auth/presentation/cubits/sign_up_cubit/sign_up_cubit.dart';
+import 'package:warehouse_app/features/Auth/presentation/cubits/signup_with_phone_number_cubit/sign_up_with_phone_number_cubit.dart';
+import 'package:warehouse_app/features/Auth/presentation/views/widgets/signup_with_phone_button_widget.dart';
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/utils/styles.dart';
@@ -24,16 +25,23 @@ class _SignUpViewWidgetState extends State<SignUpViewWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final signupCubit = context.read<SignUpCubit>();
+    final signUpWithPhoneNumberCubit =
+        context.read<SignUpWithPhoneNumberCubit>();
     return SingleChildScrollView(
       child: ValueListenableBuilder(
         valueListenable: signupMethod,
         builder: (context, value, child) {
           return Form(
-            key: context.read<SignUpCubit>().formKey,
+            key: signupMethod.value
+                ? signUpWithPhoneNumberCubit.formKey
+                : signupCubit.formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                 SignUpDataFields(signupMethod: signupMethod,),
+                SignUpDataFields(
+                  signupMethod: signupMethod,
+                ),
                 verticalSpace(20),
                 SignUpCheckBoxWidget(
                   isChecked: isChecked,
@@ -63,9 +71,11 @@ class _SignUpViewWidgetState extends State<SignUpViewWidget> {
                   ],
                 ),
                 verticalSpace(30),
-                SignUpCreateAccountButtonWidget(
-                  isChecked: isChecked,
-                ),
+                signupMethod.value
+                    ? SignUpWithPhoneButtonWidget(isChecked: isChecked)
+                    : SignUpButtonWidget(
+                        isChecked: isChecked,
+                      ),
               ],
             ),
           );

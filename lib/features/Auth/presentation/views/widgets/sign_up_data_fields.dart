@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:warehouse_app/features/Auth/presentation/cubits/signup_with_phone_number_cubit/sign_up_with_phone_number_cubit.dart';
 import '../../../../../core/utils/app_regex.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/helpers/spacer.dart';
@@ -16,6 +17,9 @@ class SignUpDataFields extends StatelessWidget {
   final ValueNotifier<bool> signupMethod;
   @override
   Widget build(BuildContext context) {
+    final signupCubit = context.read<SignUpCubit>();
+    final signUpWithPhoneNumberCubit =
+        context.read<SignUpWithPhoneNumberCubit>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -25,7 +29,9 @@ class SignUpDataFields extends StatelessWidget {
         ),
         verticalSpace(6),
         AppTextFormField(
-          controller: context.read<SignUpCubit>().nameController,
+          controller: signupMethod.value
+              ? signUpWithPhoneNumberCubit.nameController
+              : signupCubit.nameController,
           backgroundColor: ColorManager.greyF4,
           hintStyle: Styles.font14Regular.copyWith(
             color: ColorManager.grey75,
@@ -45,9 +51,7 @@ class SignUpDataFields extends StatelessWidget {
         verticalSpace(6),
         signupMethod.value
             ? AppTextFormField(
-                // controller: context
-                //     .read<SigninWithPhoneNumberCubit>()
-                //     .phoneNumberController,
+                controller: signUpWithPhoneNumberCubit.phoneNumberController,
                 backgroundColor: ColorManager.greyF4,
                 hintStyle: Styles.font14Regular.copyWith(
                   color: ColorManager.grey75,
@@ -61,7 +65,7 @@ class SignUpDataFields extends StatelessWidget {
                 },
               )
             : AppTextFormField(
-                controller: context.read<SignUpCubit>().emailController,
+                controller: signupCubit.emailController,
                 backgroundColor: ColorManager.greyF4,
                 hintStyle: Styles.font14Regular.copyWith(
                   color: ColorManager.grey75,
@@ -82,7 +86,9 @@ class SignUpDataFields extends StatelessWidget {
         ),
         verticalSpace(6),
         AppTextFormField(
-          controller: context.read<SignUpCubit>().passwordController,
+          controller: signupMethod.value
+              ? signUpWithPhoneNumberCubit.passwordController
+              : signupCubit.passwordController,
           backgroundColor: ColorManager.greyF4,
           hintStyle: Styles.font14Regular.copyWith(
             color: ColorManager.grey75,

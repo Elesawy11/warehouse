@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,8 +8,8 @@ import '../../../../../core/widgets/app_text_button.dart';
 import '../../../../../generated/l10n.dart';
 import '../../cubits/sign_up_cubit/sign_up_cubit.dart';
 
-class SignUpCreateAccountButtonWidget extends StatelessWidget {
-  const SignUpCreateAccountButtonWidget({
+class SignUpButtonWidget extends StatelessWidget {
+  const SignUpButtonWidget({
     super.key,
     required this.isChecked,
   });
