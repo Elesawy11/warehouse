@@ -40,12 +40,12 @@ class SignUpWithPhoneNumberCubit extends Cubit<SignUpWithPhoneNumberState> {
     }
   }
 
-  Future<void> verifyOtp() async {
+  Future<void> verifyOtp({required String phoneNumber}) async {
     final otpToken = controllers.map((e) => e.text).join();
 
     emit(const VerifyCodeLoading());
     final otpResponse = await _repo.verifyOTP(
-      phoneNumber: phoneNumberController.text,
+      phoneNumber: phoneNumber,
       otpToken: otpToken,
     );
 
@@ -62,5 +62,19 @@ class SignUpWithPhoneNumberCubit extends Cubit<SignUpWithPhoneNumberState> {
         );
       default:
     }
+  }
+
+  @override
+  Future<void> close() async {
+    nameController.dispose();
+    phoneNumberController.dispose();
+    passwordController.dispose();
+    for (var controller in controllers) {
+      controller.dispose();
+    }
+    for (var focusNode in focusNodes) {
+      focusNode.dispose();
+    }
+    return super.close();
   }
 }

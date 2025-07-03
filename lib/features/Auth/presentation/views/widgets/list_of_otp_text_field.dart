@@ -26,7 +26,6 @@ class ListOfOtpTextField extends StatelessWidget {
           child: TextField(
             controller: _controllers[index],
             focusNode: _focusNodes[index],
-            
             cursorColor: ColorManager.mainBlue,
             keyboardType: TextInputType.number,
             textAlign: TextAlign.center,
@@ -39,11 +38,9 @@ class ListOfOtpTextField extends StatelessWidget {
                 borderSide: const BorderSide(
                   color: ColorManager.mainBlue,
                 ),
-                
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18.r),
-                
                 borderSide: const BorderSide(
                   color: ColorManager.mainBlue,
                   width: 2,
@@ -62,9 +59,7 @@ class ListOfOtpTextField extends StatelessWidget {
               }
             },
             onTap: () {
-              // Select all text when tapping on a field
               _controllers[index].selection = TextSelection(
-                // isDirectional: true,
                 baseOffset: 0,
                 extentOffset: _controllers[index].text.length,
               );

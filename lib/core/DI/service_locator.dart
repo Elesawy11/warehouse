@@ -19,9 +19,9 @@ void serviceLocator() {
   getIt.registerLazySingleton<AuthDataSource>(() => AuthDataSource(client));
   getIt
       .registerLazySingleton<AuthRepoImpl>(() => AuthRepoImpl(source: getIt()));
-  getIt.registerLazySingleton<SigninWithPhoneNumberCubit>(
+  getIt.registerFactory<SigninWithPhoneNumberCubit>(
       () => SigninWithPhoneNumberCubit(getIt()));
 
-  getIt.registerLazySingleton<SignUpWithPhoneNumberCubit>(
+  getIt.registerFactory<SignUpWithPhoneNumberCubit>(
       () => SignUpWithPhoneNumberCubit(getIt.get()));
 }

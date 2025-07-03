@@ -23,7 +23,9 @@ class SignUpWithPhoneButtonWidget extends StatelessWidget {
         if (state is SignUpWithPhoneError) {
           customSnackBarMethod(context, state.error);
         } else if (state is SignUpWithPhoneSuccess) {
-          context.pushReplacement(Routes.otpView);
+          context.pushReplacement(Routes.otpView, extra: {
+            'phoneNumber': cubit.phoneNumberController.text,
+          });
         }
       },
       builder: (context, state) {
