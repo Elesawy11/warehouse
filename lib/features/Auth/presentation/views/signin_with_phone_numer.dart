@@ -2,10 +2,7 @@ import 'dart:developer';
 
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:warehouse_app/core/DI/service_locator.dart';
-import 'package:warehouse_app/core/routing/routes.dart';
 
 import '../../../../core/utils/supabase_init.dart';
 
@@ -123,22 +120,18 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
   //   }
   // }
 
-  Future<void> signUpWithPhone() async {
+  Future<void> signUpWithPhone(
+      {required String name,
+      required String phone,
+      required String password}) async {
     try {
       // This sends the OTP immediately
       final AuthResponse res = await SupabaseMethods.client.auth.signUp(
-        phone: '+201019986026', // include country code
-        password: '123456789', // required for phone signup
-        // email: 'elesawy928@gmail.com',
+        data: {'name': 'Ahmed Elesawy'},
+        phone: '+201019986026',
+        password: '123456789',
         channel: OtpChannel.sms,
       );
-      _codeSent = true; // Update the state to show the SMS input field
-      // At this point, the OTP is sent but user isn't fully registered yet
-      log('OTP sent to phone');
-
-      // You would then need to:
-      // 1. Show a UI for the user to enter the OTP
-      // 2. Call verifyOTP() when they submit it
     } catch (e) {
       log('Error during signup: $e');
     }

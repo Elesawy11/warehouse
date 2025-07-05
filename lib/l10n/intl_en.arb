@@ -43,7 +43,9 @@
     "stockIn": "Stock In",
     "stockOut": "Stock Out",
     "signInWithPhone": "Sign In with Phone number",
+    "signUpWithPhone": "Sign Up with Phone number",
     "signInWithEmail": "Sign In with Email",
+    "signUpWithEmail": "Sign Up with Email",
     "phoneNumber": "Phone Number",
     "enterPhoneNumber": "Enter your phone number"
     

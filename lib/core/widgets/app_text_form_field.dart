@@ -1,26 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/color_manager.dart';
 import '../utils/font_weight_helper.dart';
 import '../utils/styles.dart';
 
 class AppTextFormField extends StatefulWidget {
-  final EdgeInsetsGeometry? contentPadding;
-  final InputBorder? focusedBorder;
-  final InputBorder? enabledBorder;
-  final TextStyle? inputTextStyle;
-  final TextStyle? hintStyle;
-  final String hintText;
-  final bool isObscureText;
-  final Widget? suffixIcon;
-  final Color? backgroundColor;
-  final TextEditingController? controller;
-  final Function(String?) validator;
-  final Widget? prefixIcon;
-  final int? maxLines;
-  final void Function()? onTap;
-  final void Function(PointerDownEvent)? onTapOutside;
-  final TextInputType? keyboardType;
   const AppTextFormField({
     super.key,
     this.contentPadding,
@@ -39,7 +24,30 @@ class AppTextFormField extends StatefulWidget {
     this.onTap,
     this.onTapOutside,
     this.keyboardType,
+    this.onChanged,
+    this.focusNode, this.textAlign, this.maxLength, this.inputFormatters,
   });
+  final EdgeInsetsGeometry? contentPadding;
+  final InputBorder? focusedBorder;
+  final InputBorder? enabledBorder;
+  final TextStyle? inputTextStyle;
+  final TextStyle? hintStyle;
+  final String hintText;
+  final bool isObscureText;
+  final Widget? suffixIcon;
+  final Color? backgroundColor;
+  final TextEditingController? controller;
+  final Function(String?) validator;
+  final Widget? prefixIcon;
+  final int? maxLines;
+  final void Function()? onTap;
+  final void Function(PointerDownEvent)? onTapOutside;
+  final TextInputType? keyboardType;
+  final Function(String)? onChanged;
+  final FocusNode? focusNode;
+  final TextAlign? textAlign;
+  final int? maxLength;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   State<AppTextFormField> createState() => _AppTextFormFieldState();
@@ -50,12 +58,18 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: widget.onChanged,
+      focusNode: widget.focusNode,
       onTapOutside: widget.onTapOutside,
       keyboardType: widget.keyboardType,
       onTap: widget.onTap,
       controller: widget.controller,
       maxLines: widget.maxLines,
+      textAlign: widget.textAlign ?? TextAlign.start,
+      maxLength:widget. maxLength,
+      inputFormatters: widget.inputFormatters,
       decoration: InputDecoration(
+        
         isDense: true,
         contentPadding: widget.contentPadding ??
             EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),

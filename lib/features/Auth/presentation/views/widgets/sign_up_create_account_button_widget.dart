@@ -3,17 +3,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:warehouse_app/core/routing/routes.dart';
-import 'package:warehouse_app/features/Auth/presentation/cubits/sign_up_variables_cubit/sign_up_variables_cubit.dart';
 import '../../../../../core/helpers/custom_snack_bar_method.dart';
 import '../../../../../core/widgets/app_text_button.dart';
 import '../../../../../generated/l10n.dart';
 import '../../cubits/sign_up_cubit/sign_up_cubit.dart';
 
-class SignUpCreateAccountButtonWidget extends StatelessWidget {
-  const SignUpCreateAccountButtonWidget({
+class SignUpButtonWidget extends StatelessWidget {
+  const SignUpButtonWidget({
     super.key,
+    required this.isChecked,
   });
-
+  final ValueNotifier<bool> isChecked;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignUpCubit, SignUpState>(
@@ -38,22 +38,21 @@ class SignUpCreateAccountButtonWidget extends StatelessWidget {
                   ),
                 )
               : null,
-          onPressed: () {
-            // context.pushReplacement(Routes.home);
+          // onPressed: () {
+          //   // context.pushReplacement(Routes.home);
 
-            if (context.read<SignUpCubit>().formKey.currentState!.validate() &&
-                // context.read<SignUpVariablesCubit>().isChecked
-                true) {
-              context.read<SignUpCubit>().signUp();
-            } else if (
-                // !context.read<SignUpVariablesCubit>().isChecked
-                false) {
-              customSnackBarMethod(
-                context,
-                S.of(context).checkBox,
-              );
-            }
-          },
+          //   if (context.read<SignUpCubit>().formKey.currentState!.validate() &&
+          //       isChecked.value) {
+          //     context.read<SignUpCubit>().signUp();
+          //   } else if (!isChecked.value) {
+          //     customSnackBarMethod(
+          //       context,
+          //       S.of(context).checkBox,
+          //     );
+          //   }
+          //   log('my check is :: ${isChecked.value}');
+          // },
+          onPressed: () => context.push(Routes.otpView),
         );
       },
     );

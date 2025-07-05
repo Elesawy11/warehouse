@@ -10,6 +10,7 @@ class AuthView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
+        bottom: true,
         child: AuthViewBody(),
       ),
     );

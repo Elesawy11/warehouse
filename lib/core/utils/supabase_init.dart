@@ -3,8 +3,8 @@ import 'package:warehouse_app/constant_key.dart';
 
 class SupabaseMethods {
   SupabaseMethods._();
-  static const _supabaseUrl = supabaseUrl;
-  static const _supabaseAnonKey = supabaseAnonKey;
+  static const _supabaseUrl = ConstantKey.supabaseUrl;
+  static const _supabaseAnonKey = ConstantKey.supabaseAnonKey;
 
   static bool _isInitialized = false;
 
