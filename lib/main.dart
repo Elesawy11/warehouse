@@ -1,3 +1,5 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:warehouse_app/core/DI/service_locator.dart';
@@ -11,7 +13,12 @@ void main(List<String> args) async {
 
   serviceLocator();
   Bloc.observer = SimpleBlocObserver();
-  runApp(const WarehouseApp());
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => const WarehouseApp(),
+    ),
+  );
 }
 
 class WarehouseApp extends StatelessWidget {
