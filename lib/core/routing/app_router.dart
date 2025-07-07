@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:warehouse_app/app_navigation_bar.dart';
@@ -22,7 +23,9 @@ import 'package:warehouse_app/features/transaction/presentation/views/transactio
 import '../../features/Auth/presentation/views/signin_with_phone_view.dart';
 
 abstract class AppRouter {
+  static final rootNavigatotKey = GlobalKey<NavigatorState>();
   static final router = GoRouter(
+    navigatorKey: rootNavigatotKey,
     routes: [
       GoRoute(
         path: Routes.onboarding,

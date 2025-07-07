@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,11 +38,14 @@ class LogInButtonWidget extends StatelessWidget {
                   ),
                 )
               : null,
-          onPressed: () async {
-            if (context.read<LogInCubit>().formKey.currentState!.validate()) {
-              context.read<LogInCubit>().logIn();
-              
-            }
+          // onPressed: () async {
+          //   if (context.read<LogInCubit>().formKey.currentState!.validate()) {
+          //     context.read<LogInCubit>().logIn();
+
+          //   }
+          // },
+          onPressed: () {
+            context.pushReplacement(Routes.home);
           },
         );
       },

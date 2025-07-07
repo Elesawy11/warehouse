@@ -67,7 +67,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                         : S.of(context).continueButton,
                     onPressed: () {
                       if (_currentPage.value == listLength - 1) {
-                        context.push(Routes.auth);
+                        context.pushReplacement(Routes.auth);
                         return;
                       }
                       _pageController.nextPage(
@@ -83,7 +83,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                   text: S.of(context).skipButton,
                   onPressed: () {
                     //Navigate to Auth screen
-                    context.push(Routes.auth);
+                    context.pushReplacement(Routes.auth);
                   },
                   backgroundColor: ColorManager.blueE0,
                   textColor: ColorManager.mainBlue,
