@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -35,6 +34,273 @@ mixin _$SignUpWithPhoneNumberState {
 class $SignUpWithPhoneNumberStateCopyWith<$Res> {
   $SignUpWithPhoneNumberStateCopyWith(SignUpWithPhoneNumberState _,
       $Res Function(SignUpWithPhoneNumberState) __);
+}
+
+/// Adds pattern-matching-related methods to [SignUpWithPhoneNumberState].
+extension SignUpWithPhoneNumberStatePatterns on SignUpWithPhoneNumberState {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(SignUpWithPhoneSuccess value)? signUpWithPhoneSuccess,
+    TResult Function(SignUpWithPhoneLoading value)? signUpWithPhoneLoading,
+    TResult Function(SignUpWithPhoneError value)? signUpWithPhoneError,
+    TResult Function(VerifyCodeSuccess value)? verifyCodeSuccess,
+    TResult Function(VerifyCodeLoading value)? verifyCodeLoading,
+    TResult Function(VerifyCodeError value)? verifyCodeError,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial(_that);
+      case SignUpWithPhoneSuccess() when signUpWithPhoneSuccess != null:
+        return signUpWithPhoneSuccess(_that);
+      case SignUpWithPhoneLoading() when signUpWithPhoneLoading != null:
+        return signUpWithPhoneLoading(_that);
+      case SignUpWithPhoneError() when signUpWithPhoneError != null:
+        return signUpWithPhoneError(_that);
+      case VerifyCodeSuccess() when verifyCodeSuccess != null:
+        return verifyCodeSuccess(_that);
+      case VerifyCodeLoading() when verifyCodeLoading != null:
+        return verifyCodeLoading(_that);
+      case VerifyCodeError() when verifyCodeError != null:
+        return verifyCodeError(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(SignUpWithPhoneSuccess value)
+        signUpWithPhoneSuccess,
+    required TResult Function(SignUpWithPhoneLoading value)
+        signUpWithPhoneLoading,
+    required TResult Function(SignUpWithPhoneError value) signUpWithPhoneError,
+    required TResult Function(VerifyCodeSuccess value) verifyCodeSuccess,
+    required TResult Function(VerifyCodeLoading value) verifyCodeLoading,
+    required TResult Function(VerifyCodeError value) verifyCodeError,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial():
+        return initial(_that);
+      case SignUpWithPhoneSuccess():
+        return signUpWithPhoneSuccess(_that);
+      case SignUpWithPhoneLoading():
+        return signUpWithPhoneLoading(_that);
+      case SignUpWithPhoneError():
+        return signUpWithPhoneError(_that);
+      case VerifyCodeSuccess():
+        return verifyCodeSuccess(_that);
+      case VerifyCodeLoading():
+        return verifyCodeLoading(_that);
+      case VerifyCodeError():
+        return verifyCodeError(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(SignUpWithPhoneSuccess value)? signUpWithPhoneSuccess,
+    TResult? Function(SignUpWithPhoneLoading value)? signUpWithPhoneLoading,
+    TResult? Function(SignUpWithPhoneError value)? signUpWithPhoneError,
+    TResult? Function(VerifyCodeSuccess value)? verifyCodeSuccess,
+    TResult? Function(VerifyCodeLoading value)? verifyCodeLoading,
+    TResult? Function(VerifyCodeError value)? verifyCodeError,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial(_that);
+      case SignUpWithPhoneSuccess() when signUpWithPhoneSuccess != null:
+        return signUpWithPhoneSuccess(_that);
+      case SignUpWithPhoneLoading() when signUpWithPhoneLoading != null:
+        return signUpWithPhoneLoading(_that);
+      case SignUpWithPhoneError() when signUpWithPhoneError != null:
+        return signUpWithPhoneError(_that);
+      case VerifyCodeSuccess() when verifyCodeSuccess != null:
+        return verifyCodeSuccess(_that);
+      case VerifyCodeLoading() when verifyCodeLoading != null:
+        return verifyCodeLoading(_that);
+      case VerifyCodeError() when verifyCodeError != null:
+        return verifyCodeError(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? signUpWithPhoneSuccess,
+    TResult Function()? signUpWithPhoneLoading,
+    TResult Function(String error)? signUpWithPhoneError,
+    TResult Function()? verifyCodeSuccess,
+    TResult Function()? verifyCodeLoading,
+    TResult Function(String error)? verifyCodeError,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial();
+      case SignUpWithPhoneSuccess() when signUpWithPhoneSuccess != null:
+        return signUpWithPhoneSuccess();
+      case SignUpWithPhoneLoading() when signUpWithPhoneLoading != null:
+        return signUpWithPhoneLoading();
+      case SignUpWithPhoneError() when signUpWithPhoneError != null:
+        return signUpWithPhoneError(_that.error);
+      case VerifyCodeSuccess() when verifyCodeSuccess != null:
+        return verifyCodeSuccess();
+      case VerifyCodeLoading() when verifyCodeLoading != null:
+        return verifyCodeLoading();
+      case VerifyCodeError() when verifyCodeError != null:
+        return verifyCodeError(_that.error);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() signUpWithPhoneSuccess,
+    required TResult Function() signUpWithPhoneLoading,
+    required TResult Function(String error) signUpWithPhoneError,
+    required TResult Function() verifyCodeSuccess,
+    required TResult Function() verifyCodeLoading,
+    required TResult Function(String error) verifyCodeError,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial():
+        return initial();
+      case SignUpWithPhoneSuccess():
+        return signUpWithPhoneSuccess();
+      case SignUpWithPhoneLoading():
+        return signUpWithPhoneLoading();
+      case SignUpWithPhoneError():
+        return signUpWithPhoneError(_that.error);
+      case VerifyCodeSuccess():
+        return verifyCodeSuccess();
+      case VerifyCodeLoading():
+        return verifyCodeLoading();
+      case VerifyCodeError():
+        return verifyCodeError(_that.error);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? signUpWithPhoneSuccess,
+    TResult? Function()? signUpWithPhoneLoading,
+    TResult? Function(String error)? signUpWithPhoneError,
+    TResult? Function()? verifyCodeSuccess,
+    TResult? Function()? verifyCodeLoading,
+    TResult? Function(String error)? verifyCodeError,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial();
+      case SignUpWithPhoneSuccess() when signUpWithPhoneSuccess != null:
+        return signUpWithPhoneSuccess();
+      case SignUpWithPhoneLoading() when signUpWithPhoneLoading != null:
+        return signUpWithPhoneLoading();
+      case SignUpWithPhoneError() when signUpWithPhoneError != null:
+        return signUpWithPhoneError(_that.error);
+      case VerifyCodeSuccess() when verifyCodeSuccess != null:
+        return verifyCodeSuccess();
+      case VerifyCodeLoading() when verifyCodeLoading != null:
+        return verifyCodeLoading();
+      case VerifyCodeError() when verifyCodeError != null:
+        return verifyCodeError(_that.error);
+      case _:
+        return null;
+    }
+  }
 }
 
 /// @nodoc

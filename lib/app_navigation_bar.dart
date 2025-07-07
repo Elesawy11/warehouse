@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -18,7 +16,6 @@ class AppNavigationBar extends StatelessWidget {
         currentIndex: navigationShell.currentIndex,
         onTap: (value) {
           navigationShell.goBranch(value);
-          log('navigation is : $value');
         },
         items: items,
       ),
