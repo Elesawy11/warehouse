@@ -26,4 +26,6 @@ class Constants {
       label: 'Settings',
     ),
   ];
+
+  static const String productCollection = 'products';
 }

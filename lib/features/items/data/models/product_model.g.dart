@@ -13,12 +13,9 @@ ProductModel _$ProductModelFromJson(Map<String, dynamic> json) => ProductModel(
       sellingPrice: (json['sellingPrice'] as num).toDouble(),
       unitsPerPackage: (json['unitsPerPackage'] as num?)?.toInt(),
       unitPurchasePrice: (json['unitPurchasePrice'] as num?)?.toDouble(),
-      imagePath: json['imagePath'] as String?,
       imageUrl: json['imageUrl'] as String?,
       category: json['category'] as String,
-      expireDate: json['expireDate'] == null
-          ? null
-          : DateTime.parse(json['expireDate'] as String),
+      expireDate: json['expireDate'] as String?,
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
@@ -48,10 +45,9 @@ Map<String, dynamic> _$ProductModelToJson(ProductModel instance) =>
       'sellingPrice': instance.sellingPrice,
       'unitsPerPackage': instance.unitsPerPackage,
       'unitPurchasePrice': instance.unitPurchasePrice,
-      'imagePath': instance.imagePath,
       'imageUrl': instance.imageUrl,
       'category': instance.category,
-      'expireDate': instance.expireDate?.toIso8601String(),
+      'expireDate': instance.expireDate,
       'createdAt': instance.createdAt?.toIso8601String(),
       'updatedAt': instance.updatedAt?.toIso8601String(),
       'dimensions': instance.dimensions,

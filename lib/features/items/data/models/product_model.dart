@@ -10,10 +10,10 @@ class ProductModel {
   final double sellingPrice;
   final int? unitsPerPackage;
   final double? unitPurchasePrice;
-  final String? imagePath;
+
   final String? imageUrl;
   final String category;
-  final DateTime? expireDate;
+  final String? expireDate;
   final DateTime? createdAt;
   final DateTime? updatedAt;
   final Dimensions? dimensions;
@@ -35,12 +35,11 @@ class ProductModel {
     required this.sellingPrice,
     required this.unitsPerPackage,
     required this.unitPurchasePrice,
-    required this.imagePath,
     required this.imageUrl,
     required this.category,
-    this.expireDate,
-    this.createdAt,
-    this.updatedAt,
+    required this.expireDate,
+    required this.createdAt,
+    required this.updatedAt,
     required this.dimensions,
     required this.size,
     required this.barcode,
@@ -54,13 +53,12 @@ class ProductModel {
     required this.lastTransactionId,
   });
 
-  factory ProductModel.fromJson(Map<String, dynamic> json) => _$ProductModelFromJson(json);
+  factory ProductModel.fromJson(Map<String, dynamic> json) =>
+      _$ProductModelFromJson(json);
   Map<String, dynamic> toJson() => _$ProductModelToJson(this);
-
 }
 
 @JsonSerializable()
-
 class Dimensions {
   final double? length;
   final double? width;
@@ -73,7 +71,7 @@ class Dimensions {
     this.height,
     this.weight,
   });
-  factory Dimensions.fromJson(Map<String, dynamic> json) => _$DimensionsFromJson(json);
+  factory Dimensions.fromJson(Map<String, dynamic> json) =>
+      _$DimensionsFromJson(json);
   Map<String, dynamic> toJson() => _$DimensionsToJson(this);
-
 }

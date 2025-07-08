@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
 import 'package:warehouse_app/features/Auth/data/data_source/auth_data_source.dart';
 import 'package:warehouse_app/features/Auth/data/repo/auth_repo_impl.dart';
@@ -7,10 +8,18 @@ import 'package:warehouse_app/features/Auth/presentation/cubits/signin_with_phon
 
 import '../../features/Auth/presentation/cubits/signup_with_phone_number_cubit/sign_up_with_phone_number_cubit.dart';
 import '../utils/supabase_init.dart';
+import 'package:uuid/uuid.dart';
 
 final getIt = GetIt.instance;
 
 void serviceLocator() {
+  // fireStore instance
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  getIt.registerLazySingleton<FirebaseFirestore>(() => firestore);
+
+  // uuid instance
+  Uuid uuid = const Uuid();
+  getIt.registerLazySingleton<Uuid>(() => uuid);
   // Auth Features
   final client = SupabaseMethods.client;
   getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt<AuthRepoImpl>()));
