@@ -15,12 +15,12 @@ import 'package:warehouse_app/features/home/presentation/views/notification_view
 import 'package:warehouse_app/features/home/presentation/views/profile_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/stock_in_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/stock_out_view.dart';
+import 'package:warehouse_app/features/items/presentation/cubits/add_product_cubit/add_product_cubit.dart';
+import 'package:warehouse_app/features/items/presentation/cubits/get_all_product_cubit/get_all_product_cubit.dart';
 import 'package:warehouse_app/features/items/presentation/views/items_view.dart';
 import 'package:warehouse_app/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:warehouse_app/features/settings/presentation/views/settings_view.dart';
 import 'package:warehouse_app/features/transaction/presentation/views/transaction_view.dart';
-
-import '../../features/Auth/presentation/views/signin_with_phone_view.dart';
 
 abstract class AppRouter {
   static final rootNavigatotKey = GlobalKey<NavigatorState>();
@@ -61,7 +61,10 @@ abstract class AppRouter {
             routes: [
               GoRoute(
                 path: Routes.home,
-                builder: (context, state) => const HomeView(),
+                builder: (context, state) => BlocProvider(
+                  create: (context) => getIt.get<GetAllProductCubit>(),
+                  child: const HomeView(),
+                ),
               ),
             ],
           ),
@@ -69,7 +72,10 @@ abstract class AppRouter {
             routes: [
               GoRoute(
                 path: Routes.items,
-                builder: (context, state) => const ItemsView(),
+                builder: (context, state) => BlocProvider(
+                  create: (context) => getIt.get<AddProductCubit>(),
+                  child: const ItemsView(),
+                ),
               ),
             ],
           ),

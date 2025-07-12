@@ -11,8 +11,6 @@ class AppNavigationBar extends StatelessWidget {
     return Scaffold(
       body: navigationShell,
       bottomNavigationBar: BottomNavigationBar(
-        // showSelectedLabels: false,
-        // showUnselectedLabels: false,
         currentIndex: navigationShell.currentIndex,
         onTap: (value) {
           navigationShell.goBranch(value);

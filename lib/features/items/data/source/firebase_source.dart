@@ -1,15 +1,22 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirebaseSource {
-  final FirebaseFirestore _source;
+  final FirebaseFirestore fireStore;
 
-  FirebaseSource(this._source);
+  FirebaseSource(this.fireStore);
 
   Future<void> addItem({
     required String itemId,
     required String collection,
     required Map<String, dynamic> data,
   }) async {
-    await _source.collection(collection).doc(itemId).set(data);
+    await fireStore.collection(collection).doc(itemId).set(data);
+  }
+
+  Future<CollectionReference<Map<String, dynamic>>> getAllItems(
+      {required String collection}) async {
+    final response = fireStore.collection(collection);
+    
+    return response;
   }
 }

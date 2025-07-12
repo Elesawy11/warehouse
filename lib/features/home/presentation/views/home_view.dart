@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:warehouse_app/core/DI/service_locator.dart';
 import 'package:warehouse_app/core/helpers/spacer.dart';
 import 'package:warehouse_app/core/routing/routes.dart';
 import 'package:warehouse_app/core/utils/assets.dart';
 import 'package:warehouse_app/core/utils/color_manager.dart';
 import 'package:warehouse_app/core/utils/styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:warehouse_app/features/items/presentation/cubits/get_all_product_cubit/get_all_product_cubit.dart';
 import '../../../../generated/l10n.dart';
 import 'widgets/home_view_body.dart';
 
@@ -21,7 +24,10 @@ class HomeView extends StatelessWidget {
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         title: InkWell(
-          onTap: () => context.push(Routes.profile),
+          // onTap: () => context.push(Routes.profile),
+          onTap: () {
+            context.read<GetAllProductCubit>().getAllProduct();
+          },
           child: Row(
             children: [
               Image.asset(
