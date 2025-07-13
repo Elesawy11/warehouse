@@ -17,7 +17,6 @@ migrate_working_dir/
 *.ipr
 *.iws
 .idea/
-lib/constant_key.dart
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
 # is commented out by default.
@@ -32,7 +31,7 @@ lib/constant_key.dart
 .pub-cache/
 .pub/
 /build/
-lib/constant_key.dart
+
 # Symbolication related
 app.*.symbols
 
