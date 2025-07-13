@@ -11,5 +11,5 @@ abstract class Routes {
   static const stockIn = '/stockIn';
   static const stockOut = '/stockOut';
   static const otpView = '/otpView';
-  static const appNavigationBar = '/appNavigationBar';
+  static const addItemView = '/addItemView';
 }

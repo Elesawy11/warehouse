@@ -12,6 +12,7 @@ import 'package:warehouse_app/features/Auth/presentation/cubits/signin_with_phon
 import 'package:warehouse_app/features/Auth/presentation/cubits/signup_with_phone_number_cubit/sign_up_with_phone_number_cubit.dart';
 import 'package:warehouse_app/features/Auth/presentation/views/auth_view.dart';
 import 'package:warehouse_app/features/Auth/presentation/views/otp_view.dart';
+import 'package:warehouse_app/features/home/presentation/views/add_item_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/home_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/notification_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/profile_view.dart';
@@ -116,6 +117,10 @@ abstract class AppRouter {
       GoRoute(
         path: Routes.stockOut,
         builder: (context, state) => const StockOutView(),
+      ),
+      GoRoute(
+        path: Routes.addItemView,
+        builder: (context, state) => const AddItemView(),
       ),
     ],
   );
