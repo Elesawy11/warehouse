@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:warehouse_app/core/networking/network_result.dart';
+import 'package:warehouse_app/features/items/data/models/product_model.dart';
 import 'package:warehouse_app/features/items/data/repo/firebase_repo_impl.dart';
 
 import 'get_all_product_state.dart';
@@ -17,7 +18,12 @@ class GetAllProductCubit extends Cubit<GetAllProductState> {
 
     switch (response) {
       case Success():
-        emit(GetAllProductState.getProductSuccess(productList: response.data));
+        response.data.snapshots().listen((data) {
+          final products = data.docs
+              .map((product) => ProductModel.fromJson(product.data()))
+              .toList();
+          emit(GetAllProductState.getProductSuccess(productList: products));
+        });
 
         break;
       case Failure():

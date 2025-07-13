@@ -26,12 +26,12 @@ void serviceLocator() {
   getIt.registerLazySingleton<Uuid>(() => uuid);
   // Auth Features
   final client = SupabaseMethods.client;
-  getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt<AuthRepoImpl>()));
-  getIt.registerFactory<LogInCubit>(() => LogInCubit(getIt<AuthRepoImpl>()));
-
   getIt.registerLazySingleton<AuthDataSource>(() => AuthDataSource(client));
   getIt
       .registerLazySingleton<AuthRepoImpl>(() => AuthRepoImpl(source: getIt()));
+  getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt<AuthRepoImpl>()));
+  getIt.registerFactory<LogInCubit>(() => LogInCubit(getIt<AuthRepoImpl>()));
+
   getIt.registerFactory<SigninWithPhoneNumberCubit>(
       () => SigninWithPhoneNumberCubit(getIt()));
 
@@ -44,5 +44,6 @@ void serviceLocator() {
       () => FirebaseRepoImpl(getIt.get()));
   getIt.registerFactory<AddProductCubit>(() => AddProductCubit(getIt.get()));
   //get all products
-  getIt.registerLazySingleton<GetAllProductCubit>(() => GetAllProductCubit(getIt.get()));
+  getIt.registerFactory<GetAllProductCubit>(
+      () => GetAllProductCubit(getIt.get<FirebaseRepoImpl>()));
 }

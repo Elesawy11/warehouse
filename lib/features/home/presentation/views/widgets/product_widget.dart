@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:warehouse_app/features/items/data/models/product_model.dart';
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/color_manager.dart';
@@ -8,8 +9,9 @@ import '../../../../../core/utils/styles.dart';
 class ProductWidget extends StatelessWidget {
   const ProductWidget({
     super.key,
+    required this.product,
   });
-
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,7 +39,8 @@ class ProductWidget extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.4,
                 child: Text(
                   //TODO: product name
-                  'Hello Ahmed Elesawy',
+                  product.name,
+                  // 'ahmed',
                   style: Styles.font16Semibold,
                   overflow: TextOverflow.ellipsis,
                 ),

@@ -26,21 +26,15 @@ class FirebaseRepoImpl {
     }
   }
 
-  Future<NetworkResult<List<ProductModel>>> getAllProduct() async {
-    List<ProductModel> productList = [];
+  Future<NetworkResult<CollectionReference<Map<String, dynamic>>>>
+      getAllProduct() async {
     try {
       final response =
           await _source.getAllItems(collection: Constants.productCollection);
 
-      response.snapshots().listen((data) {
-        final products = data.docs
-            .map((product) => ProductModel.fromJson(product.data()))
-            .toList();
+      
 
-        productList = products;
-      });
-
-      return NetworkResult.success(productList);
+      return NetworkResult.success(response);
     } on FirebaseException catch (error) {
       switch (error.code) {
         case 'permission-denied':

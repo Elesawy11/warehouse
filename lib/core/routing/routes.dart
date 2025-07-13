@@ -1,3 +1,4 @@
+
 abstract class Routes {
   static const onboarding = '/';
   static const auth = '/auth';
@@ -10,4 +11,5 @@ abstract class Routes {
   static const stockIn = '/stockIn';
   static const stockOut = '/stockOut';
   static const otpView = '/otpView';
+  static const appNavigationBar = '/appNavigationBar';
 }
