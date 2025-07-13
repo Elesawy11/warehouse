@@ -15,10 +15,9 @@ class AuthViewBody extends StatefulWidget {
   State<AuthViewBody> createState() => _AuthViewBodyState();
 }
 
-ValueNotifier<int> _currentPage = ValueNotifier(0);
-final PageController _pageController = PageController();
-
 class _AuthViewBodyState extends State<AuthViewBody> {
+  final ValueNotifier<int> _currentPage = ValueNotifier(0);
+  final PageController _pageController = PageController();
   @override
   void initState() {
     _pageController.addListener(() {

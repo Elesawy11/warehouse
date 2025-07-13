@@ -17,11 +17,10 @@ class OnboardingView extends StatefulWidget {
   State<OnboardingView> createState() => _OnboardingViewState();
 }
 
-ValueNotifier<int> _currentPage = ValueNotifier<int>(0);
-final PageController _pageController = PageController();
-int listLength = 0;
-
 class _OnboardingViewState extends State<OnboardingView> {
+  final ValueNotifier<int> _currentPage = ValueNotifier<int>(0);
+  final PageController _pageController = PageController();
+  int listLength = 0;
   @override
   void initState() {
     _pageController.addListener(() {

@@ -45,7 +45,7 @@ class LogInButtonWidget extends StatelessWidget {
           //   }
           // },
           onPressed: () {
-            context.pushReplacement(Routes.home);
+            context.go(Routes.home);
           },
         );
       },
