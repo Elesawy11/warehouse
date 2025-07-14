@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/utils/styles.dart';
 
@@ -37,6 +36,9 @@ class AddItemTextDetailWidget extends StatelessWidget {
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.zero,
                   hintText: fielText,
+                  hintStyle: Styles.font16Regular.copyWith(
+                    color: ColorManager.grey9E,
+                  ),
                   border: InputBorder.none,
                 ),
               ),

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:warehouse_app/core/helpers/spacer.dart';
 import 'basic_item_details_widget.dart';
 import 'divided_container.dart';
+import 'item_attribut_widget.dart';
 import 'item_price_and_quntity_widget.dart';
 
 class AddItemViewBody extends StatelessWidget {
@@ -24,7 +25,12 @@ class AddItemViewBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: const ItemPriceAndQuntityWidget(),
           ),
-          const DividedContainer()
+          const DividedContainer(),
+          verticalSpace(12),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: const ItemAtrributesWidget(),
+          )
         ],
       ),
     );
