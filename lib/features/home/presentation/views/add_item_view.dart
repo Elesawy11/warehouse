@@ -11,6 +11,8 @@ class AddItemView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
         title: Text(
           'Add Item',
           style: Styles.font20Medium,
