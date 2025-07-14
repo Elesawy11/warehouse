@@ -4,11 +4,14 @@ import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/utils/styles.dart';
 
-class AddItemNameWidget extends StatelessWidget {
-  const AddItemNameWidget({
+class AddItemTextDetailWidget extends StatelessWidget {
+  const AddItemTextDetailWidget({
     super.key,
+    required this.detailName,
+    required this.fielText,
   });
-
+  final String detailName;
+  final String fielText;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,19 +24,19 @@ class AddItemNameWidget extends StatelessWidget {
         ),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'Item name',
+            detailName,
             style: Styles.font16Regular,
           ),
-          horizontalSpace(44),
           SizedBox(
             width: 180,
             child: Center(
               child: TextFormField(
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   contentPadding: EdgeInsets.zero,
-                  hintText: 'Enter item name',
+                  hintText: fielText,
                   border: InputBorder.none,
                 ),
               ),

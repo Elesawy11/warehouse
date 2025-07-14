@@ -15,7 +15,10 @@ class BasicItemDetailsWidget extends StatelessWidget {
       children: [
         const AddProductImageWidget(),
         verticalSpace(24),
-        const AddItemNameWidget(),
+        const AddItemTextDetailWidget(
+          detailName: 'item name',
+          fielText: 'Enter item name',
+        ),
         AddItemAttributWidget(
           text: 'SKU',
           onTap: () {},
