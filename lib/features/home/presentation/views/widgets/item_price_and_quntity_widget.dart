@@ -20,16 +20,28 @@ class ItemPriceAndQuntityWidget extends StatelessWidget {
         ),
         verticalSpace(24),
         const AddItemTextDetailWidget(
-          detailName: 'Price',
+          detailName: 'Quntity',
+          fielText: 'Enter quntity',
+        ),
+        const AddItemTextDetailWidget(
+          detailName: 'Purchase Price',
           fielText: 'Enter price',
         ),
         const AddItemTextDetailWidget(
-          detailName: 'Price',
+          detailName: 'Sale Price',
           fielText: 'Enter price',
         ),
         const AddItemTextDetailWidget(
-          detailName: 'Price',
-          fielText: 'Enter price',
+          detailName: 'Number of units',
+          fielText: 'Enter number of units',
+        ),
+        const AddItemTextDetailWidget(
+          detailName: 'unit purshase price',
+          fielText: 'Enter unit purshase price',
+        ),
+        const AddItemTextDetailWidget(
+          detailName: 'Reorder point',
+          fielText: 'Enter reorder point',
         ),
       ],
     );

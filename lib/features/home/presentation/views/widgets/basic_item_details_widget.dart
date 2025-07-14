@@ -20,15 +20,15 @@ class BasicItemDetailsWidget extends StatelessWidget {
           fielText: 'Enter item name',
         ),
         AddItemAttributWidget(
-          text: 'SKU',
+          text: 'Category',
           onTap: () {},
         ),
         AddItemAttributWidget(
-          text: 'SKU',
+          text: 'Barcode',
           onTap: () {},
         ),
         AddItemAttributWidget(
-          text: 'SKU',
+          text: 'Expire Date',
           onTap: () {},
         ),
       ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:warehouse_app/features/home/presentation/views/widgets/add_item_attribut_widget.dart';
 
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/color_manager.dart';
@@ -29,16 +30,21 @@ class ItemAtrributesWidget extends StatelessWidget {
             ),
           ],
         ),
+        AddItemAttributWidget(
+          text: 'Size',
+          onTap: () {},
+        ),
         const AddItemTextDetailWidget(
-            detailName: 'detailName', fielText: 'fielText'),
+            detailName: 'Description', fielText: 'description'),
         const AddItemTextDetailWidget(
-            detailName: 'detailName', fielText: 'fielText'),
-        const AddItemTextDetailWidget(
-            detailName: 'detailName', fielText: 'fielText'),
-        const AddItemTextDetailWidget(
-            detailName: 'detailName', fielText: 'fielText'),
-        const AddItemTextDetailWidget(
-            detailName: 'detailName', fielText: 'fielText'),
+            detailName: 'Location', fielText: 'location in store'),
+        const AddItemTextDetailWidget(detailName: 'Width', fielText: 'width'),
+        const AddItemTextDetailWidget(detailName: 'Height', fielText: 'height'),
+        const AddItemTextDetailWidget(detailName: 'Weight', fielText: 'weight'),
+        AddItemAttributWidget(
+          text: 'Basic supplier',
+          onTap: () {},
+        ),
       ],
     );
   }

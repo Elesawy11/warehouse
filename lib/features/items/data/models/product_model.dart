@@ -4,29 +4,29 @@ part 'product_model.g.dart';
 
 @JsonSerializable()
 class ProductModel {
-  final String productId;
-  final String name;
-  final double purchasePrice;
-  final double sellingPrice;
-  final int? unitsPerPackage;
-  final double? unitPurchasePrice;
+  final String productId; //✔
+  final String name; //✔
+  final double purchasePrice; //✔
+  final double sellingPrice; //✔
+  final int? unitsPerPackage; //✔
+  final double? unitPurchasePrice; //✔
+  final int? quantity; //✔
+  final int? reorderPoint;//✔
 
-  final String? imageUrl;
-  final String category;
-  final String? expireDate;
-  final DateTime? createdAt;
-  final DateTime? updatedAt;
+  final String? imageUrl; //✔
+  final String category; //✔
+  final String? expireDate; //✔
+  final DateTime? createdAt;//✔
+  final DateTime? updatedAt;//✔
   final Dimensions? dimensions;
-  final String? size;
-  final String? barcode;
-  final String? supplierId;
-  final String? supplierName;
-  final int? quantity;
-  final int? reorderPoint;
-  final String? description;
-  final String? location;
-  final bool? isActive;
-  final String? lastTransactionId;
+  final String? size; //✔
+  final String? barcode; //✔
+  final String? supplierId; //✔
+  final String? supplierName; //✔
+  final String? description; //✔
+  final String? location; //✔
+  final bool? isActive; //✔
+  final String? lastTransactionId; //✔
 
   ProductModel({
     required this.productId,
@@ -60,13 +60,13 @@ class ProductModel {
 
 @JsonSerializable()
 class Dimensions {
-  final double? length;
-  final double? width;
-  final double? height;
+  
+  final double? width;  //✔
+  final double? height; //✔
   final double? weight;
 
   Dimensions({
-    this.length,
+    
     this.width,
     this.height,
     this.weight,

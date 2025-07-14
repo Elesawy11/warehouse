@@ -45,6 +45,8 @@ Map<String, dynamic> _$ProductModelToJson(ProductModel instance) =>
       'sellingPrice': instance.sellingPrice,
       'unitsPerPackage': instance.unitsPerPackage,
       'unitPurchasePrice': instance.unitPurchasePrice,
+      'quantity': instance.quantity,
+      'reorderPoint': instance.reorderPoint,
       'imageUrl': instance.imageUrl,
       'category': instance.category,
       'expireDate': instance.expireDate,
@@ -55,8 +57,6 @@ Map<String, dynamic> _$ProductModelToJson(ProductModel instance) =>
       'barcode': instance.barcode,
       'supplierId': instance.supplierId,
       'supplierName': instance.supplierName,
-      'quantity': instance.quantity,
-      'reorderPoint': instance.reorderPoint,
       'description': instance.description,
       'location': instance.location,
       'isActive': instance.isActive,
@@ -64,7 +64,6 @@ Map<String, dynamic> _$ProductModelToJson(ProductModel instance) =>
     };
 
 Dimensions _$DimensionsFromJson(Map<String, dynamic> json) => Dimensions(
-      length: (json['length'] as num?)?.toDouble(),
       width: (json['width'] as num?)?.toDouble(),
       height: (json['height'] as num?)?.toDouble(),
       weight: (json['weight'] as num?)?.toDouble(),
@@ -72,7 +71,6 @@ Dimensions _$DimensionsFromJson(Map<String, dynamic> json) => Dimensions(
 
 Map<String, dynamic> _$DimensionsToJson(Dimensions instance) =>
     <String, dynamic>{
-      'length': instance.length,
       'width': instance.width,
       'height': instance.height,
       'weight': instance.weight,
