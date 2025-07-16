@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:warehouse_app/core/utils/color_manager.dart';
 import 'package:warehouse_app/core/utils/styles.dart';
+import 'package:warehouse_app/features/items/presentation/cubits/add_product_cubit/add_product_cubit.dart';
 
 import 'widgets/add_item_view_body.dart';
 
@@ -19,7 +21,7 @@ class AddItemView extends StatelessWidget {
         ),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () => context.read<AddProductCubit>().addProduct(),
             child: Text(
               'Save',
               style: Styles.font16Semibold.copyWith(

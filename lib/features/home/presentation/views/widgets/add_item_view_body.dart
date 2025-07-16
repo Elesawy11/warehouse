@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:warehouse_app/core/helpers/spacer.dart';
+import '../../../../items/presentation/cubits/add_product_cubit/add_product_cubit.dart';
 import 'basic_item_details_widget.dart';
 import 'divided_container.dart';
 import 'item_attribut_widget.dart';
@@ -11,6 +13,7 @@ class AddItemViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<AddProductCubit>();
     return SingleChildScrollView(
       child: Column(
         children: [

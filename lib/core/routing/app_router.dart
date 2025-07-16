@@ -67,7 +67,8 @@ abstract class AppRouter {
                   path: Routes.home,
                   builder: (context, state) {
                     return BlocProvider(
-                      create: (context) => getIt.get<GetAllProductCubit>()..getAllProduct(),
+                      create: (context) =>
+                          getIt.get<GetAllProductCubit>()..getAllProduct(),
                       child: const HomeView(),
                     );
                   }),
@@ -120,7 +121,10 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: Routes.addItemView,
-        builder: (context, state) => const AddItemView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => getIt.get<AddProductCubit>(),
+          child: const AddItemView(),
+        ),
       ),
     ],
   );

@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/widgets.dart';
 import 'package:uuid/uuid.dart';
 import 'package:warehouse_app/core/networking/network_result.dart';
 import 'package:warehouse_app/features/items/data/models/product_model.dart';
@@ -12,6 +13,27 @@ class AddProductCubit extends Cubit<AddProductState> {
   AddProductCubit(this._repo) : super(const AddProductState.initial());
 
   final FirebaseRepoImpl _repo;
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController purchasePriceController = TextEditingController();
+  final TextEditingController sellingPriceController = TextEditingController();
+  final TextEditingController unitsPerPackageController =
+      TextEditingController();
+  final TextEditingController unitPurchasePriceController =
+      TextEditingController();
+  final TextEditingController categoryController = TextEditingController();
+  final TextEditingController widthController = TextEditingController();
+  final TextEditingController heightController = TextEditingController();
+  final TextEditingController weightController = TextEditingController();
+  final TextEditingController sizeController = TextEditingController();
+  final TextEditingController barcodeController = TextEditingController();
+  final TextEditingController supplierIdController = TextEditingController();
+  final TextEditingController supplierNameController = TextEditingController();
+  final TextEditingController quantityController = TextEditingController();
+  final TextEditingController reorderPointController = TextEditingController();
+  final TextEditingController descriptionController = TextEditingController();
+  final TextEditingController locationController = TextEditingController();
+  final TextEditingController imageController = TextEditingController();
+  final TextEditingController expireDateController = TextEditingController();
 
   Future<void> addProduct() async {
     emit(const AddProductState.addProductLoading());
@@ -20,25 +42,29 @@ class AddProductCubit extends Cubit<AddProductState> {
       itemId: id,
       product: ProductModel(
         productId: id,
-        name: 'product1',
-        purchasePrice: 200,
-        sellingPrice: 250.5,
-        unitsPerPackage: null,
-        unitPurchasePrice: null,
-        imageUrl: null,
-        category: 'category1',
-        dimensions: null,
-        size: null,
-        barcode: null,
-        supplierId: '123',
-        supplierName: 'ahmed',
-        quantity: 20,
-        reorderPoint: 15,
-        description: 'description',
-        location: 'location',
+        name: nameController.text,
+        purchasePrice: double.parse(purchasePriceController.text),
+        sellingPrice: double.parse(sellingPriceController.text),
+        unitsPerPackage: int.parse(unitsPerPackageController.text),
+        unitPurchasePrice: double.parse(unitPurchasePriceController.text),
+        imageUrl: imageController.text,
+        category: categoryController.text,
+        dimensions: Dimensions(
+          height: double.parse(heightController.text),
+          width: double.parse(widthController.text),
+          weight: double.parse(weightController.text),
+        ),
+        size: sizeController.text,
+        barcode: barcodeController.text,
+        supplierId: supplierIdController.text,
+        supplierName: supplierNameController.text,
+        quantity: int.parse(quantityController.text),
+        reorderPoint: int.parse(reorderPointController.text),
+        description: descriptionController.text,
+        location: locationController.text,
         isActive: true,
-        lastTransactionId: '230',
-        expireDate: 'data',
+        lastTransactionId: null,
+        expireDate: expireDateController.text,
         createdAt: Timestamp.now().toDate(),
         updatedAt: null,
       ),

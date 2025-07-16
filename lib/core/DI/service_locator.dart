@@ -46,4 +46,6 @@ void serviceLocator() {
   //get all products
   getIt.registerFactory<GetAllProductCubit>(
       () => GetAllProductCubit(getIt.get<FirebaseRepoImpl>()));
+
+ 
 }
