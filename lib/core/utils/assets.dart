@@ -8,6 +8,8 @@ class Assets {
 
   static const String imagesLaptop = "assets/images/laptop.jpg";
 
+  static const String imagesMenu = "assets/images/menu.png";
+
   static const String imagesNoNotification = "assets/images/noNotification.png";
 
   static const String imagesOnboarding1 = "assets/images/onboarding1.webp";
