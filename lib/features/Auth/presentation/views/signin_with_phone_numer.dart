@@ -17,7 +17,7 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _smsController = TextEditingController();
   String? _verificationId;
-  bool _codeSent = false;
+  final bool _codeSent = false;
 
   @override
   Widget build(BuildContext context) {

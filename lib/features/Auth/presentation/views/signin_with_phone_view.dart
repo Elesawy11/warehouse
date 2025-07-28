@@ -2,10 +2,7 @@ import 'dart:developer';
 
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:warehouse_app/core/DI/service_locator.dart';
-import 'package:warehouse_app/core/routing/routes.dart';
 
 import '../../../../core/utils/supabase_init.dart';
 

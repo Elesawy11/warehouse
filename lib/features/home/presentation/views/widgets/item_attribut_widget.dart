@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:warehouse_app/features/home/presentation/views/widgets/add_item_attribut_widget.dart';
-
+import '../../../../../core/helpers/custom_show_bottom_sheet_metod.dart';
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/utils/styles.dart';
+import 'add_item_attribut_widget.dart';
 import 'add_item_name_widget.dart';
+import 'custom_text_of_bottom_sheet_widget.dart';
 
 class ItemAtrributesWidget extends StatelessWidget {
   const ItemAtrributesWidget({
@@ -32,7 +33,38 @@ class ItemAtrributesWidget extends StatelessWidget {
         ),
         AddItemAttributWidget(
           text: 'Size',
-          onTap: () {},
+          onTap: () {
+            customShowBottomSheetMethod(
+              context,
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomTextOfBottomSheetWidget(
+                    text: 'Large',
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  verticalSpace(8),
+                  CustomTextOfBottomSheetWidget(
+                    text: 'Medium',
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  verticalSpace(8),
+                  CustomTextOfBottomSheetWidget(
+                    text: 'Small',
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  verticalSpace(16),
+                ],
+              ),
+            );
+          },
         ),
         const AddItemTextDetailWidget(
             detailName: 'Description', fielText: 'description'),
