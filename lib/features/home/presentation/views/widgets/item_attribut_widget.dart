@@ -4,7 +4,7 @@ import '../../../../../core/helpers/custom_show_bottom_sheet_metod.dart';
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/utils/styles.dart';
-import 'add_item_attribut_widget.dart';
+import 'settings_item_widget.dart';
 import 'add_item_name_widget.dart';
 import 'custom_text_of_bottom_sheet_widget.dart';
 
@@ -31,8 +31,8 @@ class ItemAtrributesWidget extends StatelessWidget {
             ),
           ],
         ),
-        AddItemAttributWidget(
-          text: 'Size',
+        SettingsItemWidget(
+          label: 'Size',
           onTap: () {
             customShowBottomSheetMethod(
               context,
@@ -73,8 +73,8 @@ class ItemAtrributesWidget extends StatelessWidget {
         const AddItemTextDetailWidget(detailName: 'Width', fielText: 'width'),
         const AddItemTextDetailWidget(detailName: 'Height', fielText: 'height'),
         const AddItemTextDetailWidget(detailName: 'Weight', fielText: 'weight'),
-        AddItemAttributWidget(
-          text: 'Basic supplier',
+        SettingsItemWidget(
+          label: 'Basic supplier',
           onTap: () {},
         ),
       ],

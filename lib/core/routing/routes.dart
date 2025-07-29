@@ -1,4 +1,3 @@
-
 abstract class Routes {
   static const onboarding = '/';
   static const auth = '/auth';

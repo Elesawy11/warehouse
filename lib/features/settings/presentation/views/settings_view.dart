@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:warehouse_app/core/helpers/spacer.dart';
 import 'package:warehouse_app/core/utils/color_manager.dart';
 import '../../../../core/utils/styles.dart';
+import 'helpers/create_attributes_settings_method.dart';
+import 'helpers/create_information_method.dart';
+import 'helpers/create_low_stock_alert_method.dart';
+import 'helpers/create_manage_team_method.dart';
+import 'helpers/create_partner_method.dart';
 import 'widgets/profile_settings_widget.dart';
-import 'widgets/section_header_widget.dart';
-import 'widgets/settings_group_widget.dart';
-import 'widgets/settings_item_widget.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
@@ -32,14 +35,12 @@ class SettingsView extends StatelessWidget {
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.all(16),
         children: [
-          // Computer Stock Card
           Container(
             padding: const EdgeInsets.all(16),
+            margin: EdgeInsets.only(top: 16.h),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withValues(alpha: 0.04),
@@ -50,35 +51,17 @@ class SettingsView extends StatelessWidget {
             ),
             child: const ProfileSettingsWidget(),
           ),
-
           verticalSpace(16),
-
-          SettingsGroupWidget(
-            children: [
-              const SectionHeaderWidget(title: 'Manage Team'),
-              SettingsItemWidget(
-                label: 'Team name',
-                value: 'Computers st...',
-                onTap: () {},
-              ),
-              SettingsItemWidget(
-                label: 'Notes',
-                value: 'Central stock of c...',
-                onTap: () {},
-              ),
-              SettingsItemWidget(
-                label: 'Currency',
-                value: 'USD',
-                onTap: () {},
-              ),
-              SettingsItemWidget(
-                label: 'Members',
-                value: '1 member(s)',
-                onTap: () {},
-                isLast: true,
-              ),
-            ],
-          ),
+          createManageTeamMethod(),
+          verticalSpace(16),
+          createAttributesSettingsMethod(),
+          verticalSpace(16),
+          createPartnerMethod(),
+          verticalSpace(16),
+          createLowStockAlertMethod(),
+          verticalSpace(16),
+          createInformationMethod(),
+          verticalSpace(16),
         ],
       ),
     );

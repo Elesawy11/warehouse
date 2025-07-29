@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/helpers/spacer.dart';
-import 'add_item_attribut_widget.dart';
+import 'settings_item_widget.dart';
 import 'add_item_name_widget.dart';
 import 'add_product_image_widget.dart';
 
@@ -19,16 +19,17 @@ class BasicItemDetailsWidget extends StatelessWidget {
           detailName: 'item name',
           fielText: 'Enter item name',
         ),
-        AddItemAttributWidget(
-          text: 'Category',
+        SettingsItemWidget(
+          value: 'hellodkkkkkkkkkkkkkkdsddddddddddddddddddddddd',
+          label: 'Category',
           onTap: () {},
         ),
-        AddItemAttributWidget(
-          text: 'Barcode',
+        SettingsItemWidget(
+          label: 'Barcode',
           onTap: () {},
         ),
-        AddItemAttributWidget(
-          text: 'Expire Date',
+        SettingsItemWidget(
+          label: 'Expire Date',
           onTap: () {},
         ),
       ],
