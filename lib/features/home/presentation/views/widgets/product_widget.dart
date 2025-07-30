@@ -5,6 +5,7 @@ import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/utils/styles.dart';
+import 'row_of_product_info_widget.dart';
 
 class ProductWidget extends StatelessWidget {
   const ProductWidget({
@@ -38,7 +39,6 @@ class ProductWidget extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.4,
                 child: Text(
-                  //TODO: product name
                   product.name,
                   // 'ahmed',
                   style: Styles.font16Semibold,
@@ -46,65 +46,20 @@ class ProductWidget extends StatelessWidget {
                 ),
               ),
               verticalSpace(8),
-              const RowOfProductInfo()
+              RowOfProductInfoWidget(
+                product: product,
+              )
             ],
           ),
           const Spacer(),
           Text(
-            //TODO: product countity
-            '80 N',
+            '${product.quantity} N',
             style: Styles.font18Bold.copyWith(
               color: ColorManager.mainBlue,
             ),
           )
         ],
       ),
-    );
-  }
-}
-
-class RowOfProductInfo extends StatelessWidget {
-  const RowOfProductInfo({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          'category',
-          style: Styles.font16Semibold.copyWith(
-            color: ColorManager.subText,
-          ),
-        ),
-        SizedBox(
-          height: 20.h,
-          child: const VerticalDivider(
-            color: ColorManager.greyC2,
-          ),
-        ),
-        Text(
-          //TODO: product cost
-          '100 C',
-          style: Styles.font16Semibold.copyWith(
-            color: ColorManager.subText,
-          ),
-        ),
-        SizedBox(
-          height: 20.h,
-          child: const VerticalDivider(
-            color: ColorManager.greyC2,
-          ),
-        ),
-        Text(
-          //TODO: product price
-          '200 P',
-          style: Styles.font16Semibold.copyWith(
-            color: ColorManager.subText,
-          ),
-        ),
-      ],
     );
   }
 }

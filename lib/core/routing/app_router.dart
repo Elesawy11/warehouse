@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -11,7 +10,6 @@ import 'package:warehouse_app/features/Auth/presentation/cubits/signin_with_phon
 import 'package:warehouse_app/features/Auth/presentation/cubits/signup_with_phone_number_cubit/sign_up_with_phone_number_cubit.dart';
 import 'package:warehouse_app/features/Auth/presentation/views/auth_view.dart';
 import 'package:warehouse_app/features/Auth/presentation/views/otp_view.dart';
-import 'package:warehouse_app/features/home/presentation/views/add_item_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/home_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/notification_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/profile_view.dart';
@@ -20,7 +18,11 @@ import 'package:warehouse_app/features/home/presentation/views/stock_out_view.da
 import 'package:warehouse_app/features/items/presentation/cubits/add_product_cubit/add_product_cubit.dart';
 import 'package:warehouse_app/features/items/presentation/views/items_view.dart';
 import 'package:warehouse_app/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:warehouse_app/features/settings/presentation/views/add_person_view.dart';
+import 'package:warehouse_app/features/settings/presentation/views/customers_view.dart';
 import 'package:warehouse_app/features/settings/presentation/views/settings_view.dart';
+import 'package:warehouse_app/features/settings/presentation/views/supplier_view.dart';
+import 'package:warehouse_app/features/settings/presentation/views/suppliers_view.dart';
 import 'package:warehouse_app/features/transaction/presentation/views/transaction_view.dart';
 
 import '../../features/items/presentation/cubits/get_all_product_cubit/get_all_product_cubit.dart';
@@ -119,11 +121,20 @@ abstract class AppRouter {
         builder: (context, state) => const StockOutView(),
       ),
       GoRoute(
-        path: Routes.addItemView,
-        builder: (context, state) => BlocProvider(
-          create: (context) => getIt.get<AddProductCubit>(),
-          child: const AddItemView(),
-        ),
+        path: Routes.suppliers,
+        builder: (context, state) => const SuppliersView(),
+      ),
+      GoRoute(
+        path: Routes.customers,
+        builder: (context, state) => const CustomersView(),
+      ),
+      GoRoute(
+        path: Routes.addPerson,
+        builder: (context, state) => const AddPersonView(),
+      ),
+      GoRoute(
+        path: Routes.supplier,
+        builder: (context, state) => const SupplierView(),
       ),
     ],
   );

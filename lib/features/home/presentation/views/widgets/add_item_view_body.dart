@@ -33,7 +33,8 @@ class AddItemViewBody extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: const ItemAtrributesWidget(),
-          )
+          ),
+          const DividedContainer(),
         ],
       ),
     );

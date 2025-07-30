@@ -14,8 +14,9 @@ import '../../../../../core/widgets/app_text_button.dart';
 class AddProductImageWidget extends StatefulWidget {
   const AddProductImageWidget({
     super.key,
+    required this.addProductCubit,
   });
-
+  final AddProductCubit addProductCubit;
   @override
   State<AddProductImageWidget> createState() => _AddProductImageWidgetState();
 }
@@ -23,13 +24,13 @@ class AddProductImageWidget extends StatefulWidget {
 class _AddProductImageWidgetState extends State<AddProductImageWidget> {
   final ImagePicker _imagePicker = ImagePicker();
   XFile? _pickedImage;
-
   Future<void> _pickImageFromGallery() async {
     final image = await _imagePicker.pickImage(source: ImageSource.gallery);
     setState(() {
       _pickedImage = image != null ? XFile(image.path) : null;
       context.read<AddProductCubit>().imageController.text =
           image != null ? XFile(image.path).toString() : '';
+      widget.addProductCubit.imageController.text = _pickedImage!.path;
     });
   }
 

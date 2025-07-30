@@ -15,12 +15,7 @@ class TransactionsView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: Text(
-          'Transactions',
-          style: Styles.font20Medium.copyWith(
-            color: ColorManager.darkBlue,
-          ),
-        ),
+        title: Text('Transactions', style: Styles.titleStyle),
         actions: [
           IconButton(
             icon: Image.asset(

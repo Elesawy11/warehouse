@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:warehouse_app/features/items/presentation/cubits/add_product_cubit/add_product_cubit.dart';
 import '../../../../../core/helpers/spacer.dart';
 import 'settings_item_widget.dart';
 import 'add_item_name_widget.dart';
@@ -11,16 +13,18 @@ class BasicItemDetailsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<AddProductCubit>();
     return Column(
       children: [
-        const AddProductImageWidget(),
+        AddProductImageWidget(
+          addProductCubit: cubit,
+        ),
         verticalSpace(24),
         const AddItemTextDetailWidget(
           detailName: 'item name',
           fielText: 'Enter item name',
         ),
         SettingsItemWidget(
-          value: 'hellodkkkkkkkkkkkkkkdsddddddddddddddddddddddd',
           label: 'Category',
           onTap: () {},
         ),

@@ -17,7 +17,7 @@ class AddItemView extends StatelessWidget {
         surfaceTintColor: Colors.white,
         title: Text(
           'Add Item',
-          style: Styles.font20Medium,
+          style: Styles.titleStyle,
         ),
         actions: [
           TextButton(

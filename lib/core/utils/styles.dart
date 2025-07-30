@@ -48,6 +48,10 @@ abstract class Styles {
     fontSize: 20.sp,
     fontWeight: FontWeightHelper.medium,
   );
+  static TextStyle titleStyle = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.medium,
+  );
   static TextStyle font20Regular = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeightHelper.regular,

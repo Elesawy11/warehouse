@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:warehouse_app/core/helpers/spacer.dart';
-import 'package:warehouse_app/core/utils/color_manager.dart';
 import '../../../../core/utils/styles.dart';
 import 'helpers/create_attributes_settings_method.dart';
 import 'helpers/create_information_method.dart';
@@ -23,9 +22,7 @@ class SettingsView extends StatelessWidget {
         elevation: 0,
         title: Text(
           'Settings',
-          style: Styles.font20Medium.copyWith(
-            color: ColorManager.darkBlue,
-          ),
+          style: Styles.titleStyle,
         ),
         actions: [
           IconButton(
@@ -56,7 +53,7 @@ class SettingsView extends StatelessWidget {
           verticalSpace(16),
           createAttributesSettingsMethod(),
           verticalSpace(16),
-          createPartnerMethod(),
+          createPartnerMethod(context),
           verticalSpace(16),
           createLowStockAlertMethod(),
           verticalSpace(16),

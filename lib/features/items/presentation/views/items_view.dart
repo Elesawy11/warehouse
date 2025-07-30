@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:warehouse_app/core/utils/assets.dart';
+import '../../../../core/utils/styles.dart';
 import 'widgets/item_card_widget.dart';
 
 class ItemsView extends StatelessWidget {
@@ -12,13 +13,9 @@ class ItemsView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: const Text(
+        title: Text(
           'Items',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-          ),
+          style: Styles.titleStyle,
         ),
         actions: [
           IconButton(
