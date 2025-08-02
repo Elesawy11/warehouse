@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/helpers/spacer.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../cubits/cubit/add_supplier_cubit.dart';
+import '../../cubits/add_supplier_cubit/add_supplier_cubit.dart';
 import 'add_supplier_bloc_consumer_widget.dart';
 import 'person_information_field_widget.dart';
 

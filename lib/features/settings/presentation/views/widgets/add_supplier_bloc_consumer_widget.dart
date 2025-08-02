@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:warehouse_app/core/DI/service_locator.dart';
+import 'package:warehouse_app/features/settings/presentation/cubits/get_all_suppliers_cubit/get_all_suppliers_cubit.dart';
 import '../../../../../core/helpers/custom_snack_bar_method.dart';
 import '../../../../../core/widgets/app_text_button.dart';
-import '../../cubits/cubit/add_supplier_cubit.dart';
-import '../../cubits/cubit/add_supplier_state.dart';
+import '../../cubits/add_supplier_cubit/add_supplier_cubit.dart';
+import '../../cubits/add_supplier_cubit/add_supplier_state.dart';
 
 class AddSupplierBlocConsumerWidget extends StatelessWidget {
   const AddSupplierBlocConsumerWidget({
@@ -22,6 +24,7 @@ class AddSupplierBlocConsumerWidget extends StatelessWidget {
           cubit.nameController.clear();
           cubit.phoneController.clear();
           cubit.addressController.clear();
+          getIt.get<GetAllSuppliersCubit>().getAllSuppliers();
         } else if (state is AddSupplierError) {
           customSnackBarMethod(context, 'there is an error');
         }

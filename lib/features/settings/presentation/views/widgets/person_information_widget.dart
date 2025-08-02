@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:warehouse_app/features/settings/data/models/person_model.dart';
 
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/utils/styles.dart';
@@ -6,12 +7,10 @@ import '../../../../../core/utils/styles.dart';
 class PersonInformationWidget extends StatelessWidget {
   const PersonInformationWidget({
     super.key,
-    required this.title,
-    required this.subTitle,
-    required this.onTap,
+    
+    required this.onTap, required this.supplier,
   });
-  final String title;
-  final String subTitle;
+  final PersonModel supplier;
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
@@ -19,11 +18,11 @@ class PersonInformationWidget extends StatelessWidget {
       shape: const Border(bottom: BorderSide(color: ColorManager.greyCE)),
       onTap: onTap,
       title: Text(
-        title,
+        supplier.name,
         style: Styles.font16Semibold,
       ),
       subtitle: Text(
-        subTitle,
+        supplier.phone,
         style: Styles.font16Regular.copyWith(color: ColorManager.mainBlue),
       ),
       trailing: const Icon(

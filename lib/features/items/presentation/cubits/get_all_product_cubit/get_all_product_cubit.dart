@@ -1,4 +1,3 @@
-
 import 'package:bloc/bloc.dart';
 import 'package:warehouse_app/core/networking/network_result.dart';
 import 'package:warehouse_app/features/items/data/models/product_model.dart';

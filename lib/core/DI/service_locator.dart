@@ -10,7 +10,8 @@ import 'package:warehouse_app/core/networking/firebase_source.dart';
 import 'package:warehouse_app/features/items/presentation/cubits/add_product_cubit/add_product_cubit.dart';
 import 'package:warehouse_app/features/items/presentation/cubits/get_all_product_cubit/get_all_product_cubit.dart';
 import 'package:warehouse_app/features/settings/data/repo/setting_repo_impl.dart';
-import 'package:warehouse_app/features/settings/presentation/cubits/cubit/add_supplier_cubit.dart';
+import 'package:warehouse_app/features/settings/presentation/cubits/add_supplier_cubit/add_supplier_cubit.dart';
+import 'package:warehouse_app/features/settings/presentation/cubits/get_all_suppliers_cubit/get_all_suppliers_cubit.dart';
 import '../../features/Auth/presentation/cubits/signup_with_phone_number_cubit/sign_up_with_phone_number_cubit.dart';
 import '../utils/supabase_init.dart';
 import 'package:uuid/uuid.dart';
@@ -54,4 +55,6 @@ void serviceLocator() {
       () => SettingRepoImpl(getIt.get()));
 
   getIt.registerFactory<AddSupplierCubit>(() => AddSupplierCubit(getIt.get()));
+  getIt.registerLazySingleton<GetAllSuppliersCubit>(
+      () => GetAllSuppliersCubit(getIt.get()));
 }

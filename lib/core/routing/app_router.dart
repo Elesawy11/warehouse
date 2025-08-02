@@ -18,7 +18,9 @@ import 'package:warehouse_app/features/home/presentation/views/stock_out_view.da
 import 'package:warehouse_app/features/items/presentation/cubits/add_product_cubit/add_product_cubit.dart';
 import 'package:warehouse_app/features/items/presentation/views/items_view.dart';
 import 'package:warehouse_app/features/onboarding/presentation/views/onboarding_view.dart';
-import 'package:warehouse_app/features/settings/presentation/cubits/cubit/add_supplier_cubit.dart';
+import 'package:warehouse_app/features/settings/data/models/person_model.dart';
+import 'package:warehouse_app/features/settings/presentation/cubits/add_supplier_cubit/add_supplier_cubit.dart';
+import 'package:warehouse_app/features/settings/presentation/cubits/get_all_suppliers_cubit/get_all_suppliers_cubit.dart';
 import 'package:warehouse_app/features/settings/presentation/views/add_supplier_view.dart';
 import 'package:warehouse_app/features/settings/presentation/views/customers_view.dart';
 import 'package:warehouse_app/features/settings/presentation/views/settings_view.dart';
@@ -123,7 +125,10 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: Routes.allsuppliers,
-        builder: (context, state) => const AllSuppliersView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => getIt.get<GetAllSuppliersCubit>(),
+          child: const AllSuppliersView(),
+        ),
       ),
       GoRoute(
         path: Routes.customers,
@@ -131,14 +136,27 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: Routes.addPerson,
-        builder: (context, state) => BlocProvider(
-          create: (context) => getIt.get<AddSupplierCubit>(),
+        builder: (context, state) => MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => getIt.get<AddSupplierCubit>(),
+            ),
+            BlocProvider(
+              create: (context) => getIt.get<GetAllSuppliersCubit>(),
+            ),
+          ],
           child: const AddSupplierView(),
         ),
       ),
       GoRoute(
         path: Routes.supplier,
-        builder: (context, state) => const SupplierView(),
+        builder: (context, state) {
+          final supplier = state.extra as PersonModel;
+
+          return SupplierView(
+            supplier: supplier,
+          );
+        },
       ),
     ],
   );

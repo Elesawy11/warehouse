@@ -10,11 +10,13 @@ class PersonInformationFieldWidget extends StatelessWidget {
     required this.validator,
     this.controller,
     this.keyboardType,
+    this.hintText,
   });
   final String text;
   final dynamic Function(String?) validator;
   final TextEditingController? controller;
   final TextInputType? keyboardType;
+  final String? hintText;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,7 +28,7 @@ class PersonInformationFieldWidget extends StatelessWidget {
         ),
         verticalSpace(4),
         AppTextFormField(
-          hintText: text,
+          hintText: hintText ?? text,
           validator: validator,
           controller: controller,
           keyboardType: keyboardType,
