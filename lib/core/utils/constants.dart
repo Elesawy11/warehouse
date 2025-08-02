@@ -28,4 +28,5 @@ class Constants {
   ];
 
   static const String productCollection = 'products';
+  static const String supplierCollection = 'suppliers';
 }

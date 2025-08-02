@@ -4,12 +4,11 @@ import 'package:go_router/go_router.dart';
 import 'package:warehouse_app/core/routing/routes.dart';
 import 'package:warehouse_app/core/utils/color_manager.dart';
 import 'package:warehouse_app/core/utils/styles.dart';
-import 'package:warehouse_app/core/widgets/app_text_button.dart';
 
 import 'widgets/person_information_widget.dart';
 
-class SuppliersView extends StatelessWidget {
-  const SuppliersView({super.key});
+class AllSuppliersView extends StatelessWidget {
+  const AllSuppliersView({super.key});
 
   @override
   Widget build(BuildContext context) {

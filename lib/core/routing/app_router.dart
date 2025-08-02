@@ -18,11 +18,12 @@ import 'package:warehouse_app/features/home/presentation/views/stock_out_view.da
 import 'package:warehouse_app/features/items/presentation/cubits/add_product_cubit/add_product_cubit.dart';
 import 'package:warehouse_app/features/items/presentation/views/items_view.dart';
 import 'package:warehouse_app/features/onboarding/presentation/views/onboarding_view.dart';
-import 'package:warehouse_app/features/settings/presentation/views/add_person_view.dart';
+import 'package:warehouse_app/features/settings/presentation/cubits/cubit/add_supplier_cubit.dart';
+import 'package:warehouse_app/features/settings/presentation/views/add_supplier_view.dart';
 import 'package:warehouse_app/features/settings/presentation/views/customers_view.dart';
 import 'package:warehouse_app/features/settings/presentation/views/settings_view.dart';
 import 'package:warehouse_app/features/settings/presentation/views/supplier_view.dart';
-import 'package:warehouse_app/features/settings/presentation/views/suppliers_view.dart';
+import 'package:warehouse_app/features/settings/presentation/views/all_suppliers_view.dart';
 import 'package:warehouse_app/features/transaction/presentation/views/transaction_view.dart';
 
 import '../../features/items/presentation/cubits/get_all_product_cubit/get_all_product_cubit.dart';
@@ -121,8 +122,8 @@ abstract class AppRouter {
         builder: (context, state) => const StockOutView(),
       ),
       GoRoute(
-        path: Routes.suppliers,
-        builder: (context, state) => const SuppliersView(),
+        path: Routes.allsuppliers,
+        builder: (context, state) => const AllSuppliersView(),
       ),
       GoRoute(
         path: Routes.customers,
@@ -130,7 +131,10 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: Routes.addPerson,
-        builder: (context, state) => const AddPersonView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => getIt.get<AddSupplierCubit>(),
+          child: const AddSupplierView(),
+        ),
       ),
       GoRoute(
         path: Routes.supplier,

@@ -13,7 +13,7 @@ SettingsGroupWidget createPartnerMethod(BuildContext context) {
       SettingsItemWidget(
         label: 'Suppliers',
         value: '4 suppliers',
-        onTap: () => context.push(Routes.suppliers),
+        onTap: () => context.push(Routes.allsuppliers),
       ),
       SettingsItemWidget(
         label: 'Customers',

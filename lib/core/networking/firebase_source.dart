@@ -16,7 +16,7 @@ class FirebaseSource {
   Future<CollectionReference<Map<String, dynamic>>> getAllItems(
       {required String collection}) async {
     final response = fireStore.collection(collection);
-    
+
     return response;
   }
 }

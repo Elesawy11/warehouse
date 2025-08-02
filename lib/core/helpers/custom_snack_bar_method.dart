@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../utils/styles.dart';
 
-void customSnackBarMethod(BuildContext context, String text) {
+void customSnackBarMethod(BuildContext context, String text,) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       backgroundColor: Colors.black,

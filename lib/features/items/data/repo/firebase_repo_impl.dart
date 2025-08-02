@@ -2,7 +2,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:warehouse_app/core/networking/network_result.dart';
 import 'package:warehouse_app/core/utils/constants.dart';
-import 'package:warehouse_app/features/items/data/source/firebase_source.dart';
+import 'package:warehouse_app/core/networking/firebase_source.dart';
 
 import '../models/product_model.dart';
 

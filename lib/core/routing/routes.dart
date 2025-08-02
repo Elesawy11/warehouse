@@ -11,10 +11,8 @@ abstract class Routes {
   static const stockOut = '/stockOut';
   static const otpView = '/otpView';
   static const addItemView = '/addItemView';
-  static const suppliers = '/suppliers';
+  static const allsuppliers = '/allsuppliers';
   static const customers = '/customers';
   static const addPerson = '/addPerson';
   static const supplier = '/supplier';
 }
-
-
