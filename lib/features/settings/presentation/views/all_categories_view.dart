@@ -6,12 +6,12 @@ import 'package:warehouse_app/core/routing/routes.dart';
 import 'package:warehouse_app/core/utils/color_manager.dart';
 import 'package:warehouse_app/core/utils/styles.dart';
 import 'package:warehouse_app/core/widgets/app_text_button.dart';
-import 'package:warehouse_app/features/settings/presentation/cubits/get_all_suppliers_cubit/get_all_suppliers_cubit.dart';
-import 'package:warehouse_app/features/settings/presentation/cubits/get_all_suppliers_cubit/get_all_suppliers_state.dart';
+import 'package:warehouse_app/features/settings/presentation/cubits/get_all_categories_cubit/get_all_categories_cubit.dart';
+import 'package:warehouse_app/features/settings/presentation/cubits/get_all_categories_cubit/get_all_categories_state.dart';
 import 'widgets/person_information_widget.dart';
 
-class AllSuppliersView extends StatelessWidget {
-  const AllSuppliersView({super.key});
+class AllCategoriesView extends StatelessWidget {
+  const AllCategoriesView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class AllSuppliersView extends StatelessWidget {
         surfaceTintColor: Colors.white,
         backgroundColor: Colors.white,
         title: Text(
-          'Suppliers',
+          'Categories',
           style: Styles.titleStyle,
         ),
         actions: [
@@ -39,25 +39,26 @@ class AllSuppliersView extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: BlocBuilder<GetAllSuppliersCubit, GetAllSuppliersState>(
+            child: BlocBuilder<GetAllCategoriesCubit, GetAllCategoriesState>(
               builder: (context, state) {
-                return state is GetAllSuppliersSuucess
+                return state is GetAllCategoriesSuccess
                     ? ListView.builder(
-                        itemCount: state.suppliers.length,
+                        itemCount: state.categories.length,
                         itemBuilder: (context, index) {
                           return PersonInformationWidget(
-                            subTitle: state.suppliers[index].phone,
-                            title: state.suppliers[index].name,
-                            onTap: () => context.push(Routes.supplier,
-                                extra: state.suppliers[index]),
+                            title: state.categories[index],
+                            onTap: () => context.push(
+                              Routes.supplier,
+                              extra: state.categories[index],
+                            ),
                           );
                         },
                       )
-                    : state is GetAllSuppliersLoading
+                    : state is GetAllCategoriesLoading
                         ? const Center(
                             child: CircularProgressIndicator(),
                           )
-                        : state is GetAllSuppliersError
+                        : state is GetAllCategoriesError
                             ? Center(
                                 child: Text(state.error),
                               )

@@ -15,4 +15,5 @@ abstract class Routes {
   static const customers = '/customers';
   static const addPerson = '/addPerson';
   static const supplier = '/supplier';
+  static const allCategories = '/allCategories';
 }

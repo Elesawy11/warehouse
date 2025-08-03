@@ -7,10 +7,12 @@ import '../../../../../core/utils/styles.dart';
 class PersonInformationWidget extends StatelessWidget {
   const PersonInformationWidget({
     super.key,
-    
-    required this.onTap, required this.supplier,
+    required this.onTap,
+    required this.title,
+    this.subTitle,
   });
-  final PersonModel supplier;
+  final String title;
+  final String? subTitle;
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
@@ -18,13 +20,16 @@ class PersonInformationWidget extends StatelessWidget {
       shape: const Border(bottom: BorderSide(color: ColorManager.greyCE)),
       onTap: onTap,
       title: Text(
-        supplier.name,
+        title,
         style: Styles.font16Semibold,
       ),
-      subtitle: Text(
-        supplier.phone,
-        style: Styles.font16Regular.copyWith(color: ColorManager.mainBlue),
-      ),
+      subtitle: subTitle != null
+          ? Text(
+              subTitle!,
+              style:
+                  Styles.font16Regular.copyWith(color: ColorManager.mainBlue),
+            )
+          : null,
       trailing: const Icon(
         Icons.arrow_forward_ios_rounded,
         size: 20,

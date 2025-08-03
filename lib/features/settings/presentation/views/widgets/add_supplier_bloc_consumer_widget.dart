@@ -34,7 +34,7 @@ class AddSupplierBlocConsumerWidget extends StatelessWidget {
           text: 'Create',
           onPressed: () {
             if (cubit.formKey.currentState!.validate()) {
-              cubit.addPerson();
+              cubit.addSupplier();
             }
           },
           child: state is AddSupplierloading

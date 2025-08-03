@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
 import 'package:uuid/uuid.dart';
 import 'package:warehouse_app/core/networking/network_result.dart';
+import 'package:warehouse_app/core/utils/constants.dart';
 import 'package:warehouse_app/features/settings/data/models/person_model.dart';
 import 'package:warehouse_app/features/settings/data/repo/setting_repo_impl.dart';
 import '../../../../../core/DI/service_locator.dart';
@@ -14,10 +15,11 @@ class AddSupplierCubit extends Cubit<AddSupplierState> {
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey();
-  Future<void> addPerson() async {
+  Future<void> addSupplier() async {
     emit(const AddSupplierState.addSupplierloading());
     final id = getIt.get<Uuid>().v4();
     final response = await _repo.addPerson(
+      collectionName: Constants.supplierCollection,
       itemId: id,
       person: PersonModel(
         name: nameController.text.trim(),

@@ -10,6 +10,7 @@ import 'package:warehouse_app/features/Auth/presentation/cubits/signin_with_phon
 import 'package:warehouse_app/features/Auth/presentation/cubits/signup_with_phone_number_cubit/sign_up_with_phone_number_cubit.dart';
 import 'package:warehouse_app/features/Auth/presentation/views/auth_view.dart';
 import 'package:warehouse_app/features/Auth/presentation/views/otp_view.dart';
+import 'package:warehouse_app/features/home/presentation/views/add_item_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/home_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/notification_view.dart';
 import 'package:warehouse_app/features/home/presentation/views/profile_view.dart';
@@ -20,8 +21,10 @@ import 'package:warehouse_app/features/items/presentation/views/items_view.dart'
 import 'package:warehouse_app/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:warehouse_app/features/settings/data/models/person_model.dart';
 import 'package:warehouse_app/features/settings/presentation/cubits/add_supplier_cubit/add_supplier_cubit.dart';
+import 'package:warehouse_app/features/settings/presentation/cubits/get_all_categories_cubit/get_all_categories_cubit.dart';
 import 'package:warehouse_app/features/settings/presentation/cubits/get_all_suppliers_cubit/get_all_suppliers_cubit.dart';
 import 'package:warehouse_app/features/settings/presentation/views/add_supplier_view.dart';
+import 'package:warehouse_app/features/settings/presentation/views/all_categories_view.dart';
 import 'package:warehouse_app/features/settings/presentation/views/customers_view.dart';
 import 'package:warehouse_app/features/settings/presentation/views/settings_view.dart';
 import 'package:warehouse_app/features/settings/presentation/views/supplier_view.dart';
@@ -158,6 +161,20 @@ abstract class AppRouter {
           );
         },
       ),
+      GoRoute(
+        path: Routes.addItemView,
+        builder: (context, state) => BlocProvider(
+          create: (context) => getIt.get<AddProductCubit>(),
+          child: const AddItemView(),
+        ),
+      ),
+      GoRoute(
+        path: Routes.allCategories,
+        builder: (context, state) => BlocProvider(
+          create: (context) => getIt.get<GetAllCategoriesCubit>(),
+          child: const AllCategoriesView(),
+        ),
+      )
     ],
   );
 }
