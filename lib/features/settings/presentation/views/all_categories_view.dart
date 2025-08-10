@@ -31,7 +31,7 @@ class AllCategoriesView extends StatelessWidget {
               text: 'Add new',
               textColor: ColorManager.mainBlue,
               backgroundColor: Colors.white,
-              onPressed: () => context.push(Routes.addPerson),
+              onPressed: () => context.push(Routes.addSupplier),
             ),
           ),
         ],

@@ -13,6 +13,7 @@ import 'package:warehouse_app/features/settings/data/repo/setting_repo_impl.dart
 import 'package:warehouse_app/features/settings/presentation/cubits/add_supplier_cubit/add_supplier_cubit.dart';
 import 'package:warehouse_app/features/settings/presentation/cubits/get_all_categories_cubit/get_all_categories_cubit.dart';
 import 'package:warehouse_app/features/settings/presentation/cubits/get_all_suppliers_cubit/get_all_suppliers_cubit.dart';
+import 'package:warehouse_app/features/settings/presentation/cubits/supplier_feature_cubit/suppliers_features_cubit.dart';
 import '../../features/Auth/presentation/cubits/signup_with_phone_number_cubit/sign_up_with_phone_number_cubit.dart';
 import '../utils/supabase_init.dart';
 import 'package:uuid/uuid.dart';
@@ -60,4 +61,7 @@ void serviceLocator() {
       () => GetAllSuppliersCubit(getIt.get()));
   getIt.registerLazySingleton<GetAllCategoriesCubit>(
       () => GetAllCategoriesCubit(getIt.get()));
+
+  getIt.registerLazySingleton<SuppliersFeaturesCubit>(
+      () => SuppliersFeaturesCubit(getIt.get()));
 }

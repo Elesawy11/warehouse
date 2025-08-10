@@ -22,6 +22,7 @@ class AddSupplierCubit extends Cubit<AddSupplierState> {
       collectionName: Constants.supplierCollection,
       itemId: id,
       person: PersonModel(
+        id: id,
         name: nameController.text.trim(),
         phone: phoneController.text.trim(),
         address: addressController.text.trim(),

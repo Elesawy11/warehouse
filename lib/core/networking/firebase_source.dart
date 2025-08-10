@@ -19,4 +19,16 @@ class FirebaseSource {
 
     return response;
   }
+
+  Future<void> deleteItem(
+      {required String collectionName, required String id}) async {
+    await fireStore.collection(collectionName).doc(id).delete();
+  }
+
+  Future<void> updateItem(
+      {required String id,
+      required String collectionName,
+      required Map<String, dynamic> data}) async {
+    await fireStore.collection(collectionName).doc(id).update(data);
+  }
 }

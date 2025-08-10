@@ -23,6 +23,7 @@ import 'package:warehouse_app/features/settings/data/models/person_model.dart';
 import 'package:warehouse_app/features/settings/presentation/cubits/add_supplier_cubit/add_supplier_cubit.dart';
 import 'package:warehouse_app/features/settings/presentation/cubits/get_all_categories_cubit/get_all_categories_cubit.dart';
 import 'package:warehouse_app/features/settings/presentation/cubits/get_all_suppliers_cubit/get_all_suppliers_cubit.dart';
+import 'package:warehouse_app/features/settings/presentation/cubits/supplier_feature_cubit/suppliers_features_cubit.dart';
 import 'package:warehouse_app/features/settings/presentation/views/add_supplier_view.dart';
 import 'package:warehouse_app/features/settings/presentation/views/all_categories_view.dart';
 import 'package:warehouse_app/features/settings/presentation/views/customers_view.dart';
@@ -128,8 +129,15 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: Routes.allsuppliers,
-        builder: (context, state) => BlocProvider(
-          create: (context) => getIt.get<GetAllSuppliersCubit>(),
+        builder: (context, state) => MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => getIt.get<GetAllSuppliersCubit>(),
+            ),
+            BlocProvider(
+              create: (context) => getIt.get<SuppliersFeaturesCubit>(),
+            ),
+          ],
           child: const AllSuppliersView(),
         ),
       ),
@@ -138,7 +146,7 @@ abstract class AppRouter {
         builder: (context, state) => const CustomersView(),
       ),
       GoRoute(
-        path: Routes.addPerson,
+        path: Routes.addSupplier,
         builder: (context, state) => MultiBlocProvider(
           providers: [
             BlocProvider(
@@ -146,6 +154,9 @@ abstract class AppRouter {
             ),
             BlocProvider(
               create: (context) => getIt.get<GetAllSuppliersCubit>(),
+            ),
+            BlocProvider(
+              create: (context) => getIt.get<SuppliersFeaturesCubit>(),
             ),
           ],
           child: const AddSupplierView(),
@@ -156,8 +167,11 @@ abstract class AppRouter {
         builder: (context, state) {
           final supplier = state.extra as PersonModel;
 
-          return SupplierView(
-            supplier: supplier,
+          return BlocProvider(
+            create: (context) => getIt.get<SuppliersFeaturesCubit>(),
+            child: SupplierView(
+              supplier: supplier,
+            ),
           );
         },
       ),

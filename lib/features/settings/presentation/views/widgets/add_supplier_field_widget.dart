@@ -20,41 +20,46 @@ class AddSupplierViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          verticalSpace(24),
-          Text(
-            'Information about supplier',
-            style: Styles.font22Bold,
-          ),
-          verticalSpace(24),
-          PersonInformationFieldWidget(
-            controller: cubit.nameController,
-            text: 'name',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'name is required';
-              }
-            },
-          ),
-          verticalSpace(24),
-          PersonInformationFieldWidget(
-            controller: cubit.phoneController,
-            keyboardType: TextInputType.number,
-            text: 'phone',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'phone number is required';
-              }
-            },
-          ),
-          verticalSpace(24),
-          PersonInformationFieldWidget(
-            controller: cubit.addressController,
-            text: 'address',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'address is required';
-              }
-            },
+          ListView(
+            shrinkWrap: true,
+            children: [
+              verticalSpace(24),
+              Text(
+                'Information about supplier',
+                style: Styles.font22Bold,
+              ),
+              verticalSpace(24),
+              PersonInformationFieldWidget(
+                controller: cubit.nameController,
+                text: 'name',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'name is required';
+                  }
+                },
+              ),
+              verticalSpace(24),
+              PersonInformationFieldWidget(
+                controller: cubit.phoneController,
+                keyboardType: TextInputType.number,
+                text: 'phone',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'phone number is required';
+                  }
+                },
+              ),
+              verticalSpace(24),
+              PersonInformationFieldWidget(
+                controller: cubit.addressController,
+                text: 'address',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'address is required';
+                  }
+                },
+              ),
+            ],
           ),
           const Spacer(
             flex: 3,

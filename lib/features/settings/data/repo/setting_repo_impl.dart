@@ -39,6 +39,30 @@ class SettingRepoImpl {
     }
   }
 
+  //delete item method
+  Future<NetworkResult<String>> deleteItem(
+      {required String collectionName, required String id}) async {
+    try {
+      await _source.deleteItem(collectionName: collectionName, id: id);
+      return const NetworkResult.success('Deleted');
+    } catch (e) {
+      return NetworkResult.failure(e.toString());
+    }
+  }
+
+  Future<NetworkResult<String>> updateItem(
+      {required String collectionName,
+      required String id,
+      required Map<String,dynamic> data}) async {
+    try {
+      await _source.updateItem(
+          collectionName: collectionName, id: id, data: data);
+      return const NetworkResult.success('Updated');
+    } catch (e) {
+      return NetworkResult.failure(e.toString());
+    }
+  }
+
   // handle error method
   NetworkResult<CollectionReference<Map<String, dynamic>>>
       handleErrorSwitchStatement(FirebaseException error) {

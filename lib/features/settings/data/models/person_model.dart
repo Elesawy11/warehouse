@@ -3,11 +3,12 @@ part 'person_model.g.dart';
 
 @JsonSerializable()
 class PersonModel {
-  final String name;
-  final String phone;
-  final String address;
+  String id;
+  String? name;
+  String? phone;
+  String? address;
 
-  PersonModel({required this.name, required this.phone, required this.address});
+  PersonModel({this.name, this.phone, this.address, required this.id});
 
   factory PersonModel.fromJson(Map<String, dynamic> json) =>
       _$PersonModelFromJson(json);

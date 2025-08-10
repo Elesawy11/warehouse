@@ -13,7 +13,7 @@ abstract class Routes {
   static const addItemView = '/addItemView';
   static const allsuppliers = '/allsuppliers';
   static const customers = '/customers';
-  static const addPerson = '/addPerson';
+  static const addSupplier = '/addSupplier';
   static const supplier = '/supplier';
   static const allCategories = '/allCategories';
 }

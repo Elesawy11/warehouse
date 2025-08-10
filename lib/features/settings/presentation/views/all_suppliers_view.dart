@@ -31,7 +31,7 @@ class AllSuppliersView extends StatelessWidget {
               text: 'Add new',
               textColor: ColorManager.mainBlue,
               backgroundColor: Colors.white,
-              onPressed: () => context.push(Routes.addPerson),
+              onPressed: () => context.push(Routes.addSupplier),
             ),
           ),
         ],
@@ -47,7 +47,7 @@ class AllSuppliersView extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return PersonInformationWidget(
                             subTitle: state.suppliers[index].phone,
-                            title: state.suppliers[index].name,
+                            title: state.suppliers[index].name ?? '',
                             onTap: () => context.push(Routes.supplier,
                                 extra: state.suppliers[index]),
                           );

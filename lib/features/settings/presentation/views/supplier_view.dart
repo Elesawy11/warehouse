@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:warehouse_app/core/helpers/custom_snack_bar_method.dart';
 import 'package:warehouse_app/core/utils/styles.dart';
+import 'package:warehouse_app/features/settings/presentation/cubits/supplier_feature_cubit/suppliers_features_cubit.dart';
+import 'package:warehouse_app/features/settings/presentation/cubits/supplier_feature_cubit/suppliers_features_state.dart';
+import '../../../../core/helpers/show_custom_alert_dialog.dart';
 import '../../../../core/helpers/spacer.dart';
 import '../../../../core/widgets/app_text_button.dart';
 import '../../data/models/person_model.dart';
@@ -21,13 +26,26 @@ class SupplierView extends StatelessWidget {
           style: Styles.titleStyle,
         ),
         actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 6.w),
-            child: Text(
-              'Delete',
-              style: Styles.font16Regular.copyWith(
-                color: Colors.red,
-              ),
+          SizedBox(
+            width: 100.w,
+            child: AppTextButton(
+              text: 'Delete',
+              backgroundColor: Colors.white,
+              onPressed: () {
+                showCustomAlertDialog(
+                  context,
+                  title: 'Confirmation',
+                  supTitle: 'Are you sure you want to delete this item?',
+                  buttonText: 'Delete',
+                  textColor: Colors.red,
+                  onPressed: () {
+                    context
+                        .read<SuppliersFeaturesCubit>()
+                        .updateSupplier(id: supplier.id);
+                  },
+                );
+              },
+              textColor: Colors.red,
             ),
           ),
         ],
@@ -66,9 +84,24 @@ class SupplierView extends StatelessWidget {
                 ],
               ),
             ),
-            AppTextButton(
-              text: 'Save',
-              onPressed: () {},
+            BlocConsumer<SuppliersFeaturesCubit, SuppliersFeaturesState>(
+              listener: (context, state) {
+                if (state is UpdateSuccess) {
+                  customSnackBarMethod(context, 'supplier updated');
+                } else if (state is Error) {
+                  customSnackBarMethod(context, state.message);
+                }
+              },
+              builder: (context, state) {
+                return AppTextButton(
+                  text: 'Save',
+                  onPressed: () {
+                    context
+                        .read<SuppliersFeaturesCubit>()
+                        .updateSupplier(id: supplier.id);
+                  },
+                );
+              },
             ),
             verticalSpace(60),
           ],
